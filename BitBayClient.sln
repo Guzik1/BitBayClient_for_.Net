@@ -8,7 +8,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitBayClient", "BitBayClien
 		{2260DFAF-7E95-41F1-9562-955C0D915D4C} = {2260DFAF-7E95-41F1-9562-955C0D915D4C}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeBasicData", "ExchangeBasicData\ExchangeBasicData.csproj", "{2260DFAF-7E95-41F1-9562-955C0D915D4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeBasicData", "ExchangeBasicData\ExchangeBasicData.csproj", "{2260DFAF-7E95-41F1-9562-955C0D915D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeBasicDataTests", "ExchangeBasicDataTests\ExchangeBasicDataTests.csproj", "{2155EB51-FB02-4C9F-8913-B81559484A48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{2260DFAF-7E95-41F1-9562-955C0D915D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2260DFAF-7E95-41F1-9562-955C0D915D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2260DFAF-7E95-41F1-9562-955C0D915D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2155EB51-FB02-4C9F-8913-B81559484A48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2155EB51-FB02-4C9F-8913-B81559484A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2155EB51-FB02-4C9F-8913-B81559484A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2155EB51-FB02-4C9F-8913-B81559484A48}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -24,9 +24,11 @@ namespace ExchangeBasicData
 
         public static string ToLowerString(this OfferType offerType)
         {
-            string output = offerType.ToString().ToLower();
+            string output = offerType.ToString();
+            output = output.Replace('_', '-');
+            output = output.ToLower();
 
-            return output.Replace('_', '-');
+            return output;
         }
     }
 }
