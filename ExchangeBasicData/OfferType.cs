@@ -21,7 +21,7 @@ namespace ExchangeBasicData
 
             return (OfferType)Enum.Parse(typeof(OfferType), toParse, true);
         }
-
+         
         public static string ToLowerString(this OfferType offerType)
         {
             string output = offerType.ToString();

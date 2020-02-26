@@ -10,7 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitBayClient", "BitBayClien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeBasicData", "ExchangeBasicData\ExchangeBasicData.csproj", "{2260DFAF-7E95-41F1-9562-955C0D915D4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeBasicDataTests", "ExchangeBasicDataTests\ExchangeBasicDataTests.csproj", "{2155EB51-FB02-4C9F-8913-B81559484A48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeBasicDataTests", "ExchangeBasicDataTests\ExchangeBasicDataTests.csproj", "{2155EB51-FB02-4C9F-8913-B81559484A48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
