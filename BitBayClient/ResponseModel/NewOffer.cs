@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BitBayClient.ResponseModel
 {
-    public class NewOfferResponse
+    public class NewOffer
     {
         public bool Completed { get; set; }
 

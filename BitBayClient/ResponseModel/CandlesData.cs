@@ -8,39 +8,19 @@ using BitBayClient.Converters;
 
 namespace BitBayClient.ResponseModel
 {
-    public class CandlesChart
+    public class CandlesData
     {
-        [JsonProperty("items")]
-        public Dictionary<DateTime, CandleItem> Candles { get; set; }
-    }
+        /// <summary>
+        /// Default constructor.
+        /// </summary>
+        public CandlesData() { }
 
-    internal class CandesChartDeserialize : IResponseDeserializer<CandlesChart>
-    {
-        public CandlesChart Deserialize(string input)
+        internal CandlesData(Dictionary<DateTime, CandleItem> candles)
         {
-            CandlesChart output = new CandlesChart();
-
-            PreCandleChartData data = Converters.Deserialize.FromJson<PreCandleChartData>(input);
-
-            output.Candles = new Dictionary<DateTime, CandleItem>();
-
-            for (int i = 0; i < data.Items.Count; i++)
-            {
-                long id = Int64.Parse((string)data.Items[i][0]);
-                DateTime dt = Date.Convert(id);
-
-                CandleItem candle = Converters.Deserialize.FromJson<CandleItem>(data.Items[i][1].ToString());
-
-                output.Candles.Add(dt, candle);
-            }
-
-            return output;
+            Candles = candles;
         }
-    }
 
-    class PreCandleChartData
-    {
-        public List<List<object>> Items { get; set; }
+        public Dictionary<DateTime, CandleItem> Candles { get; set; }
     }
 
     public class CandleItem

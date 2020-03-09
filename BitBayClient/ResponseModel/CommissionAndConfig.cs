@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BitBayClient.ResponseModel
 {
-    public class CommissionAndConfigData
+    public class CommissionAndConfig
     {
         public ConfigItem Config { get; set; }
     }

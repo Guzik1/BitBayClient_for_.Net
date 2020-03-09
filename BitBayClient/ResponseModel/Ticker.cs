@@ -12,18 +12,16 @@ namespace BitBayClient.ResponseModel
         public TickerItem Ticker { get; set; }
     }
 
-    public class AllTicker
+    public class AllTickers
     {
-        [JsonProperty("items")]
-        [JsonConverter(typeof(SingleOrArrayConverter<Dictionary<string, TickerItem>>))]
-        public List<Dictionary<string, TickerItem>> Tickers { get; set; }
+        public Dictionary<Pair, TickerItem> Tickers { get; set; }
     }
 
     public class TickerItem
     {
         public Market Market { get; set; }
 
-        public long Time { get; set; }
+        public DateTime Time { get; set; }
 
         public decimal HighestBid { get; set; }
 
@@ -37,7 +35,6 @@ namespace BitBayClient.ResponseModel
     public class Market
     {
         public Pair Pair {get; set;}
-        public string Code { set { Pair = new Pair(value); } }
 
         public Details First { get; set; }
 
