@@ -8,13 +8,19 @@ using BitBayClient;
 
 namespace BitBayClient.RequestModel
 {
-    public class AutorizeData : IAddOwnHeaderToRequest
+    internal class AutorizeData : IAddOwnHeaderToRequest
     {
         string unixTS = Date.Convert(DateTime.Now).ToString();
+        Config config;
+
+        internal AutorizeData(Config config)
+        {
+            this.config = config;
+        }
 
         public Dictionary<string, string> AddOwnHeader()
         {
-            string hash = GenerateHash(Config.PublicKey, unixTS);
+            string hash = GenerateHash(config.PublicKey, unixTS);
 
             return AddAutorizationHeader(hash);
         }
@@ -23,7 +29,7 @@ namespace BitBayClient.RequestModel
         {
             string JsonSerializedObject = Serialize.AsJson(POSTDataToSend);
 
-            string hash = GenerateHash(Config.PublicKey, unixTS, JsonSerializedObject);
+            string hash = GenerateHash(config.PublicKey, unixTS, JsonSerializedObject);
 
             return AddAutorizationHeader(hash);
         }
@@ -33,7 +39,7 @@ namespace BitBayClient.RequestModel
             Dictionary<string, string> headers = new Dictionary<string, string>();
 
             headers.Add("Request-Timestamp", unixTS);
-            headers.Add("API-Key", Config.PublicKey);
+            headers.Add("API-Key", config.PublicKey);
             headers.Add("operation-id", Guid.NewGuid().ToString());
             headers.Add("API-Hash", hash);
 
@@ -47,7 +53,7 @@ namespace BitBayClient.RequestModel
             for (int i = 0; i < stringToMix.Length; i++)
                 sb.Append(stringToMix[i]);
 
-            return Hash.SHA512HMAC_ComputeHash(sb.ToString(), Config.PrivateKey);
+            return Hash.SHA512HMAC_ComputeHash(sb.ToString(), config.PrivateKey);
         }
     }
 }
