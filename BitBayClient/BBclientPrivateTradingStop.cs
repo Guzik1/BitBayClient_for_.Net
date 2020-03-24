@@ -49,7 +49,7 @@ namespace BitBayClient
             rc.AddOwnHeaderToRequest(new AutorizeData(config));
             rc.SendGET();
 
-            return TryGetResponse<ActiveStopOffers, ActiveStopOffersTemp>(rc);
+            return TryGetResponse<ActiveStopOffers>(rc);
         }
         #endregion
 

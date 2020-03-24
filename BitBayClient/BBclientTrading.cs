@@ -16,18 +16,18 @@ namespace BitBayClient
         Config config = new Config();
 
         #region Ticker
-        public Tickers GetTicker(Pair pair)
-            => SendGetTicer<Tickers, TickersTemp>("/" + pair.ToStringWithDash());
+        public Ticker GetTicker(Pair pair)
+            => SendGetTicer<Ticker>("/" + pair.ToStringWithDash());
 
         public AllTickers GetAllTicker()
-            => SendGetTicer<AllTickers, AllTickersTemp>("");
+            => SendGetTicer<AllTickers>("");
 
-        Expected SendGetTicer<Expected, Temp>(string url)
+        Expected SendGetTicer<Expected>(string url)
         {
             RestClient rc = new RestClient(config.ApiTradingUrl + "ticker" + url);
             rc.SendGET();
 
-            return TryGetResponse<Expected, Temp>(rc);
+            return TryGetResponse<Expected>(rc);
         }
         #endregion
 
@@ -180,7 +180,7 @@ namespace BitBayClient
 
             rc.SendGET();
 
-            return TryGetResponse<CandlesData, CandlesDataTemp>(rc);
+            return TryGetResponse<CandlesData>(rc);
         }
         #endregion
     }

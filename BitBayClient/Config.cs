@@ -8,7 +8,9 @@ namespace BitBayClient
 
         internal string ApiTradingStopUrl => ApiTradingUrl + "stop/";
 
-        internal string ApiBalancesUrl => ApiUrl + "balances/BITBAY/balance/";
+        internal string ApiBalancesUrl => ApiUrl + "balances/BITBAY/";
+
+        internal string ApiDoubleBalancesUrl => ApiBalancesUrl + "balance/";
 
         internal string ApiUrl { get; } = "https://api.bitbay.net/rest/";
 

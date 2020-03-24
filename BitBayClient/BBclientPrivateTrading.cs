@@ -51,7 +51,7 @@ namespace BitBayClient
             rc.AddOwnHeaderToRequest(new AutorizeData(config));
             rc.SendGET();
 
-            return TryGetResponse<ActiveOffers, ActiveOffersTemp>(rc);
+            return TryGetResponse<ActiveOffers>(rc);
         }
         #endregion
 
