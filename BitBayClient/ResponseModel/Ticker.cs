@@ -1,27 +1,29 @@
-﻿using Newtonsoft.Json;
+﻿using BitBayClient.Converters;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using BitBayClient.Converters;
 using CurrencyPair;
 
 namespace BitBayClient.ResponseModel
 {
-    public class Tickers
+    public class Ticker
     {
-        public TickerItem Ticker { get; set; }
+        public TickerItem TickerItem { get; set; }
     }
 
     public class AllTickers
     {
-        public Dictionary<Pair, TickerItem> Tickers { get; set; }
+        [JsonProperty("items")]
+        [JsonConverter(typeof(SingleOrArrayConverter<Dictionary<Currency, TickerItem>>))]
+        public Dictionary<string, TickerItem> Tickers { get; set; }
     }
 
     public class TickerItem
     {
         public Market Market { get; set; }
 
-        public DateTime Time { get; set; }
+        public long Time { get; set; }
 
         public decimal HighestBid { get; set; }
 
@@ -34,7 +36,7 @@ namespace BitBayClient.ResponseModel
 
     public class Market
     {
-        public Pair Pair {get; set;}
+        public string Code { get; set; }
 
         public Details First { get; set; }
 

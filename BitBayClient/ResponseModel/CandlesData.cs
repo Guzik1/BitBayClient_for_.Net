@@ -1,26 +1,14 @@
-﻿using Newtonsoft.Json;
-using Newtonsoft.Json.Serialization;
+﻿using BitBayClient.Converters;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using RestApiClient;
-using BitBayClient.Converters;
 
 namespace BitBayClient.ResponseModel
 {
     public class CandlesData
     {
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public CandlesData() { }
-
-        internal CandlesData(Dictionary<DateTime, CandleItem> candles)
-        {
-            Candles = candles;
-        }
-
-        public Dictionary<DateTime, CandleItem> Candles { get; set; }
+        public Dictionary<long, CandleItem> Items { get; set; }
     }
 
     public class CandleItem
