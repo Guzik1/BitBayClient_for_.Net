@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BitBayClient.ResponseModel.Temp
 {
-    internal class FailResponseTemp: IResponseConvert<FailResponse>
+    internal class FailResponseTemp
     {
         public List<string> Errors { get; set; }
 

@@ -25,11 +25,8 @@ namespace BitBayClient
         {
             RestClient rc = new RestClient(config.ApiTradingStopUrl + "offer/" + url);
 
-            NewStopOfferTemp newStopOfferRequest = new NewStopOfferTemp();
-            newStopOfferRequest.SetRequest(body);
-
             rc.AddOwnHeaderToRequest(new AutorizeData(config));
-            rc.SendPOST(newStopOfferRequest);
+            rc.SendPOST(body);
 
             return TryGetResponse<NewStopOffer>(rc);
         }

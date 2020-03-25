@@ -4,24 +4,74 @@
         <name>BitBayClient</name>
     </assembly>
     <members>
-        <member name="M:BitBayClient.ResponseModel.CandlesData.#ctor">
+        <member name="M:BitBayClient.ResponseModel.OLD.ActiveOffersOLD.#ctor">
             <summary>
             Default constructor.
             </summary>
         </member>
-        <member name="M:BitBayClient.ResponseModel.LastTransactions.#ctor">
+        <member name="M:BitBayClient.ResponseModel.OLD.CandlesData.#ctor">
             <summary>
             Default constructor.
             </summary>
         </member>
-        <member name="M:BitBayClient.ResponseModel.LastTransactionItem.#ctor">
+        <member name="M:BitBayClient.ResponseModel.OLD.LastTransactions.#ctor">
             <summary>
             Default constructor.
             </summary>
         </member>
-        <member name="M:BitBayClient.ResponseModel.Orderbook.#ctor">
+        <member name="M:BitBayClient.ResponseModel.OLD.LastTransactionItem.#ctor">
             <summary>
             Default constructor.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.ResponseModel.OLD.Orderbook.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Stats">
+            <summary>
+            Stat for one currency pair on exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Stats.Stats24h">
+            <summary>
+            24 hours pair stats.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.AllStats">
+            <summary>
+            Stats for all currency pair on exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.AllStats.Stats24h">
+            <summary>
+            24 hours pair stats. Key is currency pair code, Value is stats for (Key) pair.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Stat.Code">
+            <summary>
+            Currency pair code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Stat.HighestRate">
+            <summary>
+            Highest price rate.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Stat.LowestRate">
+            <summary>
+            Lowest price rate.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Stat.Volume">
+            <summary>
+            Volume in pair.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Stat.AvarageRate">
+            <summary>
+            Avarage 24h rate in pair.
             </summary>
         </member>
     </members>

@@ -24,9 +24,6 @@ namespace BitBayClient
         {
             RestClient rc = new RestClient(config.ApiTradingUrl + "history/transactions");
 
-            TransactionHistoryRequestTemp queryRequest = new TransactionHistoryRequestTemp();
-            queryRequest.SetRequest(body);
-
             rc.AddQuery(body);
             rc.AddOwnHeaderToRequest(new AutorizeData(config));
             rc.SendGET();
