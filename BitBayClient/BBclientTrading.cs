@@ -33,17 +33,17 @@ namespace BitBayClient
 
         #region Market stats
         public Stats GetMarketStats(Pair pair)
-            => SendGetMarketStats<Stats, StatTemp>("/" + pair.ToStringWithDash());
+            => SendGetMarketStats<Stats>("/" + pair.ToStringWithDash());
 
         public AllStats GetAllMarketStats()
-            => SendGetMarketStats<AllStats, AllStatsTemp>();
+            => SendGetMarketStats<AllStats>();
 
-        Expected SendGetMarketStats<Expected, Temp>(string url = "")
+        Expected SendGetMarketStats<Expected>(string url = "")
         {
             RestClient rc = new RestClient(config.ApiTradingUrl + "stats" + url);
             rc.SendGET();
 
-            return TryGetResponse<Expected, Temp>(rc);
+            return TryGetResponse<Expected>(rc);
         }
         #endregion
 
@@ -63,7 +63,7 @@ namespace BitBayClient
             RestClient rc = new RestClient(config.ApiTradingUrl + url);
             rc.SendGET();
 
-            return TryGetResponse<Orderbook, OrderbookTemp>(rc);
+            return TryGetResponse<Orderbook>(rc);
         }
         #endregion
 
@@ -77,7 +77,10 @@ namespace BitBayClient
 
             Dictionary<string, string> query = GenerateQuery(limit);
 
-            return SendLastTransactionsRequest(pair.ToStringWithDash(), query);
+            LastTransactions lt = SendLastTransactionsRequest(pair.ToStringWithDash(), query);
+            lt.RequestTime = DateTime.Now;
+
+            return lt;
         }
 
         public LastTransactions GetLastTransactions(Pair pair, DateTime fromDate)
@@ -87,7 +90,7 @@ namespace BitBayClient
             Dictionary<string, string> query = GenerateQuery(date: fromDate);
 
             LastTransactions lt = SendLastTransactionsRequest(pair.ToStringWithDash(), query);
-            lt.RequestTime = fromDate;
+            lt.RequestTime = DateTime.Now;
 
             return lt;
         }
@@ -101,7 +104,7 @@ namespace BitBayClient
             Dictionary<string, string> query = GenerateQuery(limit, fromDate);
 
             LastTransactions lt = SendLastTransactionsRequest(pair.ToStringWithDash(), query);
-            lt.RequestTime = fromDate;
+            lt.RequestTime = DateTime.Now;
 
             return lt;
         }
@@ -137,7 +140,7 @@ namespace BitBayClient
 
             rc.SendGET();
 
-            return TryGetResponse<LastTransactions, LastTransactionsTemp>(rc);
+            return TryGetResponse<LastTransactions>(rc);
         }
         #endregion
 

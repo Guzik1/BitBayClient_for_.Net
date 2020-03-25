@@ -18,21 +18,6 @@ namespace BitBayClient
             throw new Exception("Unknown error.");
         }
 
-        Expected TryGetResponse<Expected, Temp>(RestClient rc)
-        {
-            if (CheckResult(rc))
-            {
-                string response = rc.GetResponseToString;
-
-                Temp temp = Deserialize.FromJson<Temp>(response);
-                IResponseConvert<Expected> con = (IResponseConvert<Expected>)temp;
-
-                return con.GetResponse();
-            }
-
-            throw new Exception("Unknown error.");
-        }
-
         bool CheckResult(RestClient rc)
         {
             if (rc.ResponseHasNoErrors(new ResponseChecker()))

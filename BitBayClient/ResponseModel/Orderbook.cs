@@ -3,32 +3,19 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BitBayClient.ResponseModel
+namespace BitBayClient.ResponseModel.Temp
 {
     public class Orderbook
     {
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public Orderbook() { }
-
-        internal Orderbook(List<OrderBookItem> sell, List<OrderBookItem> buy, DateTime date, int seqNo)
-        {
-            Sell = sell;
-            Buy = buy;
-            Date = date;
-            SeqNo = seqNo;
-        }
-
         public List<OrderBookItem> Sell { get; set; }
 
         public List<OrderBookItem> Buy { get; set; }
 
-        public DateTime Date { get; set; }
+        public long Timestamp { get; set; }
 
         public int SeqNo { get; set; }
     }
-     
+
     public class OrderBookItem
     {
         [JsonProperty("ra")]

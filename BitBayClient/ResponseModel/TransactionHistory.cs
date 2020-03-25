@@ -1,9 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using CurrencyPair;
+using ExchangeBasicData;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using CurrencyPair;
-using ExchangeBasicData;
 
 namespace BitBayClient.ResponseModel
 {
@@ -17,34 +17,28 @@ namespace BitBayClient.ResponseModel
 
         [JsonProperty("nextPageCursor")]
         public string NextPageCursor { get; set; }
-
-        public TransactionHistory() { }
-
-        internal TransactionHistory(int totalRows, List<TransactionHistoryItem> transactions, string nextPageCursor)
-        {
-            TotalRows = totalRows;
-            Transactions = transactions;
-            NextPageCursor = nextPageCursor;
-        }
     }
 
     public class TransactionHistoryItem
     {
         public string Id { get; set; }
 
-        public Pair CurrencyPair { get; set; }
+        public string Market { get; set; }
 
-        public DateTime Time { get; set; }
-        
+        public long Time { get; set; }
+
         public decimal Amount { get; set; }
 
         public decimal Rate { get; set; }
 
-        public TransactionType InitializedBy { get; set; }
+        [JsonProperty("initializedBy")]
+        public string InitialBy { get; set; }
 
+        [JsonProperty("wasTaker")]
         public bool WasTaker { get; set; }
 
-        public TransactionType UserActionType { get; set; }
+        [JsonProperty("userAction")]
+        public string UserActionType { get; set; }
 
         [JsonProperty("offerId")]
         public string OfferId { get; set; }

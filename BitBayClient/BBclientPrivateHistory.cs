@@ -31,7 +31,7 @@ namespace BitBayClient
             rc.AddOwnHeaderToRequest(new AutorizeData(config));
             rc.SendGET();
 
-            return TryGetResponse<TransactionHistory, TransactionHistoryTemp>(rc);
+            return TryGetResponse<TransactionHistory>(rc);
         }
         #endregion
 

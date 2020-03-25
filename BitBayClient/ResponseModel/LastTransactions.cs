@@ -1,21 +1,13 @@
-﻿using ExchangeBasicData;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace BitBayClient.ResponseModel
 {
     public class LastTransactions
     {
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public LastTransactions() { }
-
-        internal LastTransactions(List<LastTransactionItem> lastTransaction)
-        {
-            LastTransaction = lastTransaction;
-        }
-
+        [JsonProperty("items")]
         public List<LastTransactionItem> LastTransaction { get; set; }
 
         public DateTime RequestTime { get; set; }
@@ -23,28 +15,18 @@ namespace BitBayClient.ResponseModel
 
     public class LastTransactionItem
     {
-        /// <summary>
-        /// Default constructor.
-        /// </summary>
-        public LastTransactionItem() { }
-
-        internal LastTransactionItem(string id, DateTime date, decimal amount, decimal positionRate, TransactionType type)
-        {
-            Id = id;
-            Date = date;
-            Amount = amount;
-            PositionRate = positionRate;
-            Type = type;
-        }
-
         public string Id { get; set; }
 
-        public DateTime Date { get; set; }
+        [JsonProperty("t")]
+        public long Timestamp { get; set; }
 
+        [JsonProperty("a")]
         public decimal Amount { get; set; }
 
+        [JsonProperty("r")]
         public decimal PositionRate { get; set; }
 
-        public TransactionType Type { get; set; }
+        [JsonProperty("ty")]
+        public string TransactionType { get; set; }
     }
 }

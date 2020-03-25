@@ -4,12 +4,22 @@
         <name>BitBayClient</name>
     </assembly>
     <members>
+        <member name="M:BitBayClient.ResponseModel.CandlesData.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
         <member name="M:BitBayClient.ResponseModel.LastTransactions.#ctor">
             <summary>
             Default constructor.
             </summary>
         </member>
         <member name="M:BitBayClient.ResponseModel.LastTransactionItem.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.ResponseModel.Orderbook.#ctor">
             <summary>
             Default constructor.
             </summary>

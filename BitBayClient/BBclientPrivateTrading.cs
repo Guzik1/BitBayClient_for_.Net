@@ -15,7 +15,7 @@ namespace BitBayClient
     public partial class BitBayClient
     {
         #region AddOffer
-        public ResponseModel.NewOffer AddNewOffer(Pair pair, RequestModel.NewOfferRequest body)
+        public NewOffer AddNewOffer(Pair pair, NewOfferRequest body)
         {
             if (body == null)
                 throw new ArgumentException("The body params can not be null!");
@@ -23,17 +23,14 @@ namespace BitBayClient
             return SendAddNewOfferRequest(pair.ToStringWithDash(), body);
         }
 
-        ResponseModel.NewOffer SendAddNewOfferRequest(string url, RequestModel.NewOfferRequest body)
+        ResponseModel.NewOffer SendAddNewOfferRequest(string url, NewOfferRequest body)
         {
             RestClient rc = new RestClient(config.ApiTradingUrl + "offer/" + url);
 
-            NewOfferRequestTemp newOfferRequest = new NewOfferRequestTemp();
-            newOfferRequest.SetRequest(body);
-
             rc.AddOwnHeaderToRequest(new AutorizeData(config));
-            rc.SendPOST(newOfferRequest);
+            rc.SendPOST(body);
 
-            return TryGetResponse<ResponseModel.NewOffer>(rc);
+            return TryGetResponse<NewOffer>(rc);
         }
         #endregion
 
