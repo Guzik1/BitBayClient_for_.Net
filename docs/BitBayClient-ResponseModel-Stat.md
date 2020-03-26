@@ -1,6 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## Stat Class
+Data model for details of 24 hours pair stats.  
 ```csharp
 public class Stat
 ```

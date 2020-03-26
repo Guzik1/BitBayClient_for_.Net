@@ -5,38 +5,83 @@ using System.Text;
 
 namespace BitBayClient.ResponseModel
 {
+    /// <summary>
+    /// Data model for response on <see cref="BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)"/> request.
+    /// </summary>
     public class CommissionAndConfig
     {
-        public ConfigItem Config { get; set; }
+        /// <summary>
+        /// Confiuguration and commission data.
+        /// </summary>
+        public Configuration Config { get; set; }
     }
 
-    public class ConfigItem
+    /// <summary>
+    /// Data model for Commision and configuration details.
+    /// </summary>
+    public class Configuration
     {
-        public BuySellItem Buy { get; set; }
+        /// <summary>
+        /// Buy configuration.
+        /// </summary>
+        public BuySellConfigItem Buy { get; set; }
 
-        public BuySellItem Sell { get; set; }
+        /// <summary>
+        /// Sell configuration.
+        /// </summary>
+        public BuySellConfigItem Sell { get; set; }
 
+        /// <summary>
+        /// Configuration for first currence in pair.
+        /// </summary>
         public MinimalTransaction First { get; set; }
 
+        /// <summary>
+        /// Configuration for second currence in pair.
+        /// </summary>
         public MinimalTransaction Second { get; set; }
     }
 
-    public class BuySellItem
+    /// <summary>
+    /// Data model for buy or sell configuration item.
+    /// </summary>
+    public class BuySellConfigItem
     {
+        /// <summary>
+        /// Commissions levels.
+        /// </summary>
         public Commissions Commissions { get; set; }
     }
 
+    /// <summary>
+    /// Commision data model for config buy and sell item.
+    /// </summary>
     public class Commissions
     {
+        /// <summary>
+        /// Actual maker commision.
+        /// </summary>
         public decimal Maker { get; set; }
 
+        /// <summary>
+        /// Actual taker commision.
+        /// </summary>
         public decimal Taker { get; set; }
     }
 
+    /// <summary>
+    /// Minimal transaction data model.
+    /// </summary>
     public class MinimalTransaction
     {
+        /// <summary>
+        /// Default balance UUID.
+        /// </summary>
         public string BalanceId { get; set; }
 
+        /// <summary>
+        /// Minimal transaction value.
+        /// </summary>
         [JsonProperty("minValue")]
         public decimal MinValue { get; set; }
     }
