@@ -21,7 +21,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.NewOfferRequest">
             <summary>
-            Data model for new offer request to exchange.
+            Data model for new offer request (<see cref="M:BitBayClient.BitBayClient.AddNewOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewOfferRequest)"/>) to exchange.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.NewOfferRequest.Amount">
@@ -72,6 +72,86 @@
         <member name="P:BitBayClient.RequestModel.NewOfferRequest.SecondBalanceId">
             <summary>
             Different UUID wallets for second currency in pair. Opcjonal
+            </summary>
+        </member>
+        <member name="T:BitBayClient.RequestModel.NewStopOfferRequest">
+            <summary>
+            Data model for new stop offer request (<see cref="M:BitBayClient.BitBayClient.AddNewStopOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewStopOfferRequest)"/>) to exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.OfferType">
+            <summary>
+            Offer type: buy or sell. REQUIRED
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.Amount">
+            <summary>
+            Currency amount. REQUIRED
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.StopRate">
+            <summary>
+            Last transaction rate, when this offer was activate. REQUIRED
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.Mode">
+            <summary>
+            Offer mode: stop-limit or stop-market. REQUIRED
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.Rate">
+            <summary>
+            Offer rate (price). Required in stop-limit mode and not required in stop-market mode.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.Balances">
+            <summary>
+            Using balances for this offer. When null, use default balances. Optional
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.IgnoreInvalidStopRate">
+            <summary>
+            Ignore invalid stop rate. Prepare for add new offer that can be implemented immedietly.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.RequestModel.TransactionHistoryRequest">
+            <summary>
+            Data model for get transaction history, is parameter in <see cref="M:BitBayClient.BitBayClient.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)"/>, use to filter resault.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.Markets">
+            <summary>
+            List of markets code. Use for filter.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.NextPageCursor">
+            <summary>
+            Next page cursor, use for get next pages of resault. Default cursor is start.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.RateFrom">
+            <summary>
+            Rate from filter.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.RateTo">
+            <summary>
+            Rate to filter.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.FromTime">
+            <summary>
+            From time filter (unix).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.ToTime">
+            <summary>
+            To time filter (unix).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.UserAction">
+            <summary>
+            Filter, user action: buy or sell.
             </summary>
         </member>
         <member name="T:BitBayClient.ResponseModel.ActiveOffers">
@@ -152,6 +232,81 @@
         <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.SecondBalanceId">
             <summary>
             Second balance UUID.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOffers.ActiveOffer">
+            <summary>
+            List of stop offers.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem">
+            <summary>
+            Data model represent one active stop offer.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Id">
+            <summary>
+            UUID offer identificator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.OperationId">
+            <summary>
+            UUID executed operation identyficator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.UserId">
+            <summary>
+            UUID user identificator, yours number.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Market">
+            <summary>
+            Market code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Amount">
+            <summary>
+            Amount currency in position.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Rate">
+            <summary>
+            Postion rate (price).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.StopRate">
+            <summary>
+            Offer activation rate.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Status">
+            <summary>
+            Offer status: (available only) active.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.OfferType">
+            <summary>
+            Type of offer, available: buy and sell.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Mode">
+            <summary>
+            Offer mode, abailable: stop-limit and stop-market
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Balances">
+            <summary>
+            Balances usage to this offer, for two currencies.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Time">
+            <summary>
+            Created time (unix).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Flags">
+            <summary>
+            Flags, already no used.
             </summary>
         </member>
         <member name="T:BitBayClient.ResponseModel.Temp.Orderbook">
@@ -405,6 +560,16 @@
             Transaction rate.
             </summary>
         </member>
+        <member name="T:BitBayClient.ResponseModel.NewStopOffer">
+            <summary>
+            Data model stop offer response, return on <see cref="M:BitBayClient.BitBayClient.AddNewStopOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewStopOfferRequest)"/> response.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.NewStopOffer.StopOfferId">
+            <summary>
+            Stop offer UUID identificator.
+            </summary>
+        </member>
         <member name="M:BitBayClient.ResponseModel.OLD.ActiveOffersOLD.#ctor">
             <summary>
             Default constructor.
@@ -573,6 +738,81 @@
         <member name="P:BitBayClient.ResponseModel.Details.Scale">
             <summary>
             The number of places, supported this currency.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.TransactionHistory">
+            <summary>
+            Data model on get transaction history request, return from <see cref="M:BitBayClient.BitBayClient.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)"/>
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistory.TotalRows">
+            <summary>
+            Number of rows in resault.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistory.Transactions">
+            <summary>
+            List of transacton history items.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistory.NextPageCursor">
+            <summary>
+            Cursor to next pager of resault, use in request to get next pages.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.TransactionHistoryItem">
+            <summary>
+            Transaction history item data model, represent one transaction.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.Id">
+            <summary>
+            Transaction UUID identificator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.Market">
+            <summary>
+            Market code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.Time">
+            <summary>
+            The transaction execution time (unix).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.Amount">
+            <summary>
+            Amount of currency in the transaction.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.Rate">
+            <summary>
+            The transation rate.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.InitialBy">
+            <summary>
+            Who initiated the transaction: buy or sell.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.UserActionType">
+            <summary>
+            The role user play in executed the transaction: buy or sell.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.WasTaker">
+            <summary>
+            Is the user completing a existing offer of another user? Flag (true - taker, false - maker).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.OfferId">
+            <summary>
+            Offer UUID identificator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.CommissionValue">
+            <summary>
+            Value of commission charged.
             </summary>
         </member>
     </members>

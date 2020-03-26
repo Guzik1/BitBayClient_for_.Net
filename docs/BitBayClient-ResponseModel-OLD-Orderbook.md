@@ -2,7 +2,7 @@
 ### [BitBayClient.ResponseModel.OLD](./BitBayClient-ResponseModel-OLD.md 'BitBayClient.ResponseModel.OLD')
 ## Orderbook Class
 ```csharp
-public class Orderbook
+internal class Orderbook
 ```
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &gt; [Orderbook](./BitBayClient-ResponseModel-OLD-Orderbook.md 'BitBayClient.ResponseModel.OLD.Orderbook')  
 ### Constructors
