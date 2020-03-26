@@ -77,10 +77,7 @@ namespace BitBayClient
 
             Dictionary<string, string> query = GenerateQuery(limit);
 
-            LastTransactions lt = SendLastTransactionsRequest(pair.ToStringWithDash(), query);
-            lt.RequestTime = DateTime.Now;
-
-            return lt;
+            return SendLastTransactionsRequest(pair.ToStringWithDash(), query);
         }
 
         public LastTransactions GetLastTransactions(Pair pair, DateTime fromDate)
@@ -89,10 +86,7 @@ namespace BitBayClient
 
             Dictionary<string, string> query = GenerateQuery(date: fromDate);
 
-            LastTransactions lt = SendLastTransactionsRequest(pair.ToStringWithDash(), query);
-            lt.RequestTime = DateTime.Now;
-
-            return lt;
+            return SendLastTransactionsRequest(pair.ToStringWithDash(), query);
         }
 
         public LastTransactions GetLastTransactions(Pair pair, int limit, DateTime fromDate)
@@ -103,10 +97,7 @@ namespace BitBayClient
 
             Dictionary<string, string> query = GenerateQuery(limit, fromDate);
 
-            LastTransactions lt = SendLastTransactionsRequest(pair.ToStringWithDash(), query);
-            lt.RequestTime = DateTime.Now;
-
-            return lt;
+            return SendLastTransactionsRequest(pair.ToStringWithDash(), query);
         }
 
         void CheckLimitValue(int limit)
@@ -145,10 +136,10 @@ namespace BitBayClient
         #endregion
 
         #region Candle
-        public CandlesData GetCandleChartData(Pair pair, CandleResolution resolution)
+        public Candles GetCandleChartData(Pair pair, CandleResolution resolution)
             => SendCandleChartDataRequest(pair.ToStringWithDash() + "/" + resolution.GetSecond());
 
-        public CandlesData GetCandleChartData(Pair pair, CandleResolution resolution, DateTime from, DateTime to)
+        public Candles GetCandleChartData(Pair pair, CandleResolution resolution, DateTime from, DateTime to)
         {
             if (from > to)
                 throw new ArgumentException("Date to must be leter(not equal) than date from!");
@@ -174,7 +165,7 @@ namespace BitBayClient
             return query;
         }
 
-        CandlesData SendCandleChartDataRequest(string path, Dictionary<string, string> query = null)
+        Candles SendCandleChartDataRequest(string path, Dictionary<string, string> query = null)
         {
             RestClient rc = new RestClient(config.ApiTradingUrl + "candle/history/" + path);
 
@@ -183,7 +174,7 @@ namespace BitBayClient
 
             rc.SendGET();
 
-            return TryGetResponse<CandlesData>(rc);
+            return TryGetResponse<Candles>(rc);
         }
         #endregion
     }

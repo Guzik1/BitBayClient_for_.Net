@@ -29,6 +29,9 @@ namespace BitBayClient.ResponseModel
         public Dictionary<string, Stat> Stats24h { get; set; }
     }
 
+    /// <summary>
+    /// Data model for details of 24 hours pair stats.
+    /// </summary>
     public class Stat
     {
         /// <summary>
