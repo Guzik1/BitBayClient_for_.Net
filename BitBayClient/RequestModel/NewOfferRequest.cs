@@ -7,7 +7,7 @@ using System.Text;
 namespace BitBayClient.RequestModel
 {
     /// <summary>
-    /// Data model for new offer request to exchange.
+    /// Data model for new offer request (<see cref="BitBayClient.AddNewOffer(CurrencyPair.Pair, NewOfferRequest)"/>) to exchange.
     /// </summary>
     public class NewOfferRequest
     {
