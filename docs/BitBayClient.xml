@@ -114,6 +114,88 @@
             Ignore invalid stop rate. Prepare for add new offer that can be implemented immedietly.
             </summary>
         </member>
+        <member name="T:BitBayClient.RequestModel.OperationHistoryRequest">
+            <summary>
+            Data model for get operation history, is parameter in <see cref="!:TODO"/>, use to filter resault. All fields is optional, use for sort result.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalancesId">
+            <summary>
+            List of balances UUID identificator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalanceCurrencies">
+            <summary>
+            List of balance currencies, use for filted resault. If null, will not send to a server.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.FromTime">
+            <summary>
+            Filter result from time (unix). If null, will not send to a server.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.ToTime">
+            <summary>
+            Filter result to time (unix). If null, will not send to a server.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.FromValue">
+            <summary>
+            Filter result from value. If null, will not send to a server.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.ToValue">
+            <summary>
+            Filter result to value. If null, will not send to a server.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalanceType">
+            <summary>
+            Type of balance walet: fiat or crypto
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalanceTypesString">
+            <summary>
+            Type of balance walet: fiat or crypto, convert from BalanceType, used inside
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.TypesString">
+            <summary>
+            List of types of operations.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.Sort">
+            <summary>
+            Sort result configuration.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.RequestModel.Sort">
+            <summary>
+            Sort configuration data struct.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.Sort.By">
+            <summary>
+            Select field to sort by this field. Example: time.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.Sort.Order">
+            <summary>
+            Sort after ASC or DESC, select from SortOrderTypes enum.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.Sort.OrderString">
+            <summary>
+            String order, converted from Order field.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.RequestModel.Sort.#ctor(System.String,BitBayClient.Converters.SortOrderTypes)">
+            <summary>
+            Construct sort object.
+            </summary>
+            <param name="sortBy">Set operation type.</param>
+            <param name="orderBy">Set order by.</param>
+        </member>
         <member name="T:BitBayClient.RequestModel.TransactionHistoryRequest">
             <summary>
             Data model for get transaction history, is parameter in <see cref="M:BitBayClient.BitBayClient.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)"/>, use to filter resault.
@@ -595,6 +677,227 @@
             Default constructor.
             </summary>
         </member>
+        <member name="T:BitBayClient.ResponseModel.OperationHistory">
+            <summary>
+            This data model is response on <see cref="!:TODO"/> request.
+            <seealso cref="T:BitBayClient.ResponseModel.OperationHistoryItem"/>
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistory.Items">
+            <summary>
+            List of operation history items.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistory.HasNextPage">
+            <summary>
+            Is there another operation history page.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistory.FetchedRows">
+            <summary>
+            Count of download history rows.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistory.Limit">
+            <summary>
+            Actual rows limit.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistory.Settings">
+            <summary>
+            Object of parameters about the filters used in the query.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.HistoryId">
+            <summary>
+            Record UUID identificator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.Balance">
+            <summary>
+            Details for wallet.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.DetailId">
+            <summary>
+            Operation unique UUID identificator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.Time">
+            <summary>
+            Creation time record (unix timestamp)
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.Type">
+            <summary>
+            Operation type string.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.OperationType">
+            <summary>
+            Operation type, convert from Type to OpeartionTypes enum.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.Value">
+            <summary>
+            The value of the operation.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.FoundsBefore">
+            <summary>
+            Founds before this operation.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.FoundsAfter">
+            <summary>
+            Founds after this operation.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.Change">
+            <summary>
+            Founds change in this operation.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Balance">
+            <summary>
+            Data model for one wallet.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Balance.Id">
+            <summary>
+            UUID identificator balance.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Balance.Currency">
+            <summary>
+            Currency code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Balance.Type">
+            <summary>
+            Wallet type string, one option between: crypto and fiat.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Balance.WalletType">
+            <summary>
+            Wallet types, convert from Type string.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Balance.UserId">
+            <summary>
+            Unique user UUID identificator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Balance.Name">
+            <summary>
+            Wallet name.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.FoudsStep">
+            <summary>
+            Represent founds before, after and chagne, on wallet.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.FoudsStep.Total">
+            <summary>
+            Total amount of founds.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.FoudsStep.Avaliable">
+            <summary>
+            Avaliable amount of founds.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.FoudsStep.Locked">
+            <summary>
+            Locked amount of founds.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.OperationHistorySettings">
+            <summary>
+            Represent settings of filters used in the request query.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.BalancesId">
+            <summary>
+            List of banaces UUID identificator, for which history was returned.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.BalanceCurrencies">
+            <summary>
+            List of currencies, for which history was returned.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.BalanceTypes">
+            <summary>
+            List of balance types, for which history was returned.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.Engine">
+            <summary>
+            Name of application, which concerns wallet. Available name: BITBAY / BITBAYPAY
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.EngineBalances">
+            <summary>
+            Name of application, which concerns wallet, convert from Engine string.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.FromTime">
+            <summary>
+            The time from which we want to download the history.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.ToTime">
+            <summary>
+            The time to which we want to download the history.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.AbsValue">
+            <summary>
+            Filtering for absolute values for <see cref="P:BitBayClient.ResponseModel.OperationHistorySettings.FromValue"/> and <see cref="P:BitBayClient.ResponseModel.OperationHistorySettings.ToValue"/>.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.FromValue">
+            <summary>
+            Minimal amount of currencies, which we want to download the history.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.ToValue">
+            <summary>
+            Maximal amount of currencies, which we want to download the history.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.Sort">
+            <summary>
+            Sort settings params.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OperationHistorySettings.Types">
+            <summary>
+            Type of operation, which we want to download the history.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.SortHistorySettings">
+            <summary>
+            Represent sorted settings.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.SortHistorySettings.By">
+            <summary>
+            Select field to sort by this field. Example: time.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.SortHistorySettings.OrderString">
+            <summary>
+            String order by field.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.SortHistorySettings.Order">
+            <summary>
+            Sort after ASC or DESC, convert from OrderString.
+            </summary>
+        </member>
         <member name="T:BitBayClient.ResponseModel.Stats">
             <summary>
             Stat for one currency pair on exchange.
@@ -662,7 +965,7 @@
         </member>
         <member name="P:BitBayClient.ResponseModel.AllTickers.Tickers">
             <summary>
-            List of tickers, key is market coda, value is ticker item.
+            List of tickers, key is market code, value is ticker item.
             </summary>
         </member>
         <member name="T:BitBayClient.ResponseModel.TickerItem">
@@ -790,7 +1093,7 @@
             The transation rate.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.InitialBy">
+        <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.initializedBy">
             <summary>
             Who initiated the transaction: buy or sell.
             </summary>

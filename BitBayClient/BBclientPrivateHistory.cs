@@ -33,8 +33,24 @@ namespace BitBayClient
         #endregion
 
         #region OperationHistory
+        public OperationHistory GetOperationHistory(OperationHistoryRequest request)
+        {
+            if (request == null)
+                throw new ArgumentException("The request params can not be null!");
 
-        // TODO: add operation history.
+            return SendGetOperationHistoryRequest(request);
+        }
+
+        OperationHistory SendGetOperationHistoryRequest(OperationHistoryRequest request)
+        {
+            RestClient rc = new RestClient(config.ApiBalancesUrl + "history");
+
+            rc.AddQuery(request);
+            rc.AddOwnHeaderToRequest(new AutorizeData(config));
+            rc.SendGET();
+
+            return TryGetResponse<OperationHistory>(rc);
+        }
         #endregion
     }
 }

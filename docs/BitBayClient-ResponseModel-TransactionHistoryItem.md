@@ -10,7 +10,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 - [Amount](./BitBayClient-ResponseModel-TransactionHistoryItem-Amount.md 'BitBayClient.ResponseModel.TransactionHistoryItem.Amount')
 - [CommissionValue](./BitBayClient-ResponseModel-TransactionHistoryItem-CommissionValue.md 'BitBayClient.ResponseModel.TransactionHistoryItem.CommissionValue')
 - [Id](./BitBayClient-ResponseModel-TransactionHistoryItem-Id.md 'BitBayClient.ResponseModel.TransactionHistoryItem.Id')
-- [InitialBy](./BitBayClient-ResponseModel-TransactionHistoryItem-InitialBy.md 'BitBayClient.ResponseModel.TransactionHistoryItem.InitialBy')
+- [initializedBy](./BitBayClient-ResponseModel-TransactionHistoryItem-initializedBy.md 'BitBayClient.ResponseModel.TransactionHistoryItem.initializedBy')
 - [Market](./BitBayClient-ResponseModel-TransactionHistoryItem-Market.md 'BitBayClient.ResponseModel.TransactionHistoryItem.Market')
 - [OfferId](./BitBayClient-ResponseModel-TransactionHistoryItem-OfferId.md 'BitBayClient.ResponseModel.TransactionHistoryItem.OfferId')
 - [Rate](./BitBayClient-ResponseModel-TransactionHistoryItem-Rate.md 'BitBayClient.ResponseModel.TransactionHistoryItem.Rate')

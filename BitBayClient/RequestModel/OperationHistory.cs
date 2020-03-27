@@ -11,7 +11,7 @@ namespace BitBayClient.RequestModel
     /// <summary>
     /// Data model for get operation history, is parameter in <see cref="TODO"/>, use to filter resault. All fields is optional, use for sort result.
     /// </summary>
-    public class OperationHistory
+    public class OperationHistoryRequest
     {
         /// <summary>
         /// List of balances UUID identificator.

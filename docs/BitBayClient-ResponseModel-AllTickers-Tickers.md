@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[AllTickers](./BitBayClient-ResponseModel-AllTickers.md 'BitBayClient.ResponseModel.AllTickers')
 ## AllTickers.Tickers Property
-List of tickers, key is market coda, value is ticker item.  
+List of tickers, key is market code, value is ticker item.  
 ```csharp
 public System.Collections.Generic.Dictionary<string,BitBayClient.ResponseModel.TickerItem> Tickers { get; set; }
 ```
