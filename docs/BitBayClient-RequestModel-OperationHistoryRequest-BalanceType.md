@@ -6,4 +6,4 @@ Type of balance walet: fiat or crypto
 public BitBayClient.WalletType BalanceType { get; set; }
 ```
 #### Property Value
-[BitBayClient.WalletType](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.WalletType 'BitBayClient.WalletType')  
+[WalletType](./BitBayClient-WalletType.md 'BitBayClient.WalletType')  

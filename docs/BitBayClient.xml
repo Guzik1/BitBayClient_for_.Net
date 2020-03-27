@@ -4,6 +4,148 @@
         <name>BitBayClient</name>
     </assembly>
     <members>
+        <member name="T:BitBayClient.ApplicationList">
+            <summary>
+            List of BitBay applications engine.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.ApplicationList.BITBAY">
+            <summary>
+            BitBay engine
+            </summary>
+        </member>
+        <member name="F:BitBayClient.ApplicationList.BITBAYPAY">
+            <summary>
+            BitBayPay engine.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.Converters.EnumConverter">
+            <summary>
+            Enum converter, add extension method to enum type.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.Converters.EnumConverter.Parse``1(System.String)">
+            <summary>
+            Parse string to enum.
+            </summary>
+            <param name="name">String name.</param>
+            <returns>Enum value.</returns>
+        </member>
+        <member name="M:BitBayClient.Converters.EnumConverter.TryParse``1(System.String,``0@)">
+            <summary>
+            Try convert string to enum value.
+            </summary>
+            <param name="name">String name to convert.</param>
+            <param name="message">Enum value.</param>
+            <returns>True if try was successful or false for else.</returns>
+        </member>
+        <member name="T:BitBayClient.OperationTypes">
+            <summary>
+            Types of operation enum.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.CREATE_BALANCE">
+            <summary>Create balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.ADD_FUNDS">
+            <summary>Add funds to balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.SUBTRACT_FUNDS">
+            <summary>Withdraw funds from balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSFER_FROM">
+            <summary>Transfer from balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSFER_TO">
+            <summary>Transfer to balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSACTION_COMMISSION_OUTCOME">
+            <summary>Pay transaction commision.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSACTION_PRE_LOCKING">
+            <summary>Locked funds on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.LOCK_FUNDS">
+            <summary>Locked funds on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.ADMIN_LOCK_FUNDS">
+            <summary>Administrator was locked funds on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.UNLOCK_FUNDS">
+            <summary>Unlock funds on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.ADMIN_UNLOCK_FUNDS">
+            <summary>Administrator was unlock funds on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSACTION_POST_INCOME">
+            <summary>Get funds from transaction to balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSACTION_POST_OUTCOME">
+            <summary>Pay funds from transaction from balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.ADMIN_ADD_FUNDS">
+            <summary>Administrator correct (add) funds on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.ADMIN_SUBTRACT_FUNDS">
+            <summary>Administrator correct (substract) funds on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSACTION_OFFER_ABORTED_RETURN">
+            <summary>Return funds for delete offer to balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.AFFILIATE_FUNDS_TRANSFER">
+            <summary>Affilate funds from partner program.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.PAY_WITHDRAW_LOCK">
+            <summary>Locked funds on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSACTION_OFFER_COMPLETED_RETURN">
+            <summary>Cancellation of offer bellow minimum value.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSACTION_FAIL_UNLOCKING">
+            <summary>Return funds after unsuccessful add offer.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.WITHDRAWAL_LOCK_FUNDS">
+            <summary>Lock funds.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.WITHDRAWAL_UNLOCK_FUNDS">
+            <summary>Unlock funds.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.WITHDRAWAL_SUBTRACT_FUNDS">
+            <summary>Withdraw funds.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.FUNDS_MIGRATION">
+            <summary>Migration funds.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.TRANSACTION_COMMISSION_RETURN">
+            <summary>Return transaction commision to balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.ADD_FUNDS_ERROR_REFUND">
+            <summary>Lock correction.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.OLD_ADDRESS_CRYPTO_DEPOSIT">
+            <summary>Deposit on constant addres.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.FIAT_DEPOSIT_MIGRATED">
+            <summary>Real currency deposit on balance.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.ADMIN_WITHDRAWAL_REFUND">
+            <summary>Return funds for canceked withdraw by administrator.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.SUBTRACT_FUNDS_ERROR_CORRECTION">
+            <summary>Funds correction.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.ADD_FUNDS_COMPENSATION">
+            <summary>Recompense.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.BITCOIN_GOLD_FORK">
+            <summary>Bitcoin gold fork.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.BALANCE_DEPOSIT_CORRECTION">
+            <summary>Deposit correction.</summary>
+        </member>
+        <member name="F:BitBayClient.OperationTypes.WITHDRAWAL_CUSTOM_COMMISSION">
+            <summary>Commission for Bitcoin network..</summary>
+        </member>
         <member name="T:BitBayClient.RequestModel.ChangeConfiguration">
             <summary>
             Data model for send to change default walets.
@@ -652,31 +794,6 @@
             Stop offer UUID identificator.
             </summary>
         </member>
-        <member name="M:BitBayClient.ResponseModel.OLD.ActiveOffersOLD.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
-        </member>
-        <member name="M:BitBayClient.ResponseModel.OLD.CandlesData.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
-        </member>
-        <member name="M:BitBayClient.ResponseModel.OLD.LastTransactions.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
-        </member>
-        <member name="M:BitBayClient.ResponseModel.OLD.LastTransactionItem.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
-        </member>
-        <member name="M:BitBayClient.ResponseModel.OLD.Orderbook.#ctor">
-            <summary>
-            Default constructor.
-            </summary>
-        </member>
         <member name="T:BitBayClient.ResponseModel.OperationHistory">
             <summary>
             This data model is response on <see cref="!:TODO"/> request.
@@ -1116,6 +1233,21 @@
         <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.CommissionValue">
             <summary>
             Value of commission charged.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.WalletType">
+            <summary>
+            Type of wallet enum.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.WalletType.CRYPTO">
+            <summary>
+            Cryptocurrency wallet
+            </summary>
+        </member>
+        <member name="F:BitBayClient.WalletType.FIAT">
+            <summary>
+            Real currency wallet
             </summary>
         </member>
     </members>

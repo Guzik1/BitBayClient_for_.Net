@@ -61,25 +61,4 @@ namespace BitBayClient
         //other
         INVALID_CANDLE_RANGE
     }
-
-    public static class ErrorMessageExtension
-    {
-        public static ErrorMessage Parse(string name)
-        {
-            return (ErrorMessage)Enum.Parse(typeof(ErrorMessage), name);
-        }
-
-        public static bool TryParse(string name, ref ErrorMessage message)
-        {
-            try
-            {
-                message = (ErrorMessage)Enum.Parse(typeof(ErrorMessage), name);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-    }
 }

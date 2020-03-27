@@ -71,7 +71,7 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// Operation type, convert from Type to OpeartionTypes enum.
         /// </summary>
-        public OperationTypes OperationType { get => OperationTypesExtension.Parse(Type); }
+        public OperationTypes OperationType { get => EnumConverter.Parse<OperationTypes>(Type); }
 
         /// <summary>
         /// The value of the operation.
@@ -119,7 +119,7 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// Wallet types, convert from Type string.
         /// </summary>
-        public WalletType WalletType { get => WalletTypeExtension.Parse(Type); }
+        public WalletType WalletType { get => EnumConverter.Parse<WalletType>(Type); }
 
         /// <summary>
         /// Unique user UUID identificator.
@@ -186,7 +186,7 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// Name of application, which concerns wallet, convert from Engine string.
         /// </summary>
-        public ApplicationList EngineBalances { get => ApplicationListExtensions.Parse(Engine); }
+        public ApplicationList EngineBalances { get => EnumConverter.Parse<ApplicationList>(Engine); }
 
         /// <summary>
         /// The time from which we want to download the history.
@@ -244,7 +244,7 @@ namespace BitBayClient.ResponseModel
         /// Sort after ASC or DESC, convert from OrderString.
         /// </summary>
         [JsonIgnore]
-        public SortOrderTypes Order { get => SortOrderTypesExtension.Parse(OrderString); }
+        public SortOrderTypes Order { get => EnumConverter.Parse<SortOrderTypes>(OrderString); }
 
     }
 

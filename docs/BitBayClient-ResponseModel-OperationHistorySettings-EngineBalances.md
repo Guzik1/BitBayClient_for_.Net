@@ -6,4 +6,4 @@ Name of application, which concerns wallet, convert from Engine string.
 public BitBayClient.ApplicationList EngineBalances { get; }
 ```
 #### Property Value
-[BitBayClient.ApplicationList](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.ApplicationList 'BitBayClient.ApplicationList')  
+[ApplicationList](./BitBayClient-ApplicationList.md 'BitBayClient.ApplicationList')  

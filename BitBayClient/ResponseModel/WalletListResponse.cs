@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using CurrencyPair;
+using BitBayClient.Converters;
 
 namespace BitBayClient.ResponseModel
 {
@@ -42,6 +43,6 @@ namespace BitBayClient.ResponseModel
         [JsonIgnore]
         public ApplicationList BalanceEngine { get; set; }
         [JsonProperty("balanceEngine")]
-        public string BalanceEngineString { set { BalanceEngine = ApplicationListExtensions.Parse(value); } }
+        public string BalanceEngineString { set { BalanceEngine = EnumConverter.Parse<ApplicationList>(value); } }
     }
 }

@@ -6,4 +6,4 @@ Wallet types, convert from Type string.
 public BitBayClient.WalletType WalletType { get; }
 ```
 #### Property Value
-[BitBayClient.WalletType](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.WalletType 'BitBayClient.WalletType')  
+[WalletType](./BitBayClient-WalletType.md 'BitBayClient.WalletType')  

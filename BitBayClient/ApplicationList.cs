@@ -4,17 +4,19 @@ using System.Text;
 
 namespace BitBayClient
 {
+    /// <summary>
+    /// List of BitBay applications engine.
+    /// </summary>
     public enum ApplicationList
     {
+        /// <summary>
+        /// BitBay engine
+        /// </summary>
         BITBAY,
-        BITBAYPAY
-    }
 
-    public static class ApplicationListExtensions
-    {
-        public static ApplicationList Parse(string name)
-        {
-            return (ApplicationList)Enum.Parse(typeof(ApplicationList), name, true);
-        }
+        /// <summary>
+        /// BitBayPay engine.
+        /// </summary>
+        BITBAYPAY
     }
 }

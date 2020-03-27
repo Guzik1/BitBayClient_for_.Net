@@ -4,17 +4,19 @@ using System.Text;
 
 namespace BitBayClient
 {
+    /// <summary>
+    /// Type of wallet enum.
+    /// </summary>
     public enum WalletType
     {
+        /// <summary>
+        /// Cryptocurrency wallet
+        /// </summary>
         CRYPTO,
-        FIAT
-    }
 
-    public static class WalletTypeExtension
-    {
-        public static WalletType Parse(string name)
-        {
-            return (WalletType)Enum.Parse(typeof(WalletType), name);
-        }
+        /// <summary>
+        /// Real currency wallet
+        /// </summary>
+        FIAT
     }
 }

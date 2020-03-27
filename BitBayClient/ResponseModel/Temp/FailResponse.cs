@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.Text;
+using BitBayClient.Converters;
 
 namespace BitBayClient.ResponseModel.Temp
 {
@@ -25,7 +25,7 @@ namespace BitBayClient.ResponseModel.Temp
 
             for (int i = 0; i < Errors.Count; i++)
             {
-                ErrorMessage emsg = ErrorMessageExtension.Parse(Errors[i]);
+                ErrorMessage emsg = EnumConverter.Parse<ErrorMessage>(Errors[i]);
 
                 output.Add(emsg);
             }

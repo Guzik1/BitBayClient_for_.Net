@@ -6,4 +6,4 @@ Operation type, convert from Type to OpeartionTypes enum.
 public BitBayClient.OperationTypes OperationType { get; }
 ```
 #### Property Value
-[BitBayClient.OperationTypes](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.OperationTypes 'BitBayClient.OperationTypes')  
+[OperationTypes](./BitBayClient-OperationTypes.md 'BitBayClient.OperationTypes')  
