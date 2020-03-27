@@ -63,7 +63,7 @@ namespace BitBayClient.ResponseModel
         /// Who initiated the transaction: buy or sell.
         /// </summary>
         [JsonProperty("initializedBy")]
-        public string InitialBy { get; set; }
+        public string initializedBy { get; set; }
 
         /// <summary>
         /// The role user play in executed the transaction: buy or sell.

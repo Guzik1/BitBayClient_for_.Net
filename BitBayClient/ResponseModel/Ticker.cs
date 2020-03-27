@@ -24,7 +24,7 @@ namespace BitBayClient.ResponseModel
     public class AllTickers
     {
         /// <summary>
-        /// List of tickers, key is market coda, value is ticker item.
+        /// List of tickers, key is market code, value is ticker item.
         /// </summary>
         [JsonProperty("items")]
         [JsonConverter(typeof(SingleOrArrayConverter<Dictionary<Currency, TickerItem>>))]
