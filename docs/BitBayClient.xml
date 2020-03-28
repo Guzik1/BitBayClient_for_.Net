@@ -39,6 +39,131 @@
             <param name="message">Enum value.</param>
             <returns>True if try was successful or false for else.</returns>
         </member>
+        <member name="T:BitBayClient.ErrorMessage">
+            <summary>
+            Error message enum, represent errors was return from serwer, which response status is fail.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.PERMISSIONS_NOT_SUFFICIENT">
+            <summary>Permisions for public api key, are not sufficient to execute action.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.INVALID_HASH_SIGNATURE">
+            <summary>The hash query signature (Autorization hash) is invalid.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.RESPONSE_TIMEOUT">
+            <summary>The response time has been exceeded.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.TIMEOUT">
+            <summary>Invalid method reference: unsupported parameters, unsupported query type or error in reference to method name.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.ACTION_BLOCKED">
+            <summary>The action is blocked on the user's account.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.ACTION_LIMIT_EXCEEDED">
+            <summary>The action call limit has been user, wait one full minut before next call to serwer.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.UNDER_MAINTENANCE">
+            <summary>Maintenance work or updates are curently underway.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.MARKET_NOT_RECOGNIZED">
+            <summary>Market code was not recognized.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.TICKER_NOT_FOUND">
+            <summary>Ticker for market was not found.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.NOT_RECOGNIZED_OFFER_TYPE">
+            <summary>Not recognized offer type, incorrect name.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.FUNDS_NOT_SUFFICIENT">
+            <summary>Funds on account's are not sufficient to complete the offer.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.OFFER_FUNDS_NOT_EXCEEDING_MINIMUMS">
+            <summary>The offer value us less than acceptable minimum value from market ticker.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.OFFER_FUNDS_SCALE_ISSUE">
+            <summary>The numerical value provided in the query doesn't match the number of decimal places for the currency.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.OFFER_COULD_NOT_BE_FILLED">
+            <summary>The offer cannot be completed in full, applies to Fill or kill method. There aren't enough offers in the orderbook.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.OFFER_WOULD_HAVE_BEEN_PARTIALLY_FILLED">
+            <summary>The offer can be realized only in part, applies to Fill or kill method.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.FILL_OR_KILL_COMBINED_WITH_POST_ONLY">
+            <summary>Used type "fill or kill" from "post only", these parameters cannot be sent together.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.INVALID_RESOLUTION">
+            <summary>Incorrect resolution parameter value for historic candles.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.OFFER_NOT_FOUND">
+            <summary>The offer was not found (if offer canceled request).</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.SECONDARY_AMOUNTONLY">
+            <summary>For maker offer.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.ALLOWED_WITH_MARKET_OFFER">
+            <summary>Allowed with market offer.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.SELF_TRADING">
+            <summary>The user has opposite offers in a market.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.PRICE_PRECISION_INVALID">
+            <summary>Incorrect price precision.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.USER_OFFER_COUNT_LIMIT_EXCEEDED">
+            <summary>The limit of offers placed on the market has been exhausted (delete one other offer).</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.MARKET_DISABLED">
+            <summary>The selected market is turned off.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.INVALID_REQUEST">
+            <summary>The query was constructed incorrectly.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.MALFORMED_REQUEST">
+            <summary>The JOSN object sent in the query is corrupted.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.MARKET_CODE_CANNOT_BE_EMPTY">
+            <summary>No market code provided.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.CONFIG_LOAD_TIMEOUT">
+            <summary>Can not load market configuration.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.SYSTEM_TIMEOUT">
+            <summary>System response time exceeded.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.CORE_OVERFLOW">
+            <summary>The trading system has been overloaded.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.SYSTEM_OVERLOADED">
+            <summary>The stock exchange system is overloaded.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.UNKNOWN_ERROR">
+            <summary>System unknown error has occurred.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.CONFIG_NOT_FOUND">
+            <summary>User market configuration not found.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.NOT_SUPPORTED_RESULT">
+            <summary>The response from the query module is not correct.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.CANNOT_GET_REQUIRED_BALANCE">
+            <summary>Unable to access user wallet.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.STATS_COULD_NOT_BE_LOADED">
+            <summary>Makret statistic cannot be loaded.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.BALANCE_NOT_FOUND_OR_INCOMPATIBLE">
+            <summary>Balance wallet not found or unsupported.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.BALANCE_NOT_FOUND">
+            <summary>Balance wallet not found.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.INVALID_STOP_RATE">
+            <summary>StopRate value is invalid - the offer can be realize immedietly. To allow immediate execution set the "ignoreInvalidStopRate" parameter to true.</summary>
+        </member>
+        <member name="F:BitBayClient.ErrorMessage.INVALID_STOP_OFFER_ID">
+            <summary>Invalid ID for stop offer - the offer with this id does not exist.</summary>
+        </member>
         <member name="T:BitBayClient.OperationTypes">
             <summary>
             Types of operation enum.
@@ -1233,6 +1358,101 @@
         <member name="P:BitBayClient.ResponseModel.TransactionHistoryItem.CommissionValue">
             <summary>
             Value of commission charged.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.WalletList">
+            <summary>
+            All wallet list on user account.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.WalletList.Balances">
+            <summary>
+            List of wallets on user account.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.NewWallet">
+            <summary>
+            New balance request.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.NewWallet.Balance">
+            <summary>
+            One balance.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.InternalTransfer">
+            <summary>
+            Response on request transfer funds between two balance.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.InternalTransfer.From">
+            <summary>
+            Balance wallet from transfer.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.InternalTransfer.To">
+            <summary>
+            Balance wallet to transfer.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Wallet">
+            <summary>
+            Data model reperesent one wallet balance.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.Id">
+            <summary>
+            Wallet UUID identificator
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.UserId">
+            <summary>
+            User UUID identificator
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.AvailableFunds">
+            <summary>
+            Amount of funds available.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.TotalFunds">
+            <summary>
+            Total amount of funds.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.LockedFunds">
+            <summary>
+            Locked amount of funds.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.Currency">
+            <summary>
+            Currency market code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.Type">
+            <summary>
+            String of currency code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.WalletType">
+            <summary>
+            Wallet type: crypto/fiat, convert from Type string.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.Name">
+            <summary>
+            Wallet name.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.BalanceEngine">
+            <summary>
+            Name of the application supports this wallet, convert from BalanceEngineString.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Wallet.BalanceEngineString">
+            <summary>
+            String name of the application support this wallet.
             </summary>
         </member>
         <member name="T:BitBayClient.WalletType">
