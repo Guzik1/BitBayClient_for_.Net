@@ -3,6 +3,8 @@
 ### Classes
 - [ActiveOfferItem](./BitBayClient-ResponseModel-ActiveOfferItem.md 'BitBayClient.ResponseModel.ActiveOfferItem')
 - [ActiveOffers](./BitBayClient-ResponseModel-ActiveOffers.md 'BitBayClient.ResponseModel.ActiveOffers')
+- [ActiveStopOfferItem](./BitBayClient-ResponseModel-ActiveStopOfferItem.md 'BitBayClient.ResponseModel.ActiveStopOfferItem')
+- [ActiveStopOffers](./BitBayClient-ResponseModel-ActiveStopOffers.md 'BitBayClient.ResponseModel.ActiveStopOffers')
 - [AddOfferStop](./BitBayClient-ResponseModel-AddOfferStop.md 'BitBayClient.ResponseModel.AddOfferStop')
 - [AllStats](./BitBayClient-ResponseModel-AllStats.md 'BitBayClient.ResponseModel.AllStats')
 - [AllTickers](./BitBayClient-ResponseModel-AllTickers.md 'BitBayClient.ResponseModel.AllTickers')
@@ -28,6 +30,8 @@
 - [OperationHistory](./BitBayClient-ResponseModel-OperationHistory.md 'BitBayClient.ResponseModel.OperationHistory')
 - [OperationHistoryItem](./BitBayClient-ResponseModel-OperationHistoryItem.md 'BitBayClient.ResponseModel.OperationHistoryItem')
 - [OperationHistorySettings](./BitBayClient-ResponseModel-OperationHistorySettings.md 'BitBayClient.ResponseModel.OperationHistorySettings')
+- [Orderbook](./BitBayClient-ResponseModel-Orderbook.md 'BitBayClient.ResponseModel.Orderbook')
+- [OrderBookItem](./BitBayClient-ResponseModel-OrderBookItem.md 'BitBayClient.ResponseModel.OrderBookItem')
 - [SortHistorySettings](./BitBayClient-ResponseModel-SortHistorySettings.md 'BitBayClient.ResponseModel.SortHistorySettings')
 - [Stat](./BitBayClient-ResponseModel-Stat.md 'BitBayClient.ResponseModel.Stat')
 - [Stats](./BitBayClient-ResponseModel-Stats.md 'BitBayClient.ResponseModel.Stats')

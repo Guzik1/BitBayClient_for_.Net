@@ -6,4 +6,3 @@
 - [BitBayClient.Internal](./BitBayClient-Internal.md 'BitBayClient.Internal')
 - [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel')
 - [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
-- [BitBayClient.ResponseModel.Temp](./BitBayClient-ResponseModel-Temp.md 'BitBayClient.ResponseModel.Temp')

@@ -19,6 +19,36 @@
             BitBayPay engine.
             </summary>
         </member>
+        <member name="T:BitBayClient.BitBayClient">
+            <summary>
+            Client for BitBay stock exchange.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.BitBayClient.PublicTrading">
+            <summary>
+            Public trading api method.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.BitBayClient.PrivateTrading">
+            <summary>
+            Private trading api method.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.BitBayClient.PrivateStopTrading">
+            <summary>
+            Private stop trading api method.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.BitBayClient.History">
+            <summary>
+            Historical api method.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.BitBayClient.#ctor">
+            <summary>
+            Default constructor.
+            </summary>
+        </member>
         <member name="T:BitBayClient.Converters.EnumConverter">
             <summary>
             Enum converter, add extension method to enum type.
@@ -347,6 +377,11 @@
         <member name="F:BitBayClient.OperationTypes.WITHDRAWAL_CUSTOM_COMMISSION">
             <summary>Commission for Bitcoin network..</summary>
         </member>
+        <member name="T:BitBayClient.PublicTrading">
+            <summary>
+            Public trading method on BitBay stock exchange.
+            </summary>
+        </member>
         <member name="T:BitBayClient.RequestModel.AutorizeData">
             <summary>
             Object to generate autorize headers for query.
@@ -413,7 +448,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.NewOfferRequest">
             <summary>
-            Data model for new offer request (<see cref="M:BitBayClient.BitBayClient.AddNewOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewOfferRequest)"/>) to exchange.
+            Data model for new offer request (<see cref="!:BitBayClient.AddNewOffer(CurrencyPair.Pair, NewOfferRequest)"/>) to exchange.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.NewOfferRequest.Amount">
@@ -468,7 +503,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.NewStopOfferRequest">
             <summary>
-            Data model for new stop offer request (<see cref="M:BitBayClient.BitBayClient.AddNewStopOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewStopOfferRequest)"/>) to exchange.
+            Data model for new stop offer request (<see cref="!:BitBayClient.AddNewStopOffer(CurrencyPair.Pair, NewStopOfferRequest)"/>) to exchange.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.OfferType">
@@ -508,7 +543,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.OperationHistoryRequest">
             <summary>
-            Data model for get operation history, is parameter in <see cref="M:BitBayClient.BitBayClient.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)"/>, use to filter resault. All fields is optional, use for sort result.
+            Data model for get operation history, is parameter in <see cref="!:BitBayClient.GetOperationHistory(OperationHistoryRequest)"/>, use to filter resault. All fields is optional, use for sort result.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalancesId">
@@ -616,7 +651,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.TransactionHistoryRequest">
             <summary>
-            Data model for get transaction history, is parameter in <see cref="M:BitBayClient.BitBayClient.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)"/>, use to filter resault.
+            Data model for get transaction history, is parameter in <see cref="!:BitBayClient.GetTransactionHistory(TransactionHistoryRequest)"/>, use to filter resault.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.Markets">
@@ -656,7 +691,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.ActiveOffers">
             <summary>
-            Data model for active offers response on <see cref="M:BitBayClient.BitBayClient.GetActiveOffer(CurrencyPair.Pair)" /> request.
+            Data model for active offers response on <see cref="!:BitBayClient.GetActiveOffer(Pair)" /> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.ActiveOffers.ActiveOffer">
@@ -734,144 +769,89 @@
             Second balance UUID.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.Temp.ActiveStopOffers">
+        <member name="T:BitBayClient.ResponseModel.ActiveStopOffers">
             <summary>
-            Data model represent response on <see cref="M:BitBayClient.BitBayClient.GetActiveOffer(CurrencyPair.Pair)" /> request.
+            Data model represent response on <see cref="M:BitBayClient.PrivateStopTrading.GetActiveStopOffer" /> request.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOffers.ActiveOffer">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffers.ActiveOffer">
             <summary>
             List of stop offers.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem">
+        <member name="T:BitBayClient.ResponseModel.ActiveStopOfferItem">
             <summary>
             Data model represent one active stop offer.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Id">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Id">
             <summary>
             UUID offer identificator.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.OperationId">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.OperationId">
             <summary>
             UUID executed operation identyficator.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.UserId">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.UserId">
             <summary>
             UUID user identificator, yours number.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Market">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Market">
             <summary>
             Market code.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Amount">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Amount">
             <summary>
             Amount currency in position.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Rate">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Rate">
             <summary>
             Postion rate (price).
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.StopRate">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.StopRate">
             <summary>
             Offer activation rate.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Status">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Status">
             <summary>
             Offer status: (available only) active.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.OfferType">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.OfferType">
             <summary>
             Type of offer, available: buy and sell.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Mode">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Mode">
             <summary>
             Offer mode, abailable: stop-limit and stop-market
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Balances">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Balances">
             <summary>
             Balances usage to this offer, for two currencies.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Time">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Time">
             <summary>
             Created time (unix).
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOfferItem.Flags">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Flags">
             <summary>
             Flags, already no used.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.Temp.Orderbook">
-            <summary>
-            Data model for orderbook response from exchange.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.Orderbook.Sell">
-            <summary>
-            List of sell transaction
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.Orderbook.Buy">
-            <summary>
-            List of buy transaction
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.Orderbook.Timestamp">
-            <summary>
-            Time (unix) for which returned orderbook, are valid.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.Orderbook.SeqNo">
-            <summary>
-            Sequence number, it allows you to keep the order of received data.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.Temp.OrderBookItem">
-            <summary>
-            Orderbook item, use for Buy and Sell transaction.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.OrderBookItem.PositionRate">
-            <summary>
-            Postion rate.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.OrderBookItem.Amout">
-            <summary>
-            Amount of currency in postion.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.OrderBookItem.InitialAmount">
-            <summary>
-            Initial amount of currency.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.OrderBookItem.AmountBeforeTheLastChange">
-            <summary>
-            Amount of currency before last change.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Temp.OrderBookItem.NumberOfOfferInPosition">
-            <summary>
-            Number of offers in this postion.
-            </summary>
-        </member>
         <member name="T:BitBayClient.ResponseModel.AddOfferStop">
             <summary>
-            Data model represent response on <see cref="M:BitBayClient.BitBayClient.AddNewOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewOfferRequest)"/> request.
+            Data model represent response on <see cref="!:BitBayClient.AddNewOffer(CurrencyPair.Pair, RequestModel.NewOfferRequest)"/> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.AddOfferStop.StopOfferId">
@@ -927,7 +907,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.CommissionAndConfig">
             <summary>
-            Data model for response on <see cref="M:BitBayClient.BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)"/> request.
+            Data model for response on <see cref="!:BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)"/> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.CommissionAndConfig.Config">
@@ -1087,7 +1067,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.NewStopOffer">
             <summary>
-            Data model stop offer response, return on <see cref="M:BitBayClient.BitBayClient.AddNewStopOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewStopOfferRequest)"/> response.
+            Data model stop offer response, return on <see cref="!:BitBayClient.AddNewStopOffer(CurrencyPair.Pair, RequestModel.NewStopOfferRequest)"/> response.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.NewStopOffer.StopOfferId">
@@ -1097,7 +1077,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.OperationHistory">
             <summary>
-            This data model is response on <see cref="M:BitBayClient.BitBayClient.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)"/> request.
+            This data model is response on <see cref="!:BitBayClient.GetOperationHistory(RequestModel.OperationHistoryRequest)"/> request.
             <seealso cref="T:BitBayClient.ResponseModel.OperationHistoryItem"/>
             </summary>
         </member>
@@ -1321,6 +1301,61 @@
             Sort after ASC or DESC, convert from OrderString.
             </summary>
         </member>
+        <member name="T:BitBayClient.ResponseModel.Orderbook">
+            <summary>
+            Data model for orderbook response from exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Orderbook.Sell">
+            <summary>
+            List of sell transaction
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Orderbook.Buy">
+            <summary>
+            List of buy transaction
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Orderbook.Timestamp">
+            <summary>
+            Time (unix) for which returned orderbook, are valid.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Orderbook.SeqNo">
+            <summary>
+            Sequence number, it allows you to keep the order of received data.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.OrderBookItem">
+            <summary>
+            Orderbook item, use for Buy and Sell transaction.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OrderBookItem.PositionRate">
+            <summary>
+            Postion rate.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OrderBookItem.Amout">
+            <summary>
+            Amount of currency in postion.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OrderBookItem.InitialAmount">
+            <summary>
+            Initial amount of currency.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OrderBookItem.AmountBeforeTheLastChange">
+            <summary>
+            Amount of currency before last change.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OrderBookItem.NumberOfOfferInPosition">
+            <summary>
+            Number of offers in this postion.
+            </summary>
+        </member>
         <member name="T:BitBayClient.ResponseModel.Stats">
             <summary>
             Stat for one currency pair on exchange.
@@ -1468,7 +1503,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.TransactionHistory">
             <summary>
-            Data model on get transaction history request, return from <see cref="M:BitBayClient.BitBayClient.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)"/>
+            Data model on get transaction history request, return from <see cref="!:BitBayClient.GetTransactionHistory(RequestModel.TransactionHistoryRequest)"/>
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.TransactionHistory.TotalRows">

@@ -4,10 +4,10 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 
-namespace BitBayClient.ResponseModel.Temp
+namespace BitBayClient.ResponseModel
 {
     /// <summary>
-    /// Data model represent response on <see cref="BitBayClient.GetActiveOffer(CurrencyPair.Pair)" /> request.
+    /// Data model represent response on <see cref="PrivateStopTrading.GetActiveStopOffer()" /> request.
     /// </summary>
     public class ActiveStopOffers
     {

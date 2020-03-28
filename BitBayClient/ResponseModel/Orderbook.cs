@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace BitBayClient.ResponseModel.Temp
+namespace BitBayClient.ResponseModel
 {
     /// <summary>
     /// Data model for orderbook response from exchange.

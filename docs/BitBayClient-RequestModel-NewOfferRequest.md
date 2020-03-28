@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel')
 ## NewOfferRequest Class
-Data model for new offer request ([BitBayClient.BitBayClient.AddNewOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewOfferRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.BitBayClient.AddNewOffer#BitBayClient_BitBayClient_AddNewOffer_CurrencyPair_Pair,BitBayClient_RequestModel_NewOfferRequest_ 'BitBayClient.BitBayClient.AddNewOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewOfferRequest)')) to exchange.  
+Data model for new offer request ([BitBayClient.AddNewOffer(CurrencyPair.Pair, NewOfferRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.AddNewOffer#BitBayClient_AddNewOffer_CurrencyPair_Pair, NewOfferRequest_ 'BitBayClient.AddNewOffer(CurrencyPair.Pair, NewOfferRequest)')) to exchange.  
 ```csharp
 public class NewOfferRequest
 ```

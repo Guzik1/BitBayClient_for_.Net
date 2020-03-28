@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## NewStopOffer Class
-Data model stop offer response, return on [BitBayClient.BitBayClient.AddNewStopOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewStopOfferRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.BitBayClient.AddNewStopOffer#BitBayClient_BitBayClient_AddNewStopOffer_CurrencyPair_Pair,BitBayClient_RequestModel_NewStopOfferRequest_ 'BitBayClient.BitBayClient.AddNewStopOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewStopOfferRequest)') response.  
+Data model stop offer response, return on [BitBayClient.AddNewStopOffer(CurrencyPair.Pair, RequestModel.NewStopOfferRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.AddNewStopOffer#BitBayClient_AddNewStopOffer_CurrencyPair_Pair, RequestModel_NewStopOfferRequest_ 'BitBayClient.AddNewStopOffer(CurrencyPair.Pair, RequestModel.NewStopOfferRequest)') response.  
 ```csharp
 public class NewStopOffer
 ```

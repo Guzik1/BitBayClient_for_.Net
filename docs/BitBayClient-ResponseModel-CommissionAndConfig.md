@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## CommissionAndConfig Class
-Data model for response on [BitBayClient.BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.BitBayClient.GetCommissionsAndConfiguration#BitBayClient_BitBayClient_GetCommissionsAndConfiguration_CurrencyPair_Pair_ 'BitBayClient.BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)') request.  
+Data model for response on [BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.GetCommissionsAndConfiguration#BitBayClient_GetCommissionsAndConfiguration_CurrencyPair_Pair_ 'BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)') request.  
 ```csharp
 public class CommissionAndConfig
 ```
