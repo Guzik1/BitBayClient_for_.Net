@@ -6,4 +6,4 @@ Balances usage to this offer, for two currencies.
 public BitBayClient.RequestModel.Balances Balances { get; set; }
 ```
 #### Property Value
-[BitBayClient.RequestModel.Balances](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.RequestModel.Balances 'BitBayClient.RequestModel.Balances')  
+[Balances](./BitBayClient-RequestModel-Balances.md 'BitBayClient.RequestModel.Balances')  

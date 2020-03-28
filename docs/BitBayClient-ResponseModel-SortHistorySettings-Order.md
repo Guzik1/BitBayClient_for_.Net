@@ -6,4 +6,4 @@ Sort after ASC or DESC, convert from OrderString.
 public BitBayClient.Converters.SortOrderTypes Order { get; }
 ```
 #### Property Value
-[BitBayClient.Converters.SortOrderTypes](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.Converters.SortOrderTypes 'BitBayClient.Converters.SortOrderTypes')  
+[SortOrderTypes](./BitBayClient-Converters-SortOrderTypes.md 'BitBayClient.Converters.SortOrderTypes')  

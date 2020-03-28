@@ -6,4 +6,4 @@ Using balances for this offer. When null, use default balances. Optional
 public BitBayClient.RequestModel.Balances Balances { get; set; }
 ```
 #### Property Value
-[BitBayClient.RequestModel.Balances](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.RequestModel.Balances 'BitBayClient.RequestModel.Balances')  
+[Balances](./BitBayClient-RequestModel-Balances.md 'BitBayClient.RequestModel.Balances')  

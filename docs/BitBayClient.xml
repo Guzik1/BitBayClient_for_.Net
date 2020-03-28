@@ -39,9 +39,24 @@
             <param name="message">Enum value.</param>
             <returns>True if try was successful or false for else.</returns>
         </member>
+        <member name="T:BitBayClient.Converters.SortOrderTypes">
+            <summary>
+            Sorting types enum.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.Converters.SortOrderTypes.ASC">
+            <summary>
+            Ascending sorting.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.Converters.SortOrderTypes.DESC">
+            <summary>
+            Decresing sorting.
+            </summary>
+        </member>
         <member name="T:BitBayClient.ErrorMessage">
             <summary>
-            Error message enum, represent errors was return from serwer, which response status is fail.
+            Error message enum, represent errors was return from serwer, which response status is fail. Use in <see cref="T:BitBayClient.Exceptions.FailResponseException"/> exception.
             </summary>
         </member>
         <member name="F:BitBayClient.ErrorMessage.PERMISSIONS_NOT_SUFFICIENT">
@@ -164,6 +179,67 @@
         <member name="F:BitBayClient.ErrorMessage.INVALID_STOP_OFFER_ID">
             <summary>Invalid ID for stop offer - the offer with this id does not exist.</summary>
         </member>
+        <member name="T:BitBayClient.Exceptions.FailResponseException">
+            <summary>
+            Fail response exception
+            </summary>
+        </member>
+        <member name="F:BitBayClient.Exceptions.FailResponseException.Errors">
+            <summary>
+            List of error messages.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.Exceptions.FailResponseException.#ctor">
+            <summary>
+            Fail response exception.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.Exceptions.FailResponseException.#ctor(System.Collections.Generic.List{BitBayClient.ErrorMessage})">
+            <summary>
+            Fail response exception with error list.
+            </summary>
+            <param name="errors">List of errors.</param>
+        </member>
+        <member name="M:BitBayClient.Exceptions.FailResponseException.#ctor(System.String)">
+            <summary>
+            Fail response exception with exception message.
+            </summary>
+            <param name="message">Exception error message string.</param>
+        </member>
+        <member name="M:BitBayClient.Exceptions.FailResponseException.#ctor(System.String,System.Collections.Generic.List{BitBayClient.ErrorMessage})">
+            <summary>
+            Fail response exception with error list and exception message.
+            </summary>
+            <param name="message">List of error message.</param>
+            <param name="errors">Exception message string.</param>
+        </member>
+        <member name="M:BitBayClient.Exceptions.FailResponseException.#ctor(System.String,System.Exception)">
+            <summary>
+            Fail response exception with exception message and inner exception stack.
+            </summary>
+            <param name="message">Exception error message string.</param>
+            <param name="inner">Inner exception stack.</param>
+        </member>
+        <member name="M:BitBayClient.Exceptions.FailResponseException.#ctor(System.String,System.Exception,System.Collections.Generic.List{BitBayClient.ErrorMessage})">
+            <summary>
+            Fail response exception with exception message, inner exception stack and error list.
+            </summary>
+            <param name="message">Exception error message string.</param>
+            <param name="inner">Inner exception stack.</param>
+            <param name="errors">List of error message.</param>
+        </member>
+        <member name="T:BitBayClient.Internal.ResponseChecker">
+            <summary>
+            Respone check class, implement IResponseChecker interface from RestApiClient.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.Internal.ResponseChecker.CheckResponseIsOk(System.String)">
+            <summary>
+            Check response is ok.
+            </summary>
+            <param name="response">string response</param>
+            <returns>true if response has no error or false in another else case.</returns>
+        </member>
         <member name="T:BitBayClient.OperationTypes">
             <summary>
             Types of operation enum.
@@ -271,6 +347,39 @@
         <member name="F:BitBayClient.OperationTypes.WITHDRAWAL_CUSTOM_COMMISSION">
             <summary>Commission for Bitcoin network..</summary>
         </member>
+        <member name="T:BitBayClient.RequestModel.AutorizeData">
+            <summary>
+            Object to generate autorize headers for query.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.RequestModel.AutorizeData.AddOwnHeader">
+            <summary>
+            Generate autorization header for GET, PUT, DELETE methods.
+            </summary>
+            <returns>Dictonar, key is param name, value is value of this param.</returns>
+        </member>
+        <member name="M:BitBayClient.RequestModel.AutorizeData.AddOwnHeaderPOST(System.Object)">
+            <summary>
+            Generate autorization header for POST methods.
+            </summary>
+            <param name="POSTDataToSend">Json object with data to send in query.</param>
+            <returns>Dictonar, key is param name, value is value of this param.</returns>
+        </member>
+        <member name="T:BitBayClient.RequestModel.Balances">
+            <summary>
+            Data model represent balance for two currencies pair.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.Balances.First">
+            <summary>
+            First balance from currency pari, UUID identificator.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.Balances.Second">
+            <summary>
+            Second balance from currency pari, UUID identificator.
+            </summary>
+        </member>
         <member name="T:BitBayClient.RequestModel.ChangeConfiguration">
             <summary>
             Data model for send to change default walets.
@@ -285,6 +394,22 @@
             <summary>
             UUID second balance walet.
             </summary>
+        </member>
+        <member name="T:BitBayClient.RequestModel.ChangeWalletName">
+            <summary>
+            Data model for request to Put change balance name.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.ChangeWalletName.Name">
+            <summary>
+            New wallet name.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.RequestModel.ChangeWalletName.#ctor(System.String)">
+            <summary>
+            Constructor to set new name.
+            </summary>
+            <param name="name"></param>
         </member>
         <member name="T:BitBayClient.RequestModel.NewOfferRequest">
             <summary>
@@ -383,7 +508,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.OperationHistoryRequest">
             <summary>
-            Data model for get operation history, is parameter in <see cref="!:TODO"/>, use to filter resault. All fields is optional, use for sort result.
+            Data model for get operation history, is parameter in <see cref="M:BitBayClient.BitBayClient.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)"/>, use to filter resault. All fields is optional, use for sort result.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalancesId">
@@ -462,6 +587,32 @@
             </summary>
             <param name="sortBy">Set operation type.</param>
             <param name="orderBy">Set order by.</param>
+        </member>
+        <member name="T:BitBayClient.RequestModel.OrderbookLimits">
+            <summary>
+            Limits of orderbook result enumerion.
+            </summary>
+        </member>
+        <member name="F:BitBayClient.RequestModel.OrderbookLimits.Limit10">
+            <summary>Limit 10 transaction.</summary>
+        </member>
+        <member name="F:BitBayClient.RequestModel.OrderbookLimits.Limit50">
+            <summary>Limit 50 transaction.</summary>
+        </member>
+        <member name="F:BitBayClient.RequestModel.OrderbookLimits.Limit100">
+            <summary>Limit 100 transaction.</summary>
+        </member>
+        <member name="T:BitBayClient.RequestModel.OrderbookLimitExtensions">
+            <summary>
+            Extension class for OrderbookLimits enum.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.RequestModel.OrderbookLimitExtensions.ToInt(BitBayClient.RequestModel.OrderbookLimits)">
+            <summary>
+            Convert OrderbookLimit to int of number limit.
+            </summary>
+            <param name="limit">OrderbookLimit enum.</param>
+            <returns>Limit number.</returns>
         </member>
         <member name="T:BitBayClient.RequestModel.TransactionHistoryRequest">
             <summary>
@@ -581,6 +732,11 @@
         <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.SecondBalanceId">
             <summary>
             Second balance UUID.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Temp.ActiveStopOffers">
+            <summary>
+            Data model represent response on <see cref="M:BitBayClient.BitBayClient.GetActiveOffer(CurrencyPair.Pair)" /> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.Temp.ActiveStopOffers.ActiveOffer">
@@ -713,6 +869,16 @@
             Number of offers in this postion.
             </summary>
         </member>
+        <member name="T:BitBayClient.ResponseModel.AddOfferStop">
+            <summary>
+            Data model represent response on <see cref="M:BitBayClient.BitBayClient.AddNewOffer(CurrencyPair.Pair,BitBayClient.RequestModel.NewOfferRequest)"/> request.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.AddOfferStop.StopOfferId">
+            <summary>
+            Stop offer UUID identificator.
+            </summary>
+        </member>
         <member name="T:BitBayClient.ResponseModel.Candles">
             <summary>
             Data model for get candles request.
@@ -834,6 +1000,16 @@
             Minimal transaction value.
             </summary>
         </member>
+        <member name="T:BitBayClient.ResponseModel.FailResponse">
+            <summary>
+            Data model for fail response on another request.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.FailResponse.Errors">
+            <summary>
+            List of error messages.
+            </summary>
+        </member>
         <member name="T:BitBayClient.ResponseModel.LastTransactions">
             <summary>
             Response data model for last transactions request.
@@ -921,7 +1097,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.OperationHistory">
             <summary>
-            This data model is response on <see cref="!:TODO"/> request.
+            This data model is response on <see cref="M:BitBayClient.BitBayClient.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)"/> request.
             <seealso cref="T:BitBayClient.ResponseModel.OperationHistoryItem"/>
             </summary>
         </member>
@@ -948,6 +1124,11 @@
         <member name="P:BitBayClient.ResponseModel.OperationHistory.Settings">
             <summary>
             Object of parameters about the filters used in the query.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.OperationHistoryItem">
+            <summary>
+            Represent operation history one item.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.OperationHistoryItem.HistoryId">

@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient')
 ## ErrorMessage Enum
-Error message enum, represent errors was return from serwer, which response status is fail.  
+Error message enum, represent errors was return from serwer, which response status is fail. Use in [FailResponseException](./BitBayClient-Exceptions-FailResponseException.md 'BitBayClient.Exceptions.FailResponseException') exception.  
 ```csharp
 public enum ErrorMessage
 ```

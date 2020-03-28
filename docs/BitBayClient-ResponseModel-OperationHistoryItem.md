@@ -1,6 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## OperationHistoryItem Class
+Represent operation history one item.  
 ```csharp
 public class OperationHistoryItem
 ```

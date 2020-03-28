@@ -1,6 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel.Temp](./BitBayClient-ResponseModel-Temp.md 'BitBayClient.ResponseModel.Temp')
 ## ActiveStopOffers Class
+Data model represent response on [BitBayClient.BitBayClient.GetActiveOffer(CurrencyPair.Pair)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.BitBayClient.GetActiveOffer#BitBayClient_BitBayClient_GetActiveOffer_CurrencyPair_Pair_ 'BitBayClient.BitBayClient.GetActiveOffer(CurrencyPair.Pair)') request.  
 ```csharp
 public class ActiveStopOffers
 ```

@@ -11,6 +11,6 @@ public Sort(string sortBy, BitBayClient.Converters.SortOrderTypes orderBy);
 Set operation type.  
   
 <a name='BitBayClient-RequestModel-Sort-Sort(string_BitBayClient-Converters-SortOrderTypes)-orderBy'></a>
-`orderBy` [BitBayClient.Converters.SortOrderTypes](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.Converters.SortOrderTypes 'BitBayClient.Converters.SortOrderTypes')  
+`orderBy` [SortOrderTypes](./BitBayClient-Converters-SortOrderTypes.md 'BitBayClient.Converters.SortOrderTypes')  
 Set order by.  
   

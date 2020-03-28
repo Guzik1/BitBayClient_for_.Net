@@ -3,6 +3,7 @@
 ### Classes
 - [ActiveOfferItem](./BitBayClient-ResponseModel-ActiveOfferItem.md 'BitBayClient.ResponseModel.ActiveOfferItem')
 - [ActiveOffers](./BitBayClient-ResponseModel-ActiveOffers.md 'BitBayClient.ResponseModel.ActiveOffers')
+- [AddOfferStop](./BitBayClient-ResponseModel-AddOfferStop.md 'BitBayClient.ResponseModel.AddOfferStop')
 - [AllStats](./BitBayClient-ResponseModel-AllStats.md 'BitBayClient.ResponseModel.AllStats')
 - [AllTickers](./BitBayClient-ResponseModel-AllTickers.md 'BitBayClient.ResponseModel.AllTickers')
 - [Balance](./BitBayClient-ResponseModel-Balance.md 'BitBayClient.ResponseModel.Balance')
@@ -13,6 +14,7 @@
 - [Commissions](./BitBayClient-ResponseModel-Commissions.md 'BitBayClient.ResponseModel.Commissions')
 - [Configuration](./BitBayClient-ResponseModel-Configuration.md 'BitBayClient.ResponseModel.Configuration')
 - [Details](./BitBayClient-ResponseModel-Details.md 'BitBayClient.ResponseModel.Details')
+- [FailResponse](./BitBayClient-ResponseModel-FailResponse.md 'BitBayClient.ResponseModel.FailResponse')
 - [FoudsStep](./BitBayClient-ResponseModel-FoudsStep.md 'BitBayClient.ResponseModel.FoudsStep')
 - [InternalTransfer](./BitBayClient-ResponseModel-InternalTransfer.md 'BitBayClient.ResponseModel.InternalTransfer')
 - [LastTransactionItem](./BitBayClient-ResponseModel-LastTransactionItem.md 'BitBayClient.ResponseModel.LastTransactionItem')
