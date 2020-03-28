@@ -6,9 +6,9 @@ using System.Text;
 
 namespace BitBayClient.Converters
 {
-    public static class Deserialize
+    internal static class Deserialize
     {
-        public static T FromJson<T>(string jsonString)
+        internal static T FromJson<T>(string jsonString)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings()
             {
@@ -18,7 +18,7 @@ namespace BitBayClient.Converters
             return JsonConvert.DeserializeObject<T>(jsonString, settings);
         }
 
-        public static dynamic FromJson(string jsonString)
+        internal static dynamic FromJson(string jsonString)
         {
             JsonSerializerSettings settings = new JsonSerializerSettings()
             {

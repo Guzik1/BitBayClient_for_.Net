@@ -7,7 +7,10 @@ using BitBayClient;
 
 namespace BitBayClient.RequestModel
 {
-    internal class AutorizeData : IAddOwnHeaderToRequest
+    /// <summary>
+    /// Object to generate autorize headers for query.
+    /// </summary>
+    public class AutorizeData : IAddOwnHeaderToRequest
     {
         string unixTS = Date.Convert(DateTime.Now).ToString();
         Config config;
@@ -17,6 +20,10 @@ namespace BitBayClient.RequestModel
             this.config = config;
         }
 
+        /// <summary>
+        /// Generate autorization header for GET, PUT, DELETE methods.
+        /// </summary>
+        /// <returns>Dictonar, key is param name, value is value of this param.</returns>
         public Dictionary<string, string> AddOwnHeader()
         {
             string hash = GenerateHash(config.PublicKey, unixTS);
@@ -24,6 +31,11 @@ namespace BitBayClient.RequestModel
             return AddAutorizationHeader(hash);
         }
 
+        /// <summary>
+        /// Generate autorization header for POST methods.
+        /// </summary>
+        /// <param name="POSTDataToSend">Json object with data to send in query.</param>
+        /// <returns>Dictonar, key is param name, value is value of this param.</returns>
         public Dictionary<string, string> AddOwnHeaderPOST(object POSTDataToSend)
         {
             string JsonSerializedObject = Serialize.AsJson(POSTDataToSend);

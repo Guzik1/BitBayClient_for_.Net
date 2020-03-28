@@ -1,7 +1,7 @@
 ﻿namespace BitBayClient
 {
     /// <summary>
-    /// Error message enum, represent errors was return from serwer, which response status is fail.
+    /// Error message enum, represent errors was return from serwer, which response status is fail. Use in <see cref="Exceptions.FailResponseException"/> exception.
     /// </summary>
     public enum ErrorMessage
     {

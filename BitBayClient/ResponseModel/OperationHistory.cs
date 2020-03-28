@@ -8,7 +8,7 @@ namespace BitBayClient.ResponseModel
 {
     // TODO change after add get operation history request.
     /// <summary>
-    /// This data model is response on <see cref="TODO"/> request.
+    /// This data model is response on <see cref="BitBayClient.GetOperationHistory(RequestModel.OperationHistoryRequest)"/> request.
     /// <seealso cref="OperationHistoryItem"/>
     /// </summary>
     public class OperationHistory
@@ -40,6 +40,9 @@ namespace BitBayClient.ResponseModel
         public OperationHistorySettings Settings { get; set; }
     }
 
+    /// <summary>
+    /// Represent operation history one item.
+    /// </summary>
     public class OperationHistoryItem
     {
         /// <summary>

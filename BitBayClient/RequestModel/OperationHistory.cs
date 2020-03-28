@@ -9,7 +9,7 @@ namespace BitBayClient.RequestModel
 {
     //TODO: change docs after add operation history.
     /// <summary>
-    /// Data model for get operation history, is parameter in <see cref="TODO"/>, use to filter resault. All fields is optional, use for sort result.
+    /// Data model for get operation history, is parameter in <see cref="BitBayClient.GetOperationHistory(OperationHistoryRequest)"/>, use to filter resault. All fields is optional, use for sort result.
     /// </summary>
     public class OperationHistoryRequest
     {

@@ -1,14 +1,14 @@
 ﻿using BitBayClient.Converters;
 using BitBayClient.RequestModel;
-using CurrencyPair;
-using ExchangeBasicData;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BitBayClient.ResponseModel.Temp
 {
+    /// <summary>
+    /// Data model represent response on <see cref="BitBayClient.GetActiveOffer(CurrencyPair.Pair)" /> request.
+    /// </summary>
     public class ActiveStopOffers
     {
         /// <summary>
