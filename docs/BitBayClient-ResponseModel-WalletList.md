@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## WalletList Class
-All wallet list on user account.  
+Wallet list on user account.  
 ```csharp
 public class WalletList
 ```

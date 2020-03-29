@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[PrivateStopTrading](./BitBayClient-PrivateStopTrading.md 'BitBayClient.PrivateStopTrading')
 ## PrivateStopTrading.GetActiveStopOffer() Method
-Get all active stop offer on exchange.  
+Get all active stop offer on exchange. For use, must authorize User.  
 ```csharp
 public System.Collections.Generic.List<BitBayClient.ResponseModel.ActiveStopOffer> GetActiveStopOffer();
 ```

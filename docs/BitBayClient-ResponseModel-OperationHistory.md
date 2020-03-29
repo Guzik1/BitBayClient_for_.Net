@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## OperationHistory Class
-This data model is response on [BitBayClient.History.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.History.GetOperationHistory#BitBayClient_History_GetOperationHistory_BitBayClient_RequestModel_OperationHistoryRequest_ 'BitBayClient.History.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)') request.  
+This data model is response on [GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)](./BitBayClient-History-GetOperationHistory(BitBayClient-RequestModel-OperationHistoryRequest).md 'BitBayClient.History.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)') request.  
 [OperationHistoryItem](./BitBayClient-ResponseModel-OperationHistoryItem.md 'BitBayClient.ResponseModel.OperationHistoryItem')  
 ```csharp
 public class OperationHistory

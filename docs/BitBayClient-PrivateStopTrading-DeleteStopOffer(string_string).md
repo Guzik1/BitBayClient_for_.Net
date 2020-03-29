@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[PrivateStopTrading](./BitBayClient-PrivateStopTrading.md 'BitBayClient.PrivateStopTrading')
 ## PrivateStopTrading.DeleteStopOffer(string, string) Method
-Delete specif offer UUID on specif currency pair.  
+Delete specif offer UUID on specif currency pair. For use, must authorize User.  
 ```csharp
 public bool DeleteStopOffer(string currencyPair, string offerId);
 ```

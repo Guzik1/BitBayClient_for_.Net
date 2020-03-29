@@ -6,6 +6,7 @@
 - [PrivateStopTrading](./BitBayClient-PrivateStopTrading.md 'BitBayClient.PrivateStopTrading')
 - [PrivateTrading](./BitBayClient-PrivateTrading.md 'BitBayClient.PrivateTrading')
 - [PublicTrading](./BitBayClient-PublicTrading.md 'BitBayClient.PublicTrading')
+- [Wallet](./BitBayClient-Wallet.md 'BitBayClient.Wallet')
 ### Enums
 - [ApplicationList](./BitBayClient-ApplicationList.md 'BitBayClient.ApplicationList')
 - [ErrorMessage](./BitBayClient-ErrorMessage.md 'BitBayClient.ErrorMessage')

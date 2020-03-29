@@ -6,25 +6,15 @@ using BitBayClient.Converters;
 namespace BitBayClient.ResponseModel
 {
     /// <summary>
-    /// All wallet list on user account.
+    /// Wallet list on user account.
     /// </summary>
     public class WalletList
     {
         /// <summary>
         /// List of wallets on user account.
         /// </summary>
-        public List<OneWallet> Balances { get; set; }
-    }
-
-    /// <summary>
-    /// New balance request.
-    /// </summary>
-    public class NewWallet
-    {
-        /// <summary>
-        /// One balance.
-        /// </summary>
-        public OneWallet Balance { get; set; }
+        [JsonConverter(typeof(List<WalletItem>))]
+        public List<WalletItem> Balances { get; set; }
     }
 
     /// <summary>
@@ -35,18 +25,18 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// Balance wallet from transfer.
         /// </summary>
-        public OneWallet From { get; set; }
+        public WalletItem From { get; set; }
 
         /// <summary>
         /// Balance wallet to transfer.
         /// </summary>
-        public OneWallet To { get; set; }
+        public WalletItem To { get; set; }
     }
 
     /// <summary>
     /// Data model reperesent one wallet balance.
     /// </summary>
-    public class OneWallet
+    public class WalletItem
     {
         /// <summary>
         /// Wallet UUID identificator

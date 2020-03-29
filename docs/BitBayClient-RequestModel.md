@@ -8,6 +8,7 @@
 - [InternalTransferRequest](./BitBayClient-RequestModel-InternalTransferRequest.md 'BitBayClient.RequestModel.InternalTransferRequest')
 - [NewOfferRequest](./BitBayClient-RequestModel-NewOfferRequest.md 'BitBayClient.RequestModel.NewOfferRequest')
 - [NewStopOfferRequest](./BitBayClient-RequestModel-NewStopOfferRequest.md 'BitBayClient.RequestModel.NewStopOfferRequest')
+- [NewWalletRequest](./BitBayClient-RequestModel-NewWalletRequest.md 'BitBayClient.RequestModel.NewWalletRequest')
 - [OperationHistoryRequest](./BitBayClient-RequestModel-OperationHistoryRequest.md 'BitBayClient.RequestModel.OperationHistoryRequest')
 - [OrderbookLimitExtensions](./BitBayClient-RequestModel-OrderbookLimitExtensions.md 'BitBayClient.RequestModel.OrderbookLimitExtensions')
 - [Sort](./BitBayClient-RequestModel-Sort.md 'BitBayClient.RequestModel.Sort')

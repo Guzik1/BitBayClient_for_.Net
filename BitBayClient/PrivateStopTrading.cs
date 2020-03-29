@@ -47,7 +47,7 @@ namespace BitBayClient
 
         #region ActiveStopOffer
         /// <summary>
-        /// Get all active stop offer on exchange.
+        /// Get all active stop offer on exchange. For use, must authorize User.
         /// </summary>
         /// <returns>List of active stop offers.</returns>
         public List<ActiveStopOffer> GetActiveStopOffer()
@@ -74,7 +74,7 @@ namespace BitBayClient
 
         #region DeleteStopOffer
         /// <summary>
-        /// Delete specif offer UUID on specif currency pair.
+        /// Delete specif offer UUID on specif currency pair. For use, must authorize User.
         /// </summary>
         /// <param name="currencyPair">Currency pair code.</param>
         /// <param name="offerId">Offer UUID identificator.</param>

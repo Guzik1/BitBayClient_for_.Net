@@ -277,6 +277,22 @@
             History object to get historical account's data through BitBay api.
             </summary>
         </member>
+        <member name="M:BitBayClient.History.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)">
+            <summary>
+            Get transaction history from user account. For use, must authorize User.
+            </summary>
+            <param name="body">Transaction history body request.</param>
+            <returns>Transaction history object.</returns>
+            <exception cref="T:System.ArgumentException">Throw when body parameter is null.</exception>
+        </member>
+        <member name="M:BitBayClient.History.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)">
+            <summary>
+            Get operation history from user account on exchange. For use, must authorize User.
+            </summary>
+            <param name="request">Operation history request object.</param>
+            <returns>Operation history.</returns>
+            <exception cref="T:System.ArgumentException">Throw when body parameter is null.</exception>
+        </member>
         <member name="T:BitBayClient.Internal.ResponseChecker">
             <summary>
             Respone check class, implement IResponseChecker interface from RestApiClient.
@@ -411,7 +427,7 @@
         </member>
         <member name="M:BitBayClient.PrivateStopTrading.GetActiveStopOffer">
             <summary>
-            Get all active stop offer on exchange.
+            Get all active stop offer on exchange. For use, must authorize User.
             </summary>
             <returns>List of active stop offers.</returns>
         </member>
@@ -424,7 +440,7 @@
         </member>
         <member name="M:BitBayClient.PrivateStopTrading.DeleteStopOffer(System.String,System.String)">
             <summary>
-            Delete specif offer UUID on specif currency pair.
+            Delete specif offer UUID on specif currency pair. For use, must authorize User.
             </summary>
             <param name="currencyPair">Currency pair code.</param>
             <param name="offerId">Offer UUID identificator.</param>
@@ -754,6 +770,26 @@
         <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.IgnoreInvalidStopRate">
             <summary>
             Ignore invalid stop rate. Prepare for add new offer that can be implemented immedietly.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.RequestModel.NewWalletRequest">
+            <summary>
+            New wallet data model for <see cref="M:BitBayClient.Wallet.CreateNewWallet(System.String,System.String,BitBayClient.WalletType)"/> request.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewWalletRequest.Currency">
+            <summary>
+            Currence code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewWalletRequest.Type">
+            <summary>
+            Type of wallet: crypto or fiat.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.NewWalletRequest.Name">
+            <summary>
+            Wallet name.
             </summary>
         </member>
         <member name="T:BitBayClient.RequestModel.OperationHistoryRequest">
@@ -1788,22 +1824,12 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.WalletList">
             <summary>
-            All wallet list on user account.
+            Wallet list on user account.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.WalletList.Balances">
             <summary>
             List of wallets on user account.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.NewWallet">
-            <summary>
-            New balance request.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.NewWallet.Balance">
-            <summary>
-            One balance.
             </summary>
         </member>
         <member name="T:BitBayClient.ResponseModel.InternalTransfer">
@@ -1821,65 +1847,103 @@
             Balance wallet to transfer.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.OneWallet">
+        <member name="T:BitBayClient.ResponseModel.WalletItem">
             <summary>
             Data model reperesent one wallet balance.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.Id">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.Id">
             <summary>
             Wallet UUID identificator
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.UserId">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.UserId">
             <summary>
             User UUID identificator
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.AvailableFunds">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.AvailableFunds">
             <summary>
             Amount of funds available.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.TotalFunds">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.TotalFunds">
             <summary>
             Total amount of funds.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.LockedFunds">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.LockedFunds">
             <summary>
             Locked amount of funds.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.Currency">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.Currency">
             <summary>
             Currency market code.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.Type">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.Type">
             <summary>
             String of currency code.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.WalletType">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.WalletType">
             <summary>
             Wallet type: crypto/fiat, convert from Type string.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.Name">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.Name">
             <summary>
             Wallet name.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.BalanceEngine">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.BalanceEngine">
             <summary>
             Name of the application supports this wallet, convert from BalanceEngineString.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.OneWallet.BalanceEngineString">
+        <member name="P:BitBayClient.ResponseModel.WalletItem.BalanceEngineString">
             <summary>
             String name of the application support this wallet.
             </summary>
+        </member>
+        <member name="T:BitBayClient.Wallet">
+            <summary>
+            History object to get historical account's data through BitBay api.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.Wallet.GetWalletList">
+            <summary>
+            Get akk wallet list from user account. For use, must authorize User
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BitBayClient.Wallet.CreateNewWallet(System.String,System.String,BitBayClient.WalletType)">
+            <summary>
+            Create new wallet on user account. For use, must authorize User
+            </summary>
+            <param name="currencyCode">Currency code.</param>
+            <param name="name">Wallet name</param>
+            <param name="walletType">Wallet type: crypto/fiat.</param>
+            <returns>Created wallet data.</returns>
+        </member>
+        <member name="M:BitBayClient.Wallet.ChangeWalletName(System.String,System.String)">
+            <summary>
+            Change wallet name on user account. For use, must authorize User
+            </summary>
+            <param name="identificator">Wallet UUID identificator.</param>
+            <param name="newName">New wallet name.</param>
+            <returns>True if wallet name was changed succesfull or false else.</returns>
+        </member>
+        <member name="M:BitBayClient.Wallet.InternalTransfer(System.String,System.String,System.String,System.Decimal)">
+            <summary>
+            Internal transfer funds between two wallet. For use, must authorize User
+            </summary>
+            <param name="sourceId">Wallet source UUID identificator.</param>
+            <param name="destinationId">Wallet destination UUID identificator.</param>
+            <param name="currencyCode">Currency market code.</param>
+            <param name="funds">Amount of funds to transfer.</param>
+            <returns>Transfer data, confirmation.</returns>
         </member>
         <member name="T:BitBayClient.WalletType">
             <summary>

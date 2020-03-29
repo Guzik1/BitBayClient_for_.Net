@@ -89,12 +89,12 @@ namespace BitBayClient
 
         bool SendDeleteOffer(string url)
         {
-            RestClient rm = new RestClient(config.ApiTradingUrl + "offer/" + url);
+            RestClient rc = new RestClient(config.ApiTradingUrl + "offer/" + url);
 
-            rm.AddOwnHeaderToRequest(new AutorizeData(config));
-            rm.SendDELETE();
+            rc.AddOwnHeaderToRequest(new AutorizeData(config));
+            rc.SendDELETE();
 
-            if (Tools.CheckResult(rm))
+            if (Tools.CheckResult(rc))
                 return true;
 
             return false;

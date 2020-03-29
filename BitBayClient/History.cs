@@ -20,6 +20,12 @@ namespace BitBayClient
         }
 
         #region TransactionHistory
+        /// <summary>
+        /// Get transaction history from user account. For use, must authorize User.
+        /// </summary>
+        /// <param name="body">Transaction history body request.</param>
+        /// <returns>Transaction history object.</returns>
+        /// <exception cref="ArgumentException">Throw when body parameter is null.</exception>
         public TransactionHistory GetTransactionHistory(TransactionHistoryRequest body)
         {
             if (body == null)
@@ -41,6 +47,12 @@ namespace BitBayClient
         #endregion
 
         #region OperationHistory
+        /// <summary>
+        /// Get operation history from user account on exchange. For use, must authorize User.
+        /// </summary>
+        /// <param name="request">Operation history request object.</param>
+        /// <returns>Operation history.</returns>
+        /// <exception cref="ArgumentException">Throw when body parameter is null.</exception>
         public OperationHistory GetOperationHistory(OperationHistoryRequest request)
         {
             if (request == null)
