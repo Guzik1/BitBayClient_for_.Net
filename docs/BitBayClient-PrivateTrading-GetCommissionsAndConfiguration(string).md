@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[PrivateTrading](./BitBayClient-PrivateTrading.md 'BitBayClient.PrivateTrading')
 ## PrivateTrading.GetCommissionsAndConfiguration(string) Method
-Get commisions and configuration assinged to the account. For use must autorize User.  
+Get commisions and configuration assinged to the account. For use, must authorize User.  
 ```csharp
 public BitBayClient.ResponseModel.CommissionAndConfig GetCommissionsAndConfiguration(string currencyPair);
 ```

@@ -3,7 +3,7 @@
 ## NewStopOfferRequest.StopRate Property
 Last transaction rate, when this offer was activate. REQUIRED  
 ```csharp
-public float StopRate { get; set; }
+public decimal StopRate { get; set; }
 ```
 #### Property Value
-[System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')  
+[System.Decimal](https://docs.microsoft.com/en-us/dotnet/api/System.Decimal 'System.Decimal')  

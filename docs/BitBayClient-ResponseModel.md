@@ -3,7 +3,7 @@
 ### Classes
 - [ActiveOffer](./BitBayClient-ResponseModel-ActiveOffer.md 'BitBayClient.ResponseModel.ActiveOffer')
 - [ActiveOffers](./BitBayClient-ResponseModel-ActiveOffers.md 'BitBayClient.ResponseModel.ActiveOffers')
-- [ActiveStopOfferItem](./BitBayClient-ResponseModel-ActiveStopOfferItem.md 'BitBayClient.ResponseModel.ActiveStopOfferItem')
+- [ActiveStopOffer](./BitBayClient-ResponseModel-ActiveStopOffer.md 'BitBayClient.ResponseModel.ActiveStopOffer')
 - [ActiveStopOffers](./BitBayClient-ResponseModel-ActiveStopOffers.md 'BitBayClient.ResponseModel.ActiveStopOffers')
 - [AddOfferStop](./BitBayClient-ResponseModel-AddOfferStop.md 'BitBayClient.ResponseModel.AddOfferStop')
 - [AllStats](./BitBayClient-ResponseModel-AllStats.md 'BitBayClient.ResponseModel.AllStats')

@@ -25,8 +25,8 @@ namespace BitBayClient.RequestModel
         /// <summary>
         /// Last transaction rate, when this offer was activate. REQUIRED
         /// </summary>
-        [JsonProperty("stopRate")]
-        public float StopRate { get; set; }
+        [JsonProperty("stopRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public decimal StopRate { get; set; }
 
         /// <summary>
         /// Offer mode: stop-limit or stop-market. REQUIRED
@@ -47,7 +47,7 @@ namespace BitBayClient.RequestModel
         /// <summary>
         /// Ignore invalid stop rate. Prepare for add new offer that can be implemented immedietly.
         /// </summary>
-        [JsonProperty("ignoreInvalidStopRate")]
+        [JsonProperty("ignoreInvalidStopRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool IgnoreInvalidStopRate { get; set; }
     }
 }

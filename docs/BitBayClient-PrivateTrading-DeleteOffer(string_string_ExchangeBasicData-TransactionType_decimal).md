@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[PrivateTrading](./BitBayClient-PrivateTrading.md 'BitBayClient.PrivateTrading')
 ## PrivateTrading.DeleteOffer(string, string, ExchangeBasicData.TransactionType, decimal) Method
-Delete offer from market. For use must autorize User.  
+Delete offer from market. For use, must authorize User.  
 ```csharp
 public bool DeleteOffer(string currencyPair, string offerId, ExchangeBasicData.TransactionType offerType, decimal offerRate);
 ```

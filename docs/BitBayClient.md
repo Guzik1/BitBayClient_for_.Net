@@ -3,6 +3,7 @@
 ### Classes
 - [BitBayClient](./BitBayClient-BitBayClient.md 'BitBayClient.BitBayClient')
 - [History](./BitBayClient-History.md 'BitBayClient.History')
+- [PrivateStopTrading](./BitBayClient-PrivateStopTrading.md 'BitBayClient.PrivateStopTrading')
 - [PrivateTrading](./BitBayClient-PrivateTrading.md 'BitBayClient.PrivateTrading')
 - [PublicTrading](./BitBayClient-PublicTrading.md 'BitBayClient.PublicTrading')
 ### Enums

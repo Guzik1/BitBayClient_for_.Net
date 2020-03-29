@@ -6,4 +6,4 @@ Private stop trading api methods.
 public BitBayClient.PrivateStopTrading PrivateStopTrading { get; }
 ```
 #### Property Value
-[BitBayClient.PrivateStopTrading](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.PrivateStopTrading 'BitBayClient.PrivateStopTrading')  
+[PrivateStopTrading](./BitBayClient-PrivateStopTrading.md 'BitBayClient.PrivateStopTrading')  

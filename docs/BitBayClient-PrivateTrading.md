@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient')
 ## PrivateTrading Class
-Private trading method on BitBay stock exchange, for use must autorize user using Public and Private key.  
+Private trading api method on BitBay stock exchange, for use must authorize user using Public and Private key.  
 ```csharp
 public class PrivateTrading
 ```

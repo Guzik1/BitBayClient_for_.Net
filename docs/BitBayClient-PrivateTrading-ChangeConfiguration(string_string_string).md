@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[PrivateTrading](./BitBayClient-PrivateTrading.md 'BitBayClient.PrivateTrading')
 ## PrivateTrading.ChangeConfiguration(string, string, string) Method
-Change default ballance on market. For use must autorize User. Pair build first-second, for example BTC-USD btc is first, usd is second.  
+Change default ballance on market. For use, must authorize User. Pair build first-second, for example BTC-USD btc is first, usd is second.  
 ```csharp
 public bool ChangeConfiguration(string currencyPair, string ballanceIdForFirstCurrence, string BallanceIdForSecondCurrence);
 ```

@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[PrivateTrading](./BitBayClient-PrivateTrading.md 'BitBayClient.PrivateTrading')
 ## PrivateTrading.GetAllActiveOffer() Method
-Get all active offer from stock exchange on user account. For use must autorize User.  
+Get all active offer from stock exchange on user account. For use, must authorize User.  
 ```csharp
 public System.Collections.Generic.List<BitBayClient.ResponseModel.ActiveOffer> GetAllActiveOffer();
 ```

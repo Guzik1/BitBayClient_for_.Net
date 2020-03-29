@@ -396,14 +396,48 @@
         <member name="F:BitBayClient.OperationTypes.WITHDRAWAL_CUSTOM_COMMISSION">
             <summary>Commission for Bitcoin network..</summary>
         </member>
+        <member name="T:BitBayClient.PrivateStopTrading">
+            <summary>
+            Private stop trading api method on BitBay stock exchange, for use must autorize user using Public and Private key.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.PrivateStopTrading.AddNewStopOffer(System.String,BitBayClient.RequestModel.NewStopOfferRequest)">
+            <summary>
+            Add new stop offer to user account. For use, must authorize User.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <param name="body">New offer body.</param>
+            <returns>Offer UUID identificator.</returns>
+        </member>
+        <member name="M:BitBayClient.PrivateStopTrading.GetActiveStopOffer">
+            <summary>
+            Get all active stop offer on exchange.
+            </summary>
+            <returns>List of active stop offers.</returns>
+        </member>
+        <member name="M:BitBayClient.PrivateStopTrading.GetActiveStopOffer(System.String)">
+            <summary>
+            Get active stop offer for specif market.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <returns>List of active stop offers.</returns>
+        </member>
+        <member name="M:BitBayClient.PrivateStopTrading.DeleteStopOffer(System.String,System.String)">
+            <summary>
+            Delete specif offer UUID on specif currency pair.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <param name="offerId">Offer UUID identificator.</param>
+            <returns>Return true if delete stop offer successful or return false else.</returns>
+        </member>
         <member name="T:BitBayClient.PrivateTrading">
             <summary>
-            Private trading method on BitBay stock exchange, for use must autorize user using Public and Private key.
+            Private trading api method on BitBay stock exchange, for use must authorize user using Public and Private key.
             </summary>
         </member>
         <member name="M:BitBayClient.PrivateTrading.AddNewOffer(System.String,BitBayClient.RequestModel.NewOfferRequest)">
             <summary>
-            Add new offer, using NewOfferRequest body and sepcif currency pair code. For use must autorize User.
+            Add new offer, using NewOfferRequest body and sepcif currency pair code. For use, must authorize User.
             </summary>
             <param name="currencyPair">Currency pair code string.</param>
             <param name="body">New offer body request.</param>
@@ -412,7 +446,7 @@
         </member>
         <member name="M:BitBayClient.PrivateTrading.GetAllActiveOffer">
             <summary>
-            Get all active offer from stock exchange on user account. For use must autorize User.
+            Get all active offer from stock exchange on user account. For use, must authorize User.
             </summary>
             <returns>List of all active offers.</returns>
         </member>
@@ -425,7 +459,7 @@
         </member>
         <member name="M:BitBayClient.PrivateTrading.DeleteOffer(System.String,System.String,ExchangeBasicData.TransactionType,System.Decimal)">
             <summary>
-            Delete offer from market. For use must autorize User.
+            Delete offer from market. For use, must authorize User.
             </summary>
             <param name="currencyPair">Currency pair code.</param>
             <param name="offerId">Offer UUID identificator, geting on offer add.</param>
@@ -435,14 +469,14 @@
         </member>
         <member name="M:BitBayClient.PrivateTrading.GetCommissionsAndConfiguration(System.String)">
             <summary>
-            Get commisions and configuration assinged to the account. For use must autorize User.
+            Get commisions and configuration assinged to the account. For use, must authorize User.
             </summary>
             <param name="currencyPair">Currency pair code.</param>
             <returns>Commision and configuration data object.</returns>
         </member>
         <member name="M:BitBayClient.PrivateTrading.ChangeConfiguration(System.String,System.String,System.String)">
             <summary>
-            Change default ballance on market. For use must autorize User. Pair build first-second, for example BTC-USD btc is first, usd is second.
+            Change default ballance on market. For use, must authorize User. Pair build first-second, for example BTC-USD btc is first, usd is second.
             </summary>
             <param name="currencyPair">Currency pair code.</param>
             <param name="ballanceIdForFirstCurrence">Balance UUID for first currency in pair.</param>
@@ -960,72 +994,72 @@
             List of stop offers.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.ActiveStopOfferItem">
+        <member name="T:BitBayClient.ResponseModel.ActiveStopOffer">
             <summary>
             Data model represent one active stop offer.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Id">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Id">
             <summary>
             UUID offer identificator.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.OperationId">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.OperationId">
             <summary>
             UUID executed operation identyficator.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.UserId">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.UserId">
             <summary>
             UUID user identificator, yours number.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Market">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Market">
             <summary>
             Market code.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Amount">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Amount">
             <summary>
             Amount currency in position.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Rate">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Rate">
             <summary>
             Postion rate (price).
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.StopRate">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.StopRate">
             <summary>
             Offer activation rate.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Status">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Status">
             <summary>
             Offer status: (available only) active.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.OfferType">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.OfferType">
             <summary>
             Type of offer, available: buy and sell.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Mode">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Mode">
             <summary>
             Offer mode, abailable: stop-limit and stop-market
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Balances">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Balances">
             <summary>
             Balances usage to this offer, for two currencies.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Time">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Time">
             <summary>
             Created time (unix).
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveStopOfferItem.Flags">
+        <member name="P:BitBayClient.ResponseModel.ActiveStopOffer.Flags">
             <summary>
             Flags, already no used.
             </summary>

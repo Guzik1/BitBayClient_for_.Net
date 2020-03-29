@@ -15,14 +15,14 @@ namespace BitBayClient.ResponseModel
         /// List of stop offers.
         /// </summary>
         [JsonProperty("items")]
-        [JsonConverter(typeof(SingleOrArrayConverter<ActiveStopOfferItem>))]
-        public List<ActiveStopOfferItem> ActiveOffer { get; set; }
+        [JsonConverter(typeof(SingleOrArrayConverter<ActiveStopOffer>))]
+        public List<ActiveStopOffer> ActiveOffer { get; set; } = new List<ActiveStopOffer>();
     }
 
     /// <summary>
     /// Data model represent one active stop offer.
     /// </summary>
-    public class ActiveStopOfferItem
+    public class ActiveStopOffer
     {
         /// <summary>
         /// UUID offer identificator.

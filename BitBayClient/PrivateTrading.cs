@@ -10,7 +10,7 @@ using System.Text;
 namespace BitBayClient
 {
     /// <summary>
-    /// Private trading method on BitBay stock exchange, for use must autorize user using Public and Private key.
+    /// Private trading api method on BitBay stock exchange, for use must authorize user using Public and Private key.
     /// </summary>
     public class PrivateTrading
     {
@@ -23,7 +23,7 @@ namespace BitBayClient
 
         #region AddOffer
         /// <summary>
-        /// Add new offer, using NewOfferRequest body and sepcif currency pair code. For use must autorize User.
+        /// Add new offer, using NewOfferRequest body and sepcif currency pair code. For use, must authorize User.
         /// </summary>
         /// <param name="currencyPair">Currency pair code string.</param>
         /// <param name="body">New offer body request.</param>
@@ -50,7 +50,7 @@ namespace BitBayClient
 
         #region ActiveOffer
         /// <summary>
-        /// Get all active offer from stock exchange on user account. For use must autorize User.
+        /// Get all active offer from stock exchange on user account. For use, must authorize User.
         /// </summary>
         /// <returns>List of all active offers.</returns>
         public List<ActiveOffer> GetAllActiveOffer()
@@ -77,7 +77,7 @@ namespace BitBayClient
 
         #region DeleteOffer
         /// <summary>
-        /// Delete offer from market. For use must autorize User.
+        /// Delete offer from market. For use, must authorize User.
         /// </summary>
         /// <param name="currencyPair">Currency pair code.</param>
         /// <param name="offerId">Offer UUID identificator, geting on offer add.</param>
@@ -103,7 +103,7 @@ namespace BitBayClient
 
         #region GetCommissionsAndConfiguration
         /// <summary>
-        /// Get commisions and configuration assinged to the account. For use must autorize User.
+        /// Get commisions and configuration assinged to the account. For use, must authorize User.
         /// </summary>
         /// <param name="currencyPair">Currency pair code.</param>
         /// <returns>Commision and configuration data object.</returns>
@@ -123,7 +123,7 @@ namespace BitBayClient
 
         #region ChangeConfiguration
         /// <summary>
-        /// Change default ballance on market. For use must autorize User. Pair build first-second, for example BTC-USD btc is first, usd is second.
+        /// Change default ballance on market. For use, must authorize User. Pair build first-second, for example BTC-USD btc is first, usd is second.
         /// </summary>
         /// <param name="currencyPair">Currency pair code.</param>
         /// <param name="ballanceIdForFirstCurrence">Balance UUID for first currency in pair.</param>

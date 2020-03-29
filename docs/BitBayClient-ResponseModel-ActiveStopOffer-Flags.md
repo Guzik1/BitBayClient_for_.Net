@@ -1,6 +1,6 @@
 #### [BitBayClient](./index.md 'index')
-### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[ActiveStopOfferItem](./BitBayClient-ResponseModel-ActiveStopOfferItem.md 'BitBayClient.ResponseModel.ActiveStopOfferItem')
-## ActiveStopOfferItem.Flags Property
+### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[ActiveStopOffer](./BitBayClient-ResponseModel-ActiveStopOffer.md 'BitBayClient.ResponseModel.ActiveStopOffer')
+## ActiveStopOffer.Flags Property
 Flags, already no used.  
 ```csharp
 public System.Collections.Generic.List<object> Flags { get; set; }

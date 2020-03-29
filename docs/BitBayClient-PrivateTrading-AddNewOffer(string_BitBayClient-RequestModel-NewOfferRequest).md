@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[PrivateTrading](./BitBayClient-PrivateTrading.md 'BitBayClient.PrivateTrading')
 ## PrivateTrading.AddNewOffer(string, BitBayClient.RequestModel.NewOfferRequest) Method
-Add new offer, using NewOfferRequest body and sepcif currency pair code. For use must autorize User.  
+Add new offer, using NewOfferRequest body and sepcif currency pair code. For use, must authorize User.  
 ```csharp
 public BitBayClient.ResponseModel.NewOffer AddNewOffer(string currencyPair, BitBayClient.RequestModel.NewOfferRequest body);
 ```
