@@ -1,6 +1,6 @@
 #### [BitBayClient](./index.md 'index')
-### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[ActiveOfferItem](./BitBayClient-ResponseModel-ActiveOfferItem.md 'BitBayClient.ResponseModel.ActiveOfferItem')
-## ActiveOfferItem.ReceivedAmount Property
+### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[ActiveOffer](./BitBayClient-ResponseModel-ActiveOffer.md 'BitBayClient.ResponseModel.ActiveOffer')
+## ActiveOffer.ReceivedAmount Property
 Amount of currency, recived from this offer.  
 ```csharp
 public decimal ReceivedAmount { get; set; }

@@ -12,4 +12,4 @@ Currency pair code, example BTC-USD
   
 #### Returns
 [Stats](./BitBayClient-ResponseModel-Stats.md 'BitBayClient.ResponseModel.Stats')  
-24 hours stats for currency pair.  
+24 hours stats for currency pair. Return "stats" list from response.  

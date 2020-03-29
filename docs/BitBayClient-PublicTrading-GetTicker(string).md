@@ -12,4 +12,4 @@ Currency pair
   
 #### Returns
 [Ticker](./BitBayClient-ResponseModel-Ticker.md 'BitBayClient.ResponseModel.Ticker')  
-Ticker for selected market.  
+Ticker for selected market. Return "ticker" atribut from api response.  

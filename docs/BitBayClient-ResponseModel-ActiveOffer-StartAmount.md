@@ -1,6 +1,6 @@
 #### [BitBayClient](./index.md 'index')
-### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[ActiveOfferItem](./BitBayClient-ResponseModel-ActiveOfferItem.md 'BitBayClient.ResponseModel.ActiveOfferItem')
-## ActiveOfferItem.StartAmount Property
+### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[ActiveOffer](./BitBayClient-ResponseModel-ActiveOffer.md 'BitBayClient.ResponseModel.ActiveOffer')
+## ActiveOffer.StartAmount Property
 Offer initial amount of currence.  
 ```csharp
 public decimal StartAmount { get; set; }

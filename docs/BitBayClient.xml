@@ -396,6 +396,59 @@
         <member name="F:BitBayClient.OperationTypes.WITHDRAWAL_CUSTOM_COMMISSION">
             <summary>Commission for Bitcoin network..</summary>
         </member>
+        <member name="T:BitBayClient.PrivateTrading">
+            <summary>
+            Private trading method on BitBay stock exchange, for use must autorize user using Public and Private key.
+            </summary>
+        </member>
+        <member name="M:BitBayClient.PrivateTrading.AddNewOffer(System.String,BitBayClient.RequestModel.NewOfferRequest)">
+            <summary>
+            Add new offer, using NewOfferRequest body and sepcif currency pair code. For use must autorize User.
+            </summary>
+            <param name="currencyPair">Currency pair code string.</param>
+            <param name="body">New offer body request.</param>
+            <returns>New offer response.</returns>
+            <exception cref="T:System.ArgumentException">Throw on event, the body params was null.</exception>
+        </member>
+        <member name="M:BitBayClient.PrivateTrading.GetAllActiveOffer">
+            <summary>
+            Get all active offer from stock exchange on user account. For use must autorize User.
+            </summary>
+            <returns>List of all active offers.</returns>
+        </member>
+        <member name="M:BitBayClient.PrivateTrading.GetActiveOffer(System.String)">
+            <summary>
+            Get all active offer from specif market. For use must autorize User.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <returns>List of all active offers on currencyPair market.</returns>
+        </member>
+        <member name="M:BitBayClient.PrivateTrading.DeleteOffer(System.String,System.String,ExchangeBasicData.TransactionType,System.Decimal)">
+            <summary>
+            Delete offer from market. For use must autorize User.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <param name="offerId">Offer UUID identificator, geting on offer add.</param>
+            <param name="offerType">Offer type: buy or sell.</param>
+            <param name="offerRate">Offer rate.</param>
+            <returns>True if offer was deleted succesfull or false else.</returns>
+        </member>
+        <member name="M:BitBayClient.PrivateTrading.GetCommissionsAndConfiguration(System.String)">
+            <summary>
+            Get commisions and configuration assinged to the account. For use must autorize User.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <returns>Commision and configuration data object.</returns>
+        </member>
+        <member name="M:BitBayClient.PrivateTrading.ChangeConfiguration(System.String,System.String,System.String)">
+            <summary>
+            Change default ballance on market. For use must autorize User. Pair build first-second, for example BTC-USD btc is first, usd is second.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <param name="ballanceIdForFirstCurrence">Balance UUID for first currency in pair.</param>
+            <param name="BallanceIdForSecondCurrence">Balance UUID for second currency in pair</param>
+            <returns>Return true if change configuration successful or return false else.</returns>
+        </member>
         <member name="T:BitBayClient.PublicTrading">
             <summary>
             Public trading method on BitBay stock exchange.
@@ -406,26 +459,94 @@
             Get ticker for selected market.
             </summary>
             <param name="currencyPair">Currency pair</param>
-            <returns>Ticker for selected market.</returns>
+            <returns>Ticker for selected market. Return "ticker" atribut from api response.</returns>
         </member>
         <member name="M:BitBayClient.PublicTrading.GetAllTicker">
             <summary>
             Get ticker for all market on stock exchange.
             </summary>
-            <returns>Dictionary where key is market code, value is ticker for this market code.</returns>
+            <returns>Dictionary where key is market code, value is ticker for this market code. Return "ticker" atribut from api response.</returns>
         </member>
         <member name="M:BitBayClient.PublicTrading.GetMarketStats(System.String)">
             <summary>
             Get 24 hours market stats for selected currency pair.
             </summary>
             <param name="currencePair">Currency pair code, example BTC-USD</param>
-            <returns>24 hours stats for currency pair.</returns>
+            <returns>24 hours stats for currency pair. Return "stats" list from response.</returns>
         </member>
         <member name="M:BitBayClient.PublicTrading.GetAllMarketStats">
             <summary>
             Get 24 hours market stats for all market on stock exchange.
             </summary>
-            <returns>Dictionary where key is currency pair code, value is stats for key market.</returns>
+            <returns>Dictionary where key is currency pair code, value is stats for key market. Return "stats" list from response.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetOrderbook(System.String)">
+            <summary>
+            Get orderbook with 300 higher buy and 300 lowest sell offers, from rest api.
+            </summary>
+            <param name="currencyPair">Currency pair code, format example: BTC-USD.</param>
+            <returns>Orderbook with 300 higher buy and 300 lowest sell offers.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetOrderbook(System.String,BitBayClient.RequestModel.OrderbookLimits)">
+            <summary>
+            Get orderbook with own limit of sell and buy offers, from rest api.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <param name="limit">Limit of offer count (available limits: 10, 50, 100). Limit must be less or equal 300.</param>
+            <returns>Orderbook with own limit offers of buy and sell.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetLastTransactions(System.String)">
+            <summary>
+            Get last 10 transaction. Return list from "items" property in api response.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <returns>List of last transactions, list count 10.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetLastTransactions(System.String,System.Int32)">
+            <summary>
+             Get last limit count transaction. Return list from "items" property in api response.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <param name="limit">Limit of result, max 300.</param>
+            <returns>List of last transactions, list count is limited by limit (max 300).</returns>
+            <exception cref="T:System.ArgumentException">Throw if the limit is greater than 300.</exception>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetLastTransactions(System.String,System.Int64)">
+            <summary>
+            Get last transaction, start from unixtimestamp. Return list from "items" property in api response.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <param name="fromTimeUnix">Unix timestam from start geting result.</param>
+            <returns>List of last transactions, started from unix timestamp.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetLastTransactions(System.String,System.Int32,System.Int64)">
+            <summary>
+            Get last limit count transaction. Return list from "items" property in api response.
+            </summary>
+            <param name="currencyPair">Currency pair code.</param>
+            <param name="limit">Limit of result, max 300</param>
+            <param name="fromTimeUnix">Unix timestam from start geting result.</param>
+            <returns>List of last transactions, started from unix timestamp and limited by limit.</returns>
+            <exception cref="T:System.ArgumentException">Throw if the limit is greater than 300.</exception>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetCandleChartData(System.String,ExchangeBasicData.CandleResolution)">
+            <summary>
+            Get all candles with specif resolution for selected currencyPair.
+            </summary>
+            <param name="currencyPair">Currency pair code string.</param>
+            <param name="resolution">Select candle resolution.</param>
+            <returns>Candles data object.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetCandleChartData(System.String,ExchangeBasicData.CandleResolution,System.Int64,System.Int64)">
+            <summary>
+            Get all candles with specif resolution for selected currencyPair, start result "fromTimeUnix" and end in "toTimeUnix".
+            </summary>
+            <param name="currencyPair">Currency pair code string.</param>
+            <param name="resolution">Select candle resolution.</param>
+            <param name="fromTimeUnix">Unix timestamp from start geting candles.</param>
+            <param name="toTimeUnix">Unix timestamp to end geting candles.</param>
+            <returns>Candles data object.</returns>
+            <exception cref="T:System.ArgumentException">Throw if "fromTimeUnix" is great than "toTimeUnix". from time must be before to time.</exception>
         </member>
         <member name="T:BitBayClient.RequestModel.AutorizeData">
             <summary>
@@ -759,72 +880,72 @@
             List of active your offers.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.ActiveOfferItem">
+        <member name="T:BitBayClient.ResponseModel.ActiveOffer">
             <summary>
             Data model represent one active offer.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.Market">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.Market">
             <summary>
             Code market, currency pair.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.OfferType">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.OfferType">
             <summary>
             Type of offer: buy or sell.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.Id">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.Id">
             <summary>
             Offer UUID.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.CurrentAmount">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.CurrentAmount">
             <summary>
             Currency amount in position.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.LockedAmount">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.LockedAmount">
             <summary>
             Locked amount on exchange account.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.Rate">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.Rate">
             <summary>
             Offer rate (price).
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.StartAmount">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.StartAmount">
             <summary>
             Offer initial amount of currence.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.Time">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.Time">
             <summary>
             Initial offer time (unix).
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.PostOnly">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.PostOnly">
             <summary>
             Is the offer post-only.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.Mode">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.Mode">
             <summary>
             Type of offer: limit or market.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.ReceivedAmount">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.ReceivedAmount">
             <summary>
             Amount of currency, recived from this offer.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.FirstBalanceId">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.FirstBalanceId">
             <summary>
             First balance UUID.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.ActiveOfferItem.SecondBalanceId">
+        <member name="P:BitBayClient.ResponseModel.ActiveOffer.SecondBalanceId">
             <summary>
             Second balance UUID.
             </summary>
@@ -924,9 +1045,14 @@
             Data model for get candles request.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Candles.Items">
+        <member name="P:BitBayClient.ResponseModel.Candles.CandlesList">
             <summary>
             List of candles item, key is open candle time (unix), value is candle item.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Candles.Resoluton">
+            <summary>
+            Resolution of candles in candle list
             </summary>
         </member>
         <member name="T:BitBayClient.ResponseModel.CandleItem">
@@ -965,37 +1091,37 @@
             </summary>
             <returns>String of this object.</returns>
         </member>
-        <member name="T:BitBayClient.ResponseModel.CommissionAndConfig">
+        <member name="T:BitBayClient.ResponseModel.CommissionAndConfigPre">
             <summary>
             Data model for response on <see cref="M:BitBayClient.PrivateTrading.GetCommissionsAndConfiguration(System.String)"/> request.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.CommissionAndConfig.Config">
+        <member name="P:BitBayClient.ResponseModel.CommissionAndConfigPre.Config">
             <summary>
             Confiuguration and commission data.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.Configuration">
+        <member name="T:BitBayClient.ResponseModel.CommissionAndConfig">
             <summary>
             Data model for Commision and configuration details.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Configuration.Buy">
+        <member name="P:BitBayClient.ResponseModel.CommissionAndConfig.Buy">
             <summary>
             Buy configuration.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Configuration.Sell">
+        <member name="P:BitBayClient.ResponseModel.CommissionAndConfig.Sell">
             <summary>
             Sell configuration.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Configuration.First">
+        <member name="P:BitBayClient.ResponseModel.CommissionAndConfig.First">
             <summary>
             Configuration for first currence in pair.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Configuration.Second">
+        <member name="P:BitBayClient.ResponseModel.CommissionAndConfig.Second">
             <summary>
             Configuration for second currence in pair.
             </summary>
@@ -1052,7 +1178,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.LastTransactions">
             <summary>
-            Response data model for last transactions request.
+            Represent list of last transaction. Response data model for last transactions request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.LastTransactions.LastTransaction">
@@ -1133,101 +1259,6 @@
         <member name="P:BitBayClient.ResponseModel.NewStopOffer.StopOfferId">
             <summary>
             Stop offer UUID identificator.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.OneTicker">
-            <summary>
-            Data model for one ticker on exchange.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.OneTicker.Ticker">
-            <summary>
-            Ticker data.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.AllTickers">
-            <summary>
-            Data model for all tickers on exchange.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.AllTickers.Tickers">
-            <summary>
-            List of tickers, key is market code, value is ticker item.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.Ticker">
-            <summary>
-            Data model for one ticker.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Ticker.Market">
-            <summary>
-            Details of currency pair. 
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Ticker.Time">
-            <summary>
-            Data update time (Unix).
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Ticker.HighestBid">
-            <summary>
-            The best rate for buy offer.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Ticker.LowestAsk">
-            <summary>
-            The best rate for sell offer.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Ticker.Rate">
-            <summary>
-            Last transaction rate.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Ticker.PreviousRate">
-            <summary>
-            Penultimate transaction rate.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.Market">
-            <summary>
-            Data model for Market details info.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Market.Code">
-            <summary>
-            Market code.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Market.First">
-            <summary>
-            Details for first currency in Code (currency pair).
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Market.Second">
-            <summary>
-            Details for second currency in Code (currency pair).
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.Details">
-            <summary>
-            Data model for details of currency setings on exchange.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Details.Currency">
-            <summary>
-            Currency code.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Details.MinOffer">
-            <summary>
-            Minimal offer value to add new offer. 
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Details.Scale">
-            <summary>
-            The number of places, supported this currency.
             </summary>
         </member>
         <member name="T:BitBayClient.ResponseModel.OperationHistory">
@@ -1559,6 +1590,91 @@
         <member name="P:BitBayClient.ResponseModel.Stats.AvarageRate">
             <summary>
             Avarage 24h rate in pair.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Tickers">
+            <summary>
+            Data model for all tickers on exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Tickers.TickersList">
+            <summary>
+            List of tickers, key is market code, value is ticker item.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Ticker">
+            <summary>
+            Data model for one ticker.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.Market">
+            <summary>
+            Details of currency pair. 
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.Time">
+            <summary>
+            Data update time (Unix).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.HighestBid">
+            <summary>
+            The best rate for buy offer.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.LowestAsk">
+            <summary>
+            The best rate for sell offer.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.Rate">
+            <summary>
+            Last transaction rate.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.PreviousRate">
+            <summary>
+            Penultimate transaction rate.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Market">
+            <summary>
+            Data model for Market details info.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Market.Code">
+            <summary>
+            Market code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Market.First">
+            <summary>
+            Details for first currency in Code (currency pair).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Market.Second">
+            <summary>
+            Details for second currency in Code (currency pair).
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Details">
+            <summary>
+            Data model for details of currency setings on exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Details.Currency">
+            <summary>
+            Currency code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Details.MinOffer">
+            <summary>
+            Minimal offer value to add new offer. 
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Details.Scale">
+            <summary>
+            The number of places, supported this currency.
             </summary>
         </member>
         <member name="T:BitBayClient.ResponseModel.TransactionHistory">

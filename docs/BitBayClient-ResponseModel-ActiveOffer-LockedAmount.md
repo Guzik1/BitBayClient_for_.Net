@@ -1,6 +1,6 @@
 #### [BitBayClient](./index.md 'index')
-### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[ActiveOfferItem](./BitBayClient-ResponseModel-ActiveOfferItem.md 'BitBayClient.ResponseModel.ActiveOfferItem')
-## ActiveOfferItem.LockedAmount Property
+### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[ActiveOffer](./BitBayClient-ResponseModel-ActiveOffer.md 'BitBayClient.ResponseModel.ActiveOffer')
+## ActiveOffer.LockedAmount Property
 Locked amount on exchange account.  
 ```csharp
 public decimal LockedAmount { get; set; }

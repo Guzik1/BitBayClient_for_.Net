@@ -7,4 +7,5 @@ public class Candles
 ```
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &gt; [Candles](./BitBayClient-ResponseModel-Candles.md 'BitBayClient.ResponseModel.Candles')  
 ### Properties
-- [Items](./BitBayClient-ResponseModel-Candles-Items.md 'BitBayClient.ResponseModel.Candles.Items')
+- [CandlesList](./BitBayClient-ResponseModel-Candles-CandlesList.md 'BitBayClient.ResponseModel.Candles.CandlesList')
+- [Resoluton](./BitBayClient-ResponseModel-Candles-Resoluton.md 'BitBayClient.ResponseModel.Candles.Resoluton')

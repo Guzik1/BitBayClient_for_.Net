@@ -24,16 +24,16 @@ namespace BitBayClient
         /// Get ticker for selected market.
         /// </summary>
         /// <param name="currencyPair">Currency pair</param>
-        /// <returns>Ticker for selected market.</returns>
+        /// <returns>Ticker for selected market. Return "ticker" atribut from api response.</returns>
         public Ticker GetTicker(string currencyPair)
-            => SendGetTicer<OneTicker>("/" + currencyPair).Ticker;
+            => SendGetTicer<Tickers>("/" + currencyPair).TickersList[currencyPair];
 
         /// <summary>
         /// Get ticker for all market on stock exchange.
         /// </summary>
-        /// <returns>Dictionary where key is market code, value is ticker for this market code.</returns>
+        /// <returns>Dictionary where key is market code, value is ticker for this market code. Return "ticker" atribut from api response.</returns>
         public Dictionary<string, Ticker> GetAllTicker()
-            => SendGetTicer<AllTickers>("").Tickers;
+            => SendGetTicer<Tickers>("").TickersList;
 
         Expected SendGetTicer<Expected>(string url)
         {
@@ -49,14 +49,14 @@ namespace BitBayClient
         /// Get 24 hours market stats for selected currency pair.
         /// </summary>
         /// <param name="currencePair">Currency pair code, example BTC-USD</param>
-        /// <returns>24 hours stats for currency pair.</returns>
+        /// <returns>24 hours stats for currency pair. Return "stats" list from response.</returns>
         public Stats GetMarketStats(string currencePair)
             => SendGetMarketStats<StatsOne>("/" + currencePair).Stats24h;
 
         /// <summary>
         /// Get 24 hours market stats for all market on stock exchange.
         /// </summary>
-        /// <returns>Dictionary where key is currency pair code, value is stats for key market.</returns>
+        /// <returns>Dictionary where key is currency pair code, value is stats for key market. Return "stats" list from response.</returns>
         public Dictionary<string, Stats> GetAllMarketStats()
             => SendGetMarketStats<AllStats>().Stats24h;
 
@@ -70,12 +70,22 @@ namespace BitBayClient
         #endregion
 
         #region Orderbook
-
+        /// <summary>
+        /// Get orderbook with 300 higher buy and 300 lowest sell offers, from rest api.
+        /// </summary>
+        /// <param name="currencyPair">Currency pair code, format example: BTC-USD.</param>
+        /// <returns>Orderbook with 300 higher buy and 300 lowest sell offers.</returns>
         public Orderbook GetOrderbook(string currencyPair)
         {
             return SendGetOrderBook("orderbook/" + currencyPair);
         }
 
+        /// <summary>
+        /// Get orderbook with own limit of sell and buy offers, from rest api.
+        /// </summary>
+        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="limit">Limit of offer count (available limits: 10, 50, 100). Limit must be less or equal 300.</param>
+        /// <returns>Orderbook with own limit offers of buy and sell.</returns>
         public Orderbook GetOrderbook(string currencyPair, OrderbookLimits limit)
         {
             return SendGetOrderBook($"orderbook-limited/{ currencyPair }/{ limit.ToInt() }");
@@ -91,32 +101,58 @@ namespace BitBayClient
         #endregion
 
         #region Last transactions
-        public LastTransactions GetLastTransactions(string currencyPair)
-            => SendLastTransactionsRequest(currencyPair);
+        /// <summary>
+        /// Get last 10 transaction. Return list from "items" property in api response.
+        /// </summary>
+        /// <param name="currencyPair">Currency pair code.</param>
+        /// <returns>List of last transactions, list count 10.</returns>
+        public List<LastTransactionItem> GetLastTransactions(string currencyPair)
+            => SendLastTransactionsRequest(currencyPair).LastTransaction;
 
-        public LastTransactions GetLastTransactions(string currencyPair, int limit)
+        /// <summary>
+        ///  Get last limit count transaction. Return list from "items" property in api response.
+        /// </summary>
+        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="limit">Limit of result, max 300.</param>
+        /// <returns>List of last transactions, list count is limited by limit (max 300).</returns>
+        /// <exception cref="ArgumentException">Throw if the limit is greater than 300.</exception>
+        public List<LastTransactionItem> GetLastTransactions(string currencyPair, int limit)
         {
             CheckLimitValue(limit);
 
             Dictionary<string, string> query = GenerateQuery(limit);
 
-            return SendLastTransactionsRequest(currencyPair, query);
+            return SendLastTransactionsRequest(currencyPair, query).LastTransaction;
         }
 
-        public LastTransactions GetLastTransactions(string currencyPair, long fromTimeUnix)
+        /// <summary>
+        /// Get last transaction, start from unixtimestamp. Return list from "items" property in api response.
+        /// </summary>
+        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="fromTimeUnix">Unix timestam from start geting result.</param>
+        /// <returns>List of last transactions, started from unix timestamp.</returns>
+        public List<LastTransactionItem> GetLastTransactions(string currencyPair, long fromTimeUnix)
         {
             Dictionary<string, string> query = GenerateQuery(timeUnix: fromTimeUnix);
 
-            return SendLastTransactionsRequest(currencyPair, query);
+            return SendLastTransactionsRequest(currencyPair, query).LastTransaction;
         }
 
-        public LastTransactions GetLastTransactions(string currencyPair, int limit, long fromTimeUnix)
+        /// <summary>
+        /// Get last limit count transaction. Return list from "items" property in api response.
+        /// </summary>
+        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="limit">Limit of result, max 300</param>
+        /// <param name="fromTimeUnix">Unix timestam from start geting result.</param>
+        /// <returns>List of last transactions, started from unix timestamp and limited by limit.</returns>
+        /// <exception cref="ArgumentException">Throw if the limit is greater than 300.</exception>
+        public List<LastTransactionItem> GetLastTransactions(string currencyPair, int limit, long fromTimeUnix)
         {
             CheckLimitValue(limit);
 
             Dictionary<string, string> query = GenerateQuery(limit, fromTimeUnix);
 
-            return SendLastTransactionsRequest(currencyPair, query);
+            return SendLastTransactionsRequest(currencyPair, query).LastTransaction;
         }
 
         void CheckLimitValue(int limit)
@@ -152,9 +188,29 @@ namespace BitBayClient
         #endregion
 
         #region Candle
+        /// <summary>
+        /// Get all candles with specif resolution for selected currencyPair.
+        /// </summary>
+        /// <param name="currencyPair">Currency pair code string.</param>
+        /// <param name="resolution">Select candle resolution.</param>
+        /// <returns>Candles data object.</returns>
         public Candles GetCandleChartData(string currencyPair, CandleResolution resolution)
-            => SendCandleChartDataRequest(currencyPair + "/" + resolution.GetSecond());
+        {
+            Candles candles = SendCandleChartDataRequest(currencyPair + "/" + resolution.GetSecond());
+            candles.Resoluton = resolution;
 
+            return candles;
+        }
+
+        /// <summary>
+        /// Get all candles with specif resolution for selected currencyPair, start result "fromTimeUnix" and end in "toTimeUnix".
+        /// </summary>
+        /// <param name="currencyPair">Currency pair code string.</param>
+        /// <param name="resolution">Select candle resolution.</param>
+        /// <param name="fromTimeUnix">Unix timestamp from start geting candles.</param>
+        /// <param name="toTimeUnix">Unix timestamp to end geting candles.</param>
+        /// <returns>Candles data object.</returns>
+        /// <exception cref="ArgumentException">Throw if "fromTimeUnix" is great than "toTimeUnix". from time must be before to time.</exception>
         public Candles GetCandleChartData(string currencyPair, CandleResolution resolution, long fromTimeUnix, long toTimeUnix)
         {
             if (fromTimeUnix > toTimeUnix)
@@ -162,7 +218,10 @@ namespace BitBayClient
 
             Dictionary<string, string> query = CreateCandleQuery(fromTimeUnix, toTimeUnix, resolution.GetSecond());
 
-            return SendCandleChartDataRequest(currencyPair + "/" + resolution.GetSecond(), query);
+            Candles candles = SendCandleChartDataRequest(currencyPair + "/" + resolution.GetSecond(), query);
+            candles.Resoluton = resolution;
+
+            return candles;
         }
 
         Dictionary<string, string> CreateCandleQuery(long from, long to, int resolutionSecond)

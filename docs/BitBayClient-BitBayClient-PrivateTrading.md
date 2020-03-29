@@ -6,4 +6,4 @@ Private trading api methods.
 public BitBayClient.PrivateTrading PrivateTrading { get; }
 ```
 #### Property Value
-[BitBayClient.PrivateTrading](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.PrivateTrading 'BitBayClient.PrivateTrading')  
+[PrivateTrading](./BitBayClient-PrivateTrading.md 'BitBayClient.PrivateTrading')  

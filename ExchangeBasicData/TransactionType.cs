@@ -6,8 +6,8 @@ namespace ExchangeBasicData
 {
     public enum TransactionType
     {
-        Buy,
-        Sell
+        BUY,
+        SELL
     }
 
     public static class TransactionTypeExtensions

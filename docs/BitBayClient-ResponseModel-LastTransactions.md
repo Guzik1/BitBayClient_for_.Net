@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## LastTransactions Class
-Response data model for last transactions request.  
+Represent list of last transaction. Response data model for last transactions request.  
 ```csharp
 public class LastTransactions
 ```

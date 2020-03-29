@@ -1,6 +1,6 @@
 #### [BitBayClient](./index.md 'index')
-### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[Configuration](./BitBayClient-ResponseModel-Configuration.md 'BitBayClient.ResponseModel.Configuration')
-## Configuration.Buy Property
+### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[CommissionAndConfig](./BitBayClient-ResponseModel-CommissionAndConfig.md 'BitBayClient.ResponseModel.CommissionAndConfig')
+## CommissionAndConfig.Buy Property
 Buy configuration.  
 ```csharp
 public BitBayClient.ResponseModel.BuySellConfigItem Buy { get; set; }

@@ -7,4 +7,4 @@ public System.Collections.Generic.Dictionary<string,BitBayClient.ResponseModel.S
 ```
 #### Returns
 [System.Collections.Generic.Dictionary&lt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2 'System.Collections.Generic.Dictionary`2')[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')[,](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2 'System.Collections.Generic.Dictionary`2')[Stats](./BitBayClient-ResponseModel-Stats.md 'BitBayClient.ResponseModel.Stats')[&gt;](https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2 'System.Collections.Generic.Dictionary`2')  
-Dictionary where key is currency pair code, value is stats for key market.  
+Dictionary where key is currency pair code, value is stats for key market. Return "stats" list from response.  
