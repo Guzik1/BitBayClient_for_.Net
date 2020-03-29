@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel')
 ## NewStopOfferRequest Class
-Data model for new stop offer request ([BitBayClient.AddNewStopOffer(CurrencyPair.Pair, NewStopOfferRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.AddNewStopOffer#BitBayClient_AddNewStopOffer_CurrencyPair_Pair, NewStopOfferRequest_ 'BitBayClient.AddNewStopOffer(CurrencyPair.Pair, NewStopOfferRequest)')) to exchange.  
+Data model for new stop offer request ([BitBayClient.PrivateStopTrading.AddNewStopOffer(System.String,BitBayClient.RequestModel.NewStopOfferRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.PrivateStopTrading.AddNewStopOffer#BitBayClient_PrivateStopTrading_AddNewStopOffer_System_String,BitBayClient_RequestModel_NewStopOfferRequest_ 'BitBayClient.PrivateStopTrading.AddNewStopOffer(System.String,BitBayClient.RequestModel.NewStopOfferRequest)')) to exchange.  
 ```csharp
 public class NewStopOfferRequest
 ```

@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## AddOfferStop Class
-Data model represent response on [BitBayClient.AddNewOffer(CurrencyPair.Pair, RequestModel.NewOfferRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.AddNewOffer#BitBayClient_AddNewOffer_CurrencyPair_Pair, RequestModel_NewOfferRequest_ 'BitBayClient.AddNewOffer(CurrencyPair.Pair, RequestModel.NewOfferRequest)') request.  
+Data model represent response on [BitBayClient.PrivateTrading.AddNewOffer(System.String,BitBayClient.RequestModel.NewOfferRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.PrivateTrading.AddNewOffer#BitBayClient_PrivateTrading_AddNewOffer_System_String,BitBayClient_RequestModel_NewOfferRequest_ 'BitBayClient.PrivateTrading.AddNewOffer(System.String,BitBayClient.RequestModel.NewOfferRequest)') request.  
 ```csharp
 public class AddOfferStop
 ```

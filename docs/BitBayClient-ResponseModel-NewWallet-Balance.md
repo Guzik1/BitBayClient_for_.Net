@@ -3,7 +3,7 @@
 ## NewWallet.Balance Property
 One balance.  
 ```csharp
-public BitBayClient.ResponseModel.Wallet Balance { get; set; }
+public BitBayClient.ResponseModel.OneWallet Balance { get; set; }
 ```
 #### Property Value
-[Wallet](./BitBayClient-ResponseModel-Wallet.md 'BitBayClient.ResponseModel.Wallet')  
+[OneWallet](./BitBayClient-ResponseModel-OneWallet.md 'BitBayClient.ResponseModel.OneWallet')  

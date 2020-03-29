@@ -5,6 +5,7 @@
 - [Balances](./BitBayClient-RequestModel-Balances.md 'BitBayClient.RequestModel.Balances')
 - [ChangeConfiguration](./BitBayClient-RequestModel-ChangeConfiguration.md 'BitBayClient.RequestModel.ChangeConfiguration')
 - [ChangeWalletName](./BitBayClient-RequestModel-ChangeWalletName.md 'BitBayClient.RequestModel.ChangeWalletName')
+- [InternalTransferRequest](./BitBayClient-RequestModel-InternalTransferRequest.md 'BitBayClient.RequestModel.InternalTransferRequest')
 - [NewOfferRequest](./BitBayClient-RequestModel-NewOfferRequest.md 'BitBayClient.RequestModel.NewOfferRequest')
 - [NewStopOfferRequest](./BitBayClient-RequestModel-NewStopOfferRequest.md 'BitBayClient.RequestModel.NewStopOfferRequest')
 - [OperationHistoryRequest](./BitBayClient-RequestModel-OperationHistoryRequest.md 'BitBayClient.RequestModel.OperationHistoryRequest')

@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel')
 ## TransactionHistoryRequest Class
-Data model for get transaction history, is parameter in [BitBayClient.GetTransactionHistory(TransactionHistoryRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.GetTransactionHistory#BitBayClient_GetTransactionHistory_TransactionHistoryRequest_ 'BitBayClient.GetTransactionHistory(TransactionHistoryRequest)'), use to filter resault.  
+Data model for get transaction history, is parameter in [BitBayClient.History.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.History.GetTransactionHistory#BitBayClient_History_GetTransactionHistory_BitBayClient_RequestModel_TransactionHistoryRequest_ 'BitBayClient.History.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)'), use to filter resault.  
 ```csharp
 public class TransactionHistoryRequest
 ```

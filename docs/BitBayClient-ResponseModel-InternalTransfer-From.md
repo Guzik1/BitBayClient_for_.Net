@@ -3,7 +3,7 @@
 ## InternalTransfer.From Property
 Balance wallet from transfer.  
 ```csharp
-public BitBayClient.ResponseModel.Wallet From { get; set; }
+public BitBayClient.ResponseModel.OneWallet From { get; set; }
 ```
 #### Property Value
-[Wallet](./BitBayClient-ResponseModel-Wallet.md 'BitBayClient.ResponseModel.Wallet')  
+[OneWallet](./BitBayClient-ResponseModel-OneWallet.md 'BitBayClient.ResponseModel.OneWallet')  

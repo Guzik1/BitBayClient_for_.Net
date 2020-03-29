@@ -24,30 +24,44 @@
             Client for BitBay stock exchange.
             </summary>
         </member>
-        <member name="F:BitBayClient.BitBayClient.PublicTrading">
+        <member name="P:BitBayClient.BitBayClient.PublicTrading">
             <summary>
-            Public trading api method.
+            Public trading api methods.
             </summary>
         </member>
-        <member name="F:BitBayClient.BitBayClient.PrivateTrading">
+        <member name="P:BitBayClient.BitBayClient.PrivateTrading">
             <summary>
-            Private trading api method.
+            Private trading api methods.
             </summary>
         </member>
-        <member name="F:BitBayClient.BitBayClient.PrivateStopTrading">
+        <member name="P:BitBayClient.BitBayClient.PrivateStopTrading">
             <summary>
-            Private stop trading api method.
+            Private stop trading api methods.
             </summary>
         </member>
-        <member name="F:BitBayClient.BitBayClient.History">
+        <member name="P:BitBayClient.BitBayClient.History">
             <summary>
-            Historical api method.
+            Historical api methods.
             </summary>
         </member>
         <member name="M:BitBayClient.BitBayClient.#ctor">
             <summary>
             Default constructor.
             </summary>
+        </member>
+        <member name="M:BitBayClient.BitBayClient.#ctor(System.String,System.String)">
+            <summary>
+            Constructio inicjalize objects and call to SetAutorizationData(publicKey, privateKey) method.
+            </summary>
+            <param name="publicKey">Public api key.</param>
+            <param name="privateKey">Private api key.</param>
+        </member>
+        <member name="M:BitBayClient.BitBayClient.SetAutorizationData(System.String,System.String)">
+            <summary>
+            Set autorization data for client.
+            </summary>
+            <param name="publicKey">Public api key.</param>
+            <param name="privateKey">Private api key.</param>
         </member>
         <member name="T:BitBayClient.Converters.EnumConverter">
             <summary>
@@ -258,6 +272,11 @@
             <param name="inner">Inner exception stack.</param>
             <param name="errors">List of error message.</param>
         </member>
+        <member name="T:BitBayClient.History">
+            <summary>
+            History object to get historical account's data through BitBay api.
+            </summary>
+        </member>
         <member name="T:BitBayClient.Internal.ResponseChecker">
             <summary>
             Respone check class, implement IResponseChecker interface from RestApiClient.
@@ -382,6 +401,32 @@
             Public trading method on BitBay stock exchange.
             </summary>
         </member>
+        <member name="M:BitBayClient.PublicTrading.GetTicker(System.String)">
+            <summary>
+            Get ticker for selected market.
+            </summary>
+            <param name="currencyPair">Currency pair</param>
+            <returns>Ticker for selected market.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetAllTicker">
+            <summary>
+            Get ticker for all market on stock exchange.
+            </summary>
+            <returns>Dictionary where key is market code, value is ticker for this market code.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetMarketStats(System.String)">
+            <summary>
+            Get 24 hours market stats for selected currency pair.
+            </summary>
+            <param name="currencePair">Currency pair code, example BTC-USD</param>
+            <returns>24 hours stats for currency pair.</returns>
+        </member>
+        <member name="M:BitBayClient.PublicTrading.GetAllMarketStats">
+            <summary>
+            Get 24 hours market stats for all market on stock exchange.
+            </summary>
+            <returns>Dictionary where key is currency pair code, value is stats for key market.</returns>
+        </member>
         <member name="T:BitBayClient.RequestModel.AutorizeData">
             <summary>
             Object to generate autorize headers for query.
@@ -446,9 +491,24 @@
             </summary>
             <param name="name"></param>
         </member>
+        <member name="T:BitBayClient.RequestModel.InternalTransferRequest">
+            <summary>
+            Represent internal transfer body data in query to send InternalTransfer on wallets request.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.InternalTransferRequest.Currency">
+            <summary>
+            Currency code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.InternalTransferRequest.Funds">
+            <summary>
+            Amount of founds.
+            </summary>
+        </member>
         <member name="T:BitBayClient.RequestModel.NewOfferRequest">
             <summary>
-            Data model for new offer request (<see cref="!:BitBayClient.AddNewOffer(CurrencyPair.Pair, NewOfferRequest)"/>) to exchange.
+            Data model for new offer request (<see cref="M:BitBayClient.PrivateTrading.AddNewOffer(System.String,BitBayClient.RequestModel.NewOfferRequest)"/>) to exchange.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.NewOfferRequest.Amount">
@@ -503,7 +563,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.NewStopOfferRequest">
             <summary>
-            Data model for new stop offer request (<see cref="!:BitBayClient.AddNewStopOffer(CurrencyPair.Pair, NewStopOfferRequest)"/>) to exchange.
+            Data model for new stop offer request (<see cref="M:BitBayClient.PrivateStopTrading.AddNewStopOffer(System.String,BitBayClient.RequestModel.NewStopOfferRequest)"/>) to exchange.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.NewStopOfferRequest.OfferType">
@@ -543,7 +603,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.OperationHistoryRequest">
             <summary>
-            Data model for get operation history, is parameter in <see cref="!:BitBayClient.GetOperationHistory(OperationHistoryRequest)"/>, use to filter resault. All fields is optional, use for sort result.
+            Data model for get operation history, is parameter in <see cref="M:BitBayClient.History.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)"/>, use to filter resault. All fields is optional, use for sort result.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalancesId">
@@ -651,7 +711,7 @@
         </member>
         <member name="T:BitBayClient.RequestModel.TransactionHistoryRequest">
             <summary>
-            Data model for get transaction history, is parameter in <see cref="!:BitBayClient.GetTransactionHistory(TransactionHistoryRequest)"/>, use to filter resault.
+            Data model for get transaction history, is parameter in <see cref="M:BitBayClient.History.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)"/>, use to filter resault.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.Markets">
@@ -691,7 +751,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.ActiveOffers">
             <summary>
-            Data model for active offers response on <see cref="!:BitBayClient.GetActiveOffer(Pair)" /> request.
+            Data model for active offers response on <see cref="M:BitBayClient.PrivateTrading.GetActiveOffer(System.String)" /> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.ActiveOffers.ActiveOffer">
@@ -851,7 +911,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.AddOfferStop">
             <summary>
-            Data model represent response on <see cref="!:BitBayClient.AddNewOffer(CurrencyPair.Pair, RequestModel.NewOfferRequest)"/> request.
+            Data model represent response on <see cref="M:BitBayClient.PrivateTrading.AddNewOffer(System.String,BitBayClient.RequestModel.NewOfferRequest)"/> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.AddOfferStop.StopOfferId">
@@ -907,7 +967,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.CommissionAndConfig">
             <summary>
-            Data model for response on <see cref="!:BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)"/> request.
+            Data model for response on <see cref="M:BitBayClient.PrivateTrading.GetCommissionsAndConfiguration(System.String)"/> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.CommissionAndConfig.Config">
@@ -1067,7 +1127,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.NewStopOffer">
             <summary>
-            Data model stop offer response, return on <see cref="!:BitBayClient.AddNewStopOffer(CurrencyPair.Pair, RequestModel.NewStopOfferRequest)"/> response.
+            Data model stop offer response, return on <see cref="M:BitBayClient.PrivateStopTrading.AddNewStopOffer(System.String,BitBayClient.RequestModel.NewStopOfferRequest)"/> response.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.NewStopOffer.StopOfferId">
@@ -1075,9 +1135,104 @@
             Stop offer UUID identificator.
             </summary>
         </member>
+        <member name="T:BitBayClient.ResponseModel.OneTicker">
+            <summary>
+            Data model for one ticker on exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.OneTicker.Ticker">
+            <summary>
+            Ticker data.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.AllTickers">
+            <summary>
+            Data model for all tickers on exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.AllTickers.Tickers">
+            <summary>
+            List of tickers, key is market code, value is ticker item.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Ticker">
+            <summary>
+            Data model for one ticker.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.Market">
+            <summary>
+            Details of currency pair. 
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.Time">
+            <summary>
+            Data update time (Unix).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.HighestBid">
+            <summary>
+            The best rate for buy offer.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.LowestAsk">
+            <summary>
+            The best rate for sell offer.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.Rate">
+            <summary>
+            Last transaction rate.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Ticker.PreviousRate">
+            <summary>
+            Penultimate transaction rate.
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Market">
+            <summary>
+            Data model for Market details info.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Market.Code">
+            <summary>
+            Market code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Market.First">
+            <summary>
+            Details for first currency in Code (currency pair).
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Market.Second">
+            <summary>
+            Details for second currency in Code (currency pair).
+            </summary>
+        </member>
+        <member name="T:BitBayClient.ResponseModel.Details">
+            <summary>
+            Data model for details of currency setings on exchange.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Details.Currency">
+            <summary>
+            Currency code.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Details.MinOffer">
+            <summary>
+            Minimal offer value to add new offer. 
+            </summary>
+        </member>
+        <member name="P:BitBayClient.ResponseModel.Details.Scale">
+            <summary>
+            The number of places, supported this currency.
+            </summary>
+        </member>
         <member name="T:BitBayClient.ResponseModel.OperationHistory">
             <summary>
-            This data model is response on <see cref="!:BitBayClient.GetOperationHistory(RequestModel.OperationHistoryRequest)"/> request.
+            This data model is response on <see cref="M:BitBayClient.History.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)"/> request.
             <seealso cref="T:BitBayClient.ResponseModel.OperationHistoryItem"/>
             </summary>
         </member>
@@ -1356,12 +1511,12 @@
             Number of offers in this postion.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.Stats">
+        <member name="T:BitBayClient.ResponseModel.StatsOne">
             <summary>
             Stat for one currency pair on exchange.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Stats.Stats24h">
+        <member name="P:BitBayClient.ResponseModel.StatsOne.Stats24h">
             <summary>
             24 hours pair stats.
             </summary>
@@ -1376,134 +1531,39 @@
             24 hours pair stats. Key is currency pair code, Value is stats for (Key) pair.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.Stat">
+        <member name="T:BitBayClient.ResponseModel.Stats">
             <summary>
             Data model for details of 24 hours pair stats.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Stat.Code">
+        <member name="P:BitBayClient.ResponseModel.Stats.Code">
             <summary>
             Currency pair code.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Stat.HighestRate">
+        <member name="P:BitBayClient.ResponseModel.Stats.HighestRate">
             <summary>
             Highest price rate.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Stat.LowestRate">
+        <member name="P:BitBayClient.ResponseModel.Stats.LowestRate">
             <summary>
             Lowest price rate.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Stat.Volume">
+        <member name="P:BitBayClient.ResponseModel.Stats.Volume">
             <summary>
             Volume in pair.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Stat.AvarageRate">
+        <member name="P:BitBayClient.ResponseModel.Stats.AvarageRate">
             <summary>
             Avarage 24h rate in pair.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.Ticker">
-            <summary>
-            Data model for one ticker on exchange.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Ticker.TickerItem">
-            <summary>
-            Ticker data.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.AllTickers">
-            <summary>
-            Data model for all tickers on exchange.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.AllTickers.Tickers">
-            <summary>
-            List of tickers, key is market code, value is ticker item.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.TickerItem">
-            <summary>
-            Data model for one ticker.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.TickerItem.Market">
-            <summary>
-            Details of currency pair. 
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.TickerItem.Time">
-            <summary>
-            Data update time (Unix).
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.TickerItem.HighestBid">
-            <summary>
-            The best rate for buy offer.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.TickerItem.LowestAsk">
-            <summary>
-            The best rate for sell offer.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.TickerItem.Rate">
-            <summary>
-            Last transaction rate.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.TickerItem.PreviousRate">
-            <summary>
-            Penultimate transaction rate.
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.Market">
-            <summary>
-            Data model for Market details info.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Market.Code">
-            <summary>
-            Market code.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Market.First">
-            <summary>
-            Details for first currency in Code (currency pair).
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Market.Second">
-            <summary>
-            Details for second currency in Code (currency pair).
-            </summary>
-        </member>
-        <member name="T:BitBayClient.ResponseModel.Details">
-            <summary>
-            Data model for details of currency setings on exchange.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Details.Currency">
-            <summary>
-            Currency code.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Details.MinOffer">
-            <summary>
-            Minimal offer value to add new offer. 
-            </summary>
-        </member>
-        <member name="P:BitBayClient.ResponseModel.Details.Scale">
-            <summary>
-            The number of places, supported this currency.
-            </summary>
-        </member>
         <member name="T:BitBayClient.ResponseModel.TransactionHistory">
             <summary>
-            Data model on get transaction history request, return from <see cref="!:BitBayClient.GetTransactionHistory(RequestModel.TransactionHistoryRequest)"/>
+            Data model on get transaction history request, return from <see cref="M:BitBayClient.History.GetTransactionHistory(BitBayClient.RequestModel.TransactionHistoryRequest)"/>
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.TransactionHistory.TotalRows">
@@ -1611,62 +1671,62 @@
             Balance wallet to transfer.
             </summary>
         </member>
-        <member name="T:BitBayClient.ResponseModel.Wallet">
+        <member name="T:BitBayClient.ResponseModel.OneWallet">
             <summary>
             Data model reperesent one wallet balance.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.Id">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.Id">
             <summary>
             Wallet UUID identificator
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.UserId">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.UserId">
             <summary>
             User UUID identificator
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.AvailableFunds">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.AvailableFunds">
             <summary>
             Amount of funds available.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.TotalFunds">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.TotalFunds">
             <summary>
             Total amount of funds.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.LockedFunds">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.LockedFunds">
             <summary>
             Locked amount of funds.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.Currency">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.Currency">
             <summary>
             Currency market code.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.Type">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.Type">
             <summary>
             String of currency code.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.WalletType">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.WalletType">
             <summary>
             Wallet type: crypto/fiat, convert from Type string.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.Name">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.Name">
             <summary>
             Wallet name.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.BalanceEngine">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.BalanceEngine">
             <summary>
             Name of the application supports this wallet, convert from BalanceEngineString.
             </summary>
         </member>
-        <member name="P:BitBayClient.ResponseModel.Wallet.BalanceEngineString">
+        <member name="P:BitBayClient.ResponseModel.OneWallet.BalanceEngineString">
             <summary>
             String name of the application support this wallet.
             </summary>

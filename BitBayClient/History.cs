@@ -7,6 +7,9 @@ using System.Text;
 
 namespace BitBayClient
 {
+    /// <summary>
+    /// History object to get historical account's data through BitBay api.
+    /// </summary>
     public class History
     {
         Config config;
@@ -27,7 +30,7 @@ namespace BitBayClient
 
         TransactionHistory SendGetTransactionHistoryRequest(TransactionHistoryRequest body)
         {
-            RestClient rc = new RestClient(config.ApiTradingUrl + "history/transactions");
+            RestClient rc = new RestClient(config.ApiDoubleBalancesUrl + "history/transactions");
 
             rc.AddQuery(body);
             rc.AddOwnHeaderToRequest(new AutorizeData(config));

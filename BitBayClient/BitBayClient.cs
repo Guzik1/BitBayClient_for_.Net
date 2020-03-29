@@ -1,11 +1,4 @@
-﻿using BitBayClient.Converters;
-using BitBayClient.RequestModel;
-using BitBayClient.ResponseModel;
-using BitBayClient.ResponseModel.Temp;
-using CurrencyPair;
-using ExchangeBasicData;
-using RestApiClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,39 +7,104 @@ namespace BitBayClient
     /// <summary>
     /// Client for BitBay stock exchange.
     /// </summary>
-    public partial class BitBayClient
+    public class BitBayClient
     {
         Config config = new Config();
+        bool autorized = false;
 
         /// <summary>
-        /// Public trading api method.
+        /// Public trading api methods.
         /// </summary>
-        public PublicTrading PublicTrading;
+        public PublicTrading PublicTrading { get; private set; }
 
         /// <summary>
-        /// Private trading api method.
+        /// Private trading api methods.
         /// </summary>
-        public PrivateTrading PrivateTrading;
+        public PrivateTrading PrivateTrading 
+        {
+            get
+            {
+                if (!autorized)
+                    ThrowUnauthorizedException();
+
+                return _privateTrading;
+            }
+        }
+        PrivateTrading _privateTrading;
 
         /// <summary>
-        /// Private stop trading api method.
+        /// Private stop trading api methods.
         /// </summary>
-        public PrivateStopTrading PrivateStopTrading;
+        public PrivateStopTrading PrivateStopTrading
+        {
+            get
+            {
+                if (!autorized)
+                    ThrowUnauthorizedException();
+
+                return _privateStopTrading;
+            }
+        }
+        PrivateStopTrading _privateStopTrading;
 
         /// <summary>
-        /// Historical api method.
+        /// Historical api methods.
         /// </summary>
-        public History History;
+        public History History
+        {
+            get
+            {
+                if (!autorized)
+                    ThrowUnauthorizedException();
+
+                return _history;
+            }
+        }
+        History _history;
+
+        void ThrowUnauthorizedException()
+        {
+            throw new Exception("Unautorized user, use SetAutorizationData method to autorize.");
+        }
 
         /// <summary>
         /// Default constructor.
         /// </summary>
         public BitBayClient()
         {
+            Inicjalize();
+        }
+
+        /// <summary>
+        /// Constructio inicjalize objects and call to SetAutorizationData(publicKey, privateKey) method.
+        /// </summary>
+        /// <param name="publicKey">Public api key.</param>
+        /// <param name="privateKey">Private api key.</param>
+        public BitBayClient(string publicKey, string privateKey)
+        {
+            Inicjalize();
+            SetAutorizationData(publicKey, privateKey);
+        }
+
+        void Inicjalize()
+        {
             PublicTrading = new PublicTrading(config);
-            PrivateTrading = new PrivateTrading(config);
-            PrivateStopTrading = new PrivateStopTrading(config);
-            History = new History(config);
+            _privateTrading = new PrivateTrading(config);
+            _privateStopTrading = new PrivateStopTrading(config);
+            _history = new History(config);
+        }
+
+        /// <summary>
+        /// Set autorization data for client.
+        /// </summary>
+        /// <param name="publicKey">Public api key.</param>
+        /// <param name="privateKey">Private api key.</param>
+        public void SetAutorizationData(string publicKey, string privateKey)
+        {
+            config.PublicKey = publicKey;
+            config.PrivateKey = privateKey;
+
+            autorized = true;
         }
     }
 }

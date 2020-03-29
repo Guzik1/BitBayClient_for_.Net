@@ -1,9 +1,9 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[BitBayClient](./BitBayClient-BitBayClient.md 'BitBayClient.BitBayClient')
-## BitBayClient.PublicTrading Field
-Public trading api method.  
+## BitBayClient.PublicTrading Property
+Public trading api methods.  
 ```csharp
-public PublicTrading;
+public BitBayClient.PublicTrading PublicTrading { get; set; }
 ```
-#### Field Value
+#### Property Value
 [PublicTrading](./BitBayClient-PublicTrading.md 'BitBayClient.PublicTrading')  

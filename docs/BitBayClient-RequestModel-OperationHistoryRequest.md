@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel')
 ## OperationHistoryRequest Class
-Data model for get operation history, is parameter in [BitBayClient.GetOperationHistory(OperationHistoryRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.GetOperationHistory#BitBayClient_GetOperationHistory_OperationHistoryRequest_ 'BitBayClient.GetOperationHistory(OperationHistoryRequest)'), use to filter resault. All fields is optional, use for sort result.  
+Data model for get operation history, is parameter in [BitBayClient.History.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.History.GetOperationHistory#BitBayClient_History_GetOperationHistory_BitBayClient_RequestModel_OperationHistoryRequest_ 'BitBayClient.History.GetOperationHistory(BitBayClient.RequestModel.OperationHistoryRequest)'), use to filter resault. All fields is optional, use for sort result.  
 ```csharp
 public class OperationHistoryRequest
 ```

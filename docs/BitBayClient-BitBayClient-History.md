@@ -1,9 +1,9 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[BitBayClient](./BitBayClient-BitBayClient.md 'BitBayClient.BitBayClient')
-## BitBayClient.History Field
-Historical api method.  
+## BitBayClient.History Property
+Historical api methods.  
 ```csharp
-public History;
+public BitBayClient.History History { get; }
 ```
-#### Field Value
-[BitBayClient.History](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.History 'BitBayClient.History')  
+#### Property Value
+[History](./BitBayClient-History.md 'BitBayClient.History')  

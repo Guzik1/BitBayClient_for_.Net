@@ -20,11 +20,20 @@ namespace BitBayClient
         }
 
         #region Ticker
+        /// <summary>
+        /// Get ticker for selected market.
+        /// </summary>
+        /// <param name="currencyPair">Currency pair</param>
+        /// <returns>Ticker for selected market.</returns>
         public Ticker GetTicker(string currencyPair)
-            => SendGetTicer<Ticker>("/" + currencyPair);
+            => SendGetTicer<OneTicker>("/" + currencyPair).Ticker;
 
-        public AllTickers GetAllTicker()
-            => SendGetTicer<AllTickers>("");
+        /// <summary>
+        /// Get ticker for all market on stock exchange.
+        /// </summary>
+        /// <returns>Dictionary where key is market code, value is ticker for this market code.</returns>
+        public Dictionary<string, Ticker> GetAllTicker()
+            => SendGetTicer<AllTickers>("").Tickers;
 
         Expected SendGetTicer<Expected>(string url)
         {
@@ -36,11 +45,20 @@ namespace BitBayClient
         #endregion
 
         #region Market stats
+        /// <summary>
+        /// Get 24 hours market stats for selected currency pair.
+        /// </summary>
+        /// <param name="currencePair">Currency pair code, example BTC-USD</param>
+        /// <returns>24 hours stats for currency pair.</returns>
         public Stats GetMarketStats(string currencePair)
-            => SendGetMarketStats<Stats>("/" + currencePair);
+            => SendGetMarketStats<StatsOne>("/" + currencePair).Stats24h;
 
-        public AllStats GetAllMarketStats()
-            => SendGetMarketStats<AllStats>();
+        /// <summary>
+        /// Get 24 hours market stats for all market on stock exchange.
+        /// </summary>
+        /// <returns>Dictionary where key is currency pair code, value is stats for key market.</returns>
+        public Dictionary<string, Stats> GetAllMarketStats()
+            => SendGetMarketStats<AllStats>().Stats24h;
 
         Expected SendGetMarketStats<Expected>(string url = "")
         {
@@ -52,6 +70,7 @@ namespace BitBayClient
         #endregion
 
         #region Orderbook
+
         public Orderbook GetOrderbook(string currencyPair)
         {
             return SendGetOrderBook("orderbook/" + currencyPair);

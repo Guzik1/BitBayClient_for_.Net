@@ -12,7 +12,7 @@ namespace BitBayClient
 
         internal string ApiDoubleBalancesUrl => ApiBalancesUrl + "balance/";
 
-        internal string ApiUrl { get; } = "https://api.bitbay.net/rest/";
+        internal string ApiUrl { get; } = @"https://api.bitbay.net/rest/";
 
         internal string PublicKey { get; set; } = "";
 

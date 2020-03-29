@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## ActiveOffers Class
-Data model for active offers response on [BitBayClient.GetActiveOffer(Pair)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.GetActiveOffer#BitBayClient_GetActiveOffer_Pair_ 'BitBayClient.GetActiveOffer(Pair)') request.  
+Data model for active offers response on [BitBayClient.PrivateTrading.GetActiveOffer(System.String)](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.PrivateTrading.GetActiveOffer#BitBayClient_PrivateTrading_GetActiveOffer_System_String_ 'BitBayClient.PrivateTrading.GetActiveOffer(System.String)') request.  
 ```csharp
 public class ActiveOffers
 ```

@@ -1,9 +1,9 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[BitBayClient](./BitBayClient-BitBayClient.md 'BitBayClient.BitBayClient')
-## BitBayClient.PrivateStopTrading Field
-Private stop trading api method.  
+## BitBayClient.PrivateStopTrading Property
+Private stop trading api methods.  
 ```csharp
-public PrivateStopTrading;
+public BitBayClient.PrivateStopTrading PrivateStopTrading { get; }
 ```
-#### Field Value
+#### Property Value
 [BitBayClient.PrivateStopTrading](https://docs.microsoft.com/en-us/dotnet/api/BitBayClient.PrivateStopTrading 'BitBayClient.PrivateStopTrading')  

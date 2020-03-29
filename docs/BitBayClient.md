@@ -2,6 +2,7 @@
 ## BitBayClient Namespace
 ### Classes
 - [BitBayClient](./BitBayClient-BitBayClient.md 'BitBayClient.BitBayClient')
+- [History](./BitBayClient-History.md 'BitBayClient.History')
 - [PublicTrading](./BitBayClient-PublicTrading.md 'BitBayClient.PublicTrading')
 ### Enums
 - [ApplicationList](./BitBayClient-ApplicationList.md 'BitBayClient.ApplicationList')
