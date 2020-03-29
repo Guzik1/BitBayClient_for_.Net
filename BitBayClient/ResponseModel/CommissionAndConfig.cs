@@ -6,20 +6,20 @@ using System.Text;
 namespace BitBayClient.ResponseModel
 {
     /// <summary>
-    /// Data model for response on <see cref="BitBayClient.GetCommissionsAndConfiguration(CurrencyPair.Pair)"/> request.
+    /// Data model for response on <see cref="PrivateTrading.GetCommissionsAndConfiguration(string)"/> request.
     /// </summary>
-    public class CommissionAndConfig
+    public class CommissionAndConfigPre
     {
         /// <summary>
         /// Confiuguration and commission data.
         /// </summary>
-        public Configuration Config { get; set; }
+        public CommissionAndConfig Config { get; set; }
     }
 
     /// <summary>
     /// Data model for Commision and configuration details.
     /// </summary>
-    public class Configuration
+    public class CommissionAndConfig
     {
         /// <summary>
         /// Buy configuration.

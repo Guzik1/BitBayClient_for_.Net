@@ -1,4 +1,5 @@
 ﻿using BitBayClient.Converters;
+using ExchangeBasicData;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,14 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// List of candles item, key is open candle time (unix), value is candle item.
         /// </summary>
-        public Dictionary<long, CandleItem> Items { get; set; }
+        [JsonProperty("items")]
+        public Dictionary<long, CandleItem> CandlesList { get; set; }
+
+        /// <summary>
+        /// Resolution of candles in candle list
+        /// </summary>
+        [JsonIgnore]
+        public CandleResolution Resoluton { get; internal set; }
     }
 
     /// <summary>

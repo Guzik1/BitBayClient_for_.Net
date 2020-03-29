@@ -6,7 +6,7 @@ using System.Text;
 namespace BitBayClient.ResponseModel
 {
     /// <summary>
-    /// Data model represent response on <see cref="BitBayClient.AddNewOffer(CurrencyPair.Pair, RequestModel.NewOfferRequest)"/> request.
+    /// Data model represent response on <see cref="PrivateTrading.AddNewOffer(string, RequestModel.NewOfferRequest)"/> request.
     /// </summary>
     public class AddOfferStop
     {

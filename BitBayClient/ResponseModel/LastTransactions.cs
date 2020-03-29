@@ -6,7 +6,7 @@ using System.Text;
 namespace BitBayClient.ResponseModel
 {
     /// <summary>
-    /// Response data model for last transactions request.
+    /// Represent list of last transaction. Response data model for last transactions request.
     /// </summary>
     public class LastTransactions
     {

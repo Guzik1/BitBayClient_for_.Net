@@ -13,7 +13,7 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// List of wallets on user account.
         /// </summary>
-        public List<Wallet> Balances { get; set; }
+        public List<OneWallet> Balances { get; set; }
     }
 
     /// <summary>
@@ -24,7 +24,7 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// One balance.
         /// </summary>
-        public Wallet Balance { get; set; }
+        public OneWallet Balance { get; set; }
     }
 
     /// <summary>
@@ -35,18 +35,18 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// Balance wallet from transfer.
         /// </summary>
-        public Wallet From { get; set; }
+        public OneWallet From { get; set; }
 
         /// <summary>
         /// Balance wallet to transfer.
         /// </summary>
-        public Wallet To { get; set; }
+        public OneWallet To { get; set; }
     }
 
     /// <summary>
     /// Data model reperesent one wallet balance.
     /// </summary>
-    public class Wallet
+    public class OneWallet
     {
         /// <summary>
         /// Wallet UUID identificator

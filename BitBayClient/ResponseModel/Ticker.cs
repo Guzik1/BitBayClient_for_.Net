@@ -7,34 +7,35 @@ using CurrencyPair;
 
 namespace BitBayClient.ResponseModel
 {
+    /*
     /// <summary>
     /// Data model for one ticker on exchange.
     /// </summary>
-    public class Ticker
+    public class OneTicker
     {
         /// <summary>
         /// Ticker data.
         /// </summary>
-        public TickerItem TickerItem { get; set; }
-    }
+        public OneTicker Ticker { get; set; }
+    }*/
 
     /// <summary>
     /// Data model for all tickers on exchange.
     /// </summary>
-    public class AllTickers
+    public class Tickers
     {
         /// <summary>
         /// List of tickers, key is market code, value is ticker item.
         /// </summary>
         [JsonProperty("items")]
-        [JsonConverter(typeof(SingleOrArrayConverter<Dictionary<Currency, TickerItem>>))]
-        public Dictionary<string, TickerItem> Tickers { get; set; }
+        [JsonConverter(typeof(SingleOrArrayConverter<Dictionary<string, Ticker>>))]
+        public Dictionary<string, Ticker> TickersList { get; set; }
     }
 
     /// <summary>
     /// Data model for one ticker.
     /// </summary>
-    public class TickerItem
+    public class Ticker
     {
         /// <summary>
         /// Details of currency pair. 

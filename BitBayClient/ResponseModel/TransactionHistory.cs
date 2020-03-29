@@ -6,7 +6,7 @@ using System.Text;
 namespace BitBayClient.ResponseModel
 {
     /// <summary>
-    /// Data model on get transaction history request, return from <see cref="BitBayClient.GetTransactionHistory(RequestModel.TransactionHistoryRequest)"/>
+    /// Data model on get transaction history request, return from <see cref="History.GetTransactionHistory(RequestModel.TransactionHistoryRequest)"/>
     /// </summary>
     public class TransactionHistory
     {

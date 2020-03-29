@@ -7,7 +7,7 @@ using System.Text;
 namespace BitBayClient.RequestModel
 {
     /// <summary>
-    /// Data model for new stop offer request (<see cref="BitBayClient.AddNewStopOffer(CurrencyPair.Pair, NewStopOfferRequest)"/>) to exchange.
+    /// Data model for new stop offer request (<see cref="PrivateStopTrading.AddNewStopOffer(string, NewStopOfferRequest)"/>) to exchange.
     /// </summary>
     public class NewStopOfferRequest
     {

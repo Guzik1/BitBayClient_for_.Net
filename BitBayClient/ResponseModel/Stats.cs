@@ -8,13 +8,13 @@ namespace BitBayClient.ResponseModel
     /// <summary>
     /// Stat for one currency pair on exchange.
     /// </summary>
-    public class Stats
+    public class StatsOne
     {
         /// <summary>
         /// 24 hours pair stats.
         /// </summary>
         [JsonProperty("stats")]
-        public Stat Stats24h { get; set; }
+        public Stats Stats24h { get; set; }
     }
 
     /// <summary>
@@ -26,13 +26,13 @@ namespace BitBayClient.ResponseModel
         /// 24 hours pair stats. Key is currency pair code, Value is stats for (Key) pair.
         /// </summary>
         [JsonProperty("items")]
-        public Dictionary<string, Stat> Stats24h { get; set; }
+        public Dictionary<string, Stats> Stats24h { get; set; }
     }
 
     /// <summary>
     /// Data model for details of 24 hours pair stats.
     /// </summary>
-    public class Stat
+    public class Stats
     {
         /// <summary>
         /// Currency pair code.

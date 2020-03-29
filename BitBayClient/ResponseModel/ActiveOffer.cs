@@ -9,7 +9,7 @@ using System.Text;
 namespace BitBayClient.ResponseModel
 {
     /// <summary>
-    /// Data model for active offers response on <see cref="BitBayClient.GetActiveOffer(Pair)" /> request.
+    /// Data model for active offers response on <see cref="PrivateTrading.GetActiveOffer(string)" /> request.
     /// </summary>
     public class ActiveOffers
     {
@@ -17,14 +17,14 @@ namespace BitBayClient.ResponseModel
         /// List of active your offers.
         /// </summary>
         [JsonProperty("items")]
-        [JsonConverter(typeof(SingleOrArrayConverter<ActiveOfferItem>))]
-        public List<ActiveOfferItem> ActiveOffer { get; set; }
+        [JsonConverter(typeof(SingleOrArrayConverter<ActiveOffer>))]
+        public List<ActiveOffer> ActiveOffer { get; set; }
     }
 
     /// <summary>
     /// Data model represent one active offer.
     /// </summary>
-    public class ActiveOfferItem
+    public class ActiveOffer
     {
         /// <summary>
         /// Code market, currency pair.

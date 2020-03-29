@@ -6,9 +6,8 @@ using System.Text;
 
 namespace BitBayClient.ResponseModel
 {
-    // TODO change after add get operation history request.
     /// <summary>
-    /// This data model is response on <see cref="BitBayClient.GetOperationHistory(RequestModel.OperationHistoryRequest)"/> request.
+    /// This data model is response on <see cref="History.GetOperationHistory(RequestModel.OperationHistoryRequest)"/> request.
     /// <seealso cref="OperationHistoryItem"/>
     /// </summary>
     public class OperationHistory

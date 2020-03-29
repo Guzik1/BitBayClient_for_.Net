@@ -8,7 +8,7 @@ using BitBayClient.Converters;
 namespace BitBayClient.RequestModel
 {
     /// <summary>
-    /// Data model for get transaction history, is parameter in <see cref="BitBayClient.GetTransactionHistory(TransactionHistoryRequest)"/>, use to filter resault.
+    /// Data model for get transaction history, is parameter in <see cref="History.GetTransactionHistory(TransactionHistoryRequest)"/>, use to filter resault.
     /// </summary>
     public class TransactionHistoryRequest
     {

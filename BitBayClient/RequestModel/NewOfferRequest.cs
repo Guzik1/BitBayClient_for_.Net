@@ -7,7 +7,7 @@ using System.Text;
 namespace BitBayClient.RequestModel
 {
     /// <summary>
-    /// Data model for new offer request (<see cref="BitBayClient.AddNewOffer(CurrencyPair.Pair, NewOfferRequest)"/>) to exchange.
+    /// Data model for new offer request (<see cref="PrivateTrading.AddNewOffer(string, NewOfferRequest)"/>) to exchange.
     /// </summary>
     public class NewOfferRequest
     {
@@ -52,7 +52,7 @@ namespace BitBayClient.RequestModel
         /// <summary>
         /// Is the offer immediate or cancel? atribute. Opcjonal
         /// </summary>
-        [JsonProperty("immediateOrCancel")]
+        [JsonProperty("immediateOrCancel", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public bool ImmediateOrCancel { get; set; }
 
         /// <summary>

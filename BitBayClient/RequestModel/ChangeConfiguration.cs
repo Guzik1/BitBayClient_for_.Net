@@ -18,5 +18,11 @@ namespace BitBayClient.RequestModel
         /// UUID second balance walet.
         /// </summary>
         public string Second { get; set; }
+
+        internal ChangeConfiguration(string first, string second)
+        {
+            First = first;
+            Second = second;
+        }
     }
 }
