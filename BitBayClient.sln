@@ -12,9 +12,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeBasicData", "Exchan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ExchangeBasicDataTests", "ExchangeBasicDataTests\ExchangeBasicDataTests.csproj", "{2155EB51-FB02-4C9F-8913-B81559484A48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBayClientTests", "BitBayClientTests\BitBayClientTests.csproj", "{EEA1B78B-FD65-46AB-AC12-22C14BCB3009}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitBayClientTests", "BitBayClientTests\BitBayClientTests.csproj", "{EEA1B78B-FD65-46AB-AC12-22C14BCB3009}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitBayClientIntegratedTests.cs", "BitBayClientIntegratedTests.cs\BitBayClientIntegratedTests.cs.csproj", "{47C4D11D-82F2-43ED-AC8A-EF9180A59C0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BitBayClientIntegratedTests", "BitBayClientIntegratedTests.cs\BitBayClientIntegratedTests.csproj", "{47C4D11D-82F2-43ED-AC8A-EF9180A59C0B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -9,8 +9,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 ### Methods
 - [GetAllMarketStats()](./BitBayClient-PublicTrading-GetAllMarketStats().md 'BitBayClient.PublicTrading.GetAllMarketStats()')
 - [GetAllTicker()](./BitBayClient-PublicTrading-GetAllTicker().md 'BitBayClient.PublicTrading.GetAllTicker()')
-- [GetCandleChartData(string, ExchangeBasicData.CandleResolution)](./BitBayClient-PublicTrading-GetCandleChartData(string_ExchangeBasicData-CandleResolution).md 'BitBayClient.PublicTrading.GetCandleChartData(string, ExchangeBasicData.CandleResolution)')
-- [GetCandleChartData(string, ExchangeBasicData.CandleResolution, long, long)](./BitBayClient-PublicTrading-GetCandleChartData(string_ExchangeBasicData-CandleResolution_long_long).md 'BitBayClient.PublicTrading.GetCandleChartData(string, ExchangeBasicData.CandleResolution, long, long)')
+- [GetCandlesData(string, ExchangeBasicData.CandleResolution, long, long)](./BitBayClient-PublicTrading-GetCandlesData(string_ExchangeBasicData-CandleResolution_long_long).md 'BitBayClient.PublicTrading.GetCandlesData(string, ExchangeBasicData.CandleResolution, long, long)')
 - [GetLastTransactions(string)](./BitBayClient-PublicTrading-GetLastTransactions(string).md 'BitBayClient.PublicTrading.GetLastTransactions(string)')
 - [GetLastTransactions(string, int)](./BitBayClient-PublicTrading-GetLastTransactions(string_int).md 'BitBayClient.PublicTrading.GetLastTransactions(string, int)')
 - [GetLastTransactions(string, int, long)](./BitBayClient-PublicTrading-GetLastTransactions(string_int_long).md 'BitBayClient.PublicTrading.GetLastTransactions(string, int, long)')

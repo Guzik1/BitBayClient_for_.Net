@@ -1,5 +1,6 @@
 ﻿using BitBayClient.RequestModel;
 using BitBayClient.ResponseModel;
+using BitBayClient.ResponseModel.Temp;
 using ExchangeBasicData;
 using RestApiClient;
 using System;
@@ -23,10 +24,10 @@ namespace BitBayClient
         /// <summary>
         /// Get ticker for selected market.
         /// </summary>
-        /// <param name="currencyPair">Currency pair</param>
+        /// <param name="currencyPair">Currency pair with dash, example BTC-USD</param>
         /// <returns>Ticker for selected market. Return "ticker" atribut from api response.</returns>
         public Ticker GetTicker(string currencyPair)
-            => SendGetTicer<Tickers>("/" + currencyPair).TickersList[currencyPair];
+            => SendGetTicer<OneTicker>("/" + currencyPair).Ticker;
 
         /// <summary>
         /// Get ticker for all market on stock exchange.
@@ -83,7 +84,7 @@ namespace BitBayClient
         /// <summary>
         /// Get orderbook with own limit of sell and buy offers, from rest api.
         /// </summary>
-        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="currencyPair">Currency pair code, example BTC-USD.</param>
         /// <param name="limit">Limit of offer count (available limits: 10, 50, 100). Limit must be less or equal 300.</param>
         /// <returns>Orderbook with own limit offers of buy and sell.</returns>
         public Orderbook GetOrderbook(string currencyPair, OrderbookLimits limit)
@@ -104,7 +105,7 @@ namespace BitBayClient
         /// <summary>
         /// Get last 10 transaction. Return list from "items" property in api response.
         /// </summary>
-        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="currencyPair">Currency pair code, example BTC-USD.</param>
         /// <returns>List of last transactions, list count 10.</returns>
         public List<LastTransactionItem> GetLastTransactions(string currencyPair)
             => SendLastTransactionsRequest(currencyPair).LastTransaction;
@@ -112,7 +113,7 @@ namespace BitBayClient
         /// <summary>
         ///  Get last limit count transaction. Return list from "items" property in api response.
         /// </summary>
-        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="currencyPair">Currency pair code, example BTC-USD.</param>
         /// <param name="limit">Limit of result, max 300.</param>
         /// <returns>List of last transactions, list count is limited by limit (max 300).</returns>
         /// <exception cref="ArgumentException">Throw if the limit is greater than 300.</exception>
@@ -128,7 +129,7 @@ namespace BitBayClient
         /// <summary>
         /// Get last transaction, start from unixtimestamp. Return list from "items" property in api response.
         /// </summary>
-        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="currencyPair">Currency pair code, example BTC-USD.</param>
         /// <param name="fromTimeUnix">Unix timestam from start geting result.</param>
         /// <returns>List of last transactions, started from unix timestamp.</returns>
         public List<LastTransactionItem> GetLastTransactions(string currencyPair, long fromTimeUnix)
@@ -141,7 +142,7 @@ namespace BitBayClient
         /// <summary>
         /// Get last limit count transaction. Return list from "items" property in api response.
         /// </summary>
-        /// <param name="currencyPair">Currency pair code.</param>
+        /// <param name="currencyPair">Currency pair code, example BTC-USD.</param>
         /// <param name="limit">Limit of result, max 300</param>
         /// <param name="fromTimeUnix">Unix timestam from start geting result.</param>
         /// <returns>List of last transactions, started from unix timestamp and limited by limit.</returns>
@@ -188,30 +189,31 @@ namespace BitBayClient
         #endregion
 
         #region Candle
-        /// <summary>
+        /*/// <summary>
         /// Get all candles with specif resolution for selected currencyPair.
         /// </summary>
-        /// <param name="currencyPair">Currency pair code string.</param>
+        /// <param name="currencyPair">Currency pair code string, example BTC-USD.</param>
         /// <param name="resolution">Select candle resolution.</param>
         /// <returns>Candles data object.</returns>
-        public Candles GetCandleChartData(string currencyPair, CandleResolution resolution)
+        public Candles GetCandlesData(string currencyPair, CandleResolution resolution)
         {
             Candles candles = SendCandleChartDataRequest(currencyPair + "/" + resolution.GetSecond());
             candles.Resoluton = resolution;
 
             return candles;
-        }
+        }*/
 
         /// <summary>
         /// Get all candles with specif resolution for selected currencyPair, start result "fromTimeUnix" and end in "toTimeUnix".
+        /// For get one candle time from and time to must be the same.
         /// </summary>
-        /// <param name="currencyPair">Currency pair code string.</param>
+        /// <param name="currencyPair">Currency pair code string, example BTC-USD.</param>
         /// <param name="resolution">Select candle resolution.</param>
         /// <param name="fromTimeUnix">Unix timestamp from start geting candles.</param>
         /// <param name="toTimeUnix">Unix timestamp to end geting candles.</param>
         /// <returns>Candles data object.</returns>
-        /// <exception cref="ArgumentException">Throw if "fromTimeUnix" is great than "toTimeUnix". from time must be before to time.</exception>
-        public Candles GetCandleChartData(string currencyPair, CandleResolution resolution, long fromTimeUnix, long toTimeUnix)
+        /// <exception cref="ArgumentException">Throw if "fromTimeUnix" is great than "toTimeUnix". From time must be before to time.</exception>
+        public Candles GetCandlesData(string currencyPair, CandleResolution resolution, long fromTimeUnix, long toTimeUnix)
         {
             if (fromTimeUnix > toTimeUnix)
                 throw new ArgumentException("Date to must be leter(not equal) than date from!");
@@ -243,7 +245,7 @@ namespace BitBayClient
 
             rc.SendGET();
 
-            return Tools.TryGetResponse<Candles>(rc);
+            return Tools.TryGetResponse<Candles, CandlesTemp>(rc);
         }
         #endregion
     }

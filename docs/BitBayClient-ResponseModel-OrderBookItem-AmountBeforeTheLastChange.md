@@ -1,6 +1,6 @@
 #### [BitBayClient](./index.md 'index')
-### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[OrderBookItem](./BitBayClient-ResponseModel-OrderBookItem.md 'BitBayClient.ResponseModel.OrderBookItem')
-## OrderBookItem.AmountBeforeTheLastChange Property
+### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[OrderbookItem](./BitBayClient-ResponseModel-OrderbookItem.md 'BitBayClient.ResponseModel.OrderbookItem')
+## OrderbookItem.AmountBeforeTheLastChange Property
 Amount of currency before last change.  
 ```csharp
 public decimal AmountBeforeTheLastChange { get; set; }

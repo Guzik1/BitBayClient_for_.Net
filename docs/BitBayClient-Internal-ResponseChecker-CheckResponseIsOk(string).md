@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.Internal](./BitBayClient-Internal.md 'BitBayClient.Internal').[ResponseChecker](./BitBayClient-Internal-ResponseChecker.md 'BitBayClient.Internal.ResponseChecker')
 ## ResponseChecker.CheckResponseIsOk(string) Method
-Check response is ok.  
+Check response is correct.  
 ```csharp
 public bool CheckResponseIsOk(string response);
 ```

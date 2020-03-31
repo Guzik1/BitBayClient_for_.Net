@@ -7,33 +7,32 @@ using CurrencyPair;
 
 namespace BitBayClient.ResponseModel
 {
-    /*
+    
     /// <summary>
     /// Data model for one ticker on exchange.
     /// </summary>
-    public class OneTicker
+    internal class OneTicker
     {
         /// <summary>
         /// Ticker data.
         /// </summary>
-        public OneTicker Ticker { get; set; }
-    }*/
+        public Ticker Ticker { get; set; }
+    }
 
     /// <summary>
     /// Data model for all tickers on exchange.
     /// </summary>
-    public class Tickers
+    internal class Tickers
     {
         /// <summary>
         /// List of tickers, key is market code, value is ticker item.
         /// </summary>
         [JsonProperty("items")]
-        [JsonConverter(typeof(SingleOrArrayConverter<Dictionary<string, Ticker>>))]
         public Dictionary<string, Ticker> TickersList { get; set; }
     }
 
     /// <summary>
-    /// Data model for one ticker.
+    /// Data model represent one ticker.
     /// </summary>
     public class Ticker
     {
@@ -50,11 +49,13 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// The best rate for buy offer.
         /// </summary>
+        [JsonProperty("highestBid")]
         public decimal HighestBid { get; set; }
 
         /// <summary>
         /// The best rate for sell offer.
         /// </summary>
+        [JsonProperty("lowestAsk")]
         public decimal LowestAsk { get; set; }
 
         /// <summary>
@@ -65,6 +66,7 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// Penultimate transaction rate.
         /// </summary>
+        [JsonProperty("previousRate")]
         public decimal PreviousRate { get; set; }
     }
 

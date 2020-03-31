@@ -1,6 +1,6 @@
 #### [BitBayClient](./index.md 'index')
-### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[OrderBookItem](./BitBayClient-ResponseModel-OrderBookItem.md 'BitBayClient.ResponseModel.OrderBookItem')
-## OrderBookItem.Amout Property
+### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[OrderbookItem](./BitBayClient-ResponseModel-OrderbookItem.md 'BitBayClient.ResponseModel.OrderbookItem')
+## OrderbookItem.Amout Property
 Amount of currency in postion.  
 ```csharp
 public decimal Amout { get; set; }

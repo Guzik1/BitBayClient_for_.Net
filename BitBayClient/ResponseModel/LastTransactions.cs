@@ -8,7 +8,7 @@ namespace BitBayClient.ResponseModel
     /// <summary>
     /// Represent list of last transaction. Response data model for last transactions request.
     /// </summary>
-    public class LastTransactions
+    internal class LastTransactions
     {
         /// <summary>
         /// List of last transactions.

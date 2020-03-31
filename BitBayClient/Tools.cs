@@ -13,7 +13,28 @@ namespace BitBayClient
         public static Expected TryGetResponse<Expected>(RestClient rc)
         {
             if (CheckResult(rc))
-                return rc.GetResponse<Expected>();
+            {
+                string response = rc.GetResponseToString;
+
+                return Deserialize.FromJson<Expected>(response);
+
+                //return rc.GetResponse<Expected>();
+            }
+
+            throw new Exception("Unknown error.");
+        }
+
+        public static Expected TryGetResponse<Expected, Temp>(RestClient rc)
+        {
+            if (CheckResult(rc))
+            {
+                string response = rc.GetResponseToString;
+
+                Temp temp = Deserialize.FromJson<Temp>(response);
+                DeserializeWithTempObject<Expected> converter = (DeserializeWithTempObject<Expected>)temp;
+
+                return converter.Convert();
+            }
 
             throw new Exception("Unknown error.");
         }
@@ -24,7 +45,7 @@ namespace BitBayClient
             {
                 return true;
             }
-            else if (rc.ResponseHasSuccessStatusCode)
+            else if(rc.ResponseHasSuccessStatusCode)
             {
                 string response = rc.GetResponseToString;
 
@@ -34,7 +55,9 @@ namespace BitBayClient
                 throw new FailResponseException("Server was return error response. Check error list for more informations.", fr.Errors);
             }
 
-            return false;
+            FailResponseTemp frt2 = Deserialize.FromJson<FailResponseTemp>(rc.GetResponseToString);
+
+            throw new FailResponseException(frt2.Errors[0]);
         }
     }
 }

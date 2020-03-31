@@ -11,13 +11,13 @@ namespace BitBayClient.Internal
     public class ResponseChecker : IResponseChecker
     {
         /// <summary>
-        /// Check response is ok.
+        /// Check response is correct.
         /// </summary>
         /// <param name="response">string response</param>
         /// <returns>true if response has no error or false in another else case.</returns>
         public bool CheckResponseIsOk(string response)
         {
-            if (response.Contains("\"status\":\"Fail\""))
+            if (response.Contains("\"Fail\"") || response.Contains("\"errors\""))
                 return false;
 
             return true;

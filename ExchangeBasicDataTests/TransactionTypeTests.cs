@@ -13,7 +13,7 @@ namespace ExchangeBasicDataTests
 
             TransactionType type = TransactionTypeExtensions.Parse(sType);
 
-            Assert.AreEqual(TransactionType.Buy, type);
+            Assert.AreEqual(TransactionType.BUY, type);
         }
 
         [Test]
@@ -23,13 +23,13 @@ namespace ExchangeBasicDataTests
 
             TransactionType type = TransactionTypeExtensions.Parse(sType);
 
-            Assert.AreEqual(TransactionType.Sell, type);
+            Assert.AreEqual(TransactionType.SELL, type);
         }
 
         [Test]
         public void TransactionTypeToLowerStringTest()
         {
-            string type = TransactionType.Sell.ToLowerString();
+            string type = TransactionType.SELL.ToLowerString();
 
             Assert.AreEqual("sell", type);
         }

@@ -8,7 +8,7 @@ public System.Collections.Generic.List<BitBayClient.ResponseModel.LastTransactio
 #### Parameters
 <a name='BitBayClient-PublicTrading-GetLastTransactions(string_long)-currencyPair'></a>
 `currencyPair` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
-Currency pair code.  
+Currency pair code, example BTC-USD.  
   
 <a name='BitBayClient-PublicTrading-GetLastTransactions(string_long)-fromTimeUnix'></a>
 `fromTimeUnix` [System.Int64](https://docs.microsoft.com/en-us/dotnet/api/System.Int64 'System.Int64')  

@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## Ticker Class
-Data model for one ticker.  
+Data model represent one ticker.  
 ```csharp
 public class Ticker
 ```

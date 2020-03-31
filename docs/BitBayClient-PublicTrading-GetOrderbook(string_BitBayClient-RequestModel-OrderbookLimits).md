@@ -8,7 +8,7 @@ public BitBayClient.ResponseModel.Orderbook GetOrderbook(string currencyPair, Bi
 #### Parameters
 <a name='BitBayClient-PublicTrading-GetOrderbook(string_BitBayClient-RequestModel-OrderbookLimits)-currencyPair'></a>
 `currencyPair` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
-Currency pair code.  
+Currency pair code, example BTC-USD.  
   
 <a name='BitBayClient-PublicTrading-GetOrderbook(string_BitBayClient-RequestModel-OrderbookLimits)-limit'></a>
 `limit` [OrderbookLimits](./BitBayClient-RequestModel-OrderbookLimits.md 'BitBayClient.RequestModel.OrderbookLimits')  

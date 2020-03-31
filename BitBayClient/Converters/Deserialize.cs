@@ -12,7 +12,8 @@ namespace BitBayClient.Converters
         {
             JsonSerializerSettings settings = new JsonSerializerSettings()
             {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                NullValueHandling = NullValueHandling.Ignore
             };
 
             return JsonConvert.DeserializeObject<T>(jsonString, settings);
@@ -22,7 +23,8 @@ namespace BitBayClient.Converters
         {
             JsonSerializerSettings settings = new JsonSerializerSettings()
             {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
+                ContractResolver = new CamelCasePropertyNamesContractResolver(),
+                NullValueHandling = NullValueHandling.Ignore
             };
 
             return JsonConvert.DeserializeObject(jsonString, settings);

@@ -1,14 +1,14 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
-## OrderBookItem Class
+## OrderbookItem Class
 Orderbook item, use for Buy and Sell transaction.  
 ```csharp
-public class OrderBookItem
+public class OrderbookItem
 ```
-Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &gt; [OrderBookItem](./BitBayClient-ResponseModel-OrderBookItem.md 'BitBayClient.ResponseModel.OrderBookItem')  
+Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &gt; [OrderbookItem](./BitBayClient-ResponseModel-OrderbookItem.md 'BitBayClient.ResponseModel.OrderbookItem')  
 ### Properties
-- [AmountBeforeTheLastChange](./BitBayClient-ResponseModel-OrderBookItem-AmountBeforeTheLastChange.md 'BitBayClient.ResponseModel.OrderBookItem.AmountBeforeTheLastChange')
-- [Amout](./BitBayClient-ResponseModel-OrderBookItem-Amout.md 'BitBayClient.ResponseModel.OrderBookItem.Amout')
-- [InitialAmount](./BitBayClient-ResponseModel-OrderBookItem-InitialAmount.md 'BitBayClient.ResponseModel.OrderBookItem.InitialAmount')
-- [NumberOfOfferInPosition](./BitBayClient-ResponseModel-OrderBookItem-NumberOfOfferInPosition.md 'BitBayClient.ResponseModel.OrderBookItem.NumberOfOfferInPosition')
-- [PositionRate](./BitBayClient-ResponseModel-OrderBookItem-PositionRate.md 'BitBayClient.ResponseModel.OrderBookItem.PositionRate')
+- [AmountBeforeTheLastChange](./BitBayClient-ResponseModel-OrderbookItem-AmountBeforeTheLastChange.md 'BitBayClient.ResponseModel.OrderbookItem.AmountBeforeTheLastChange')
+- [Amout](./BitBayClient-ResponseModel-OrderbookItem-Amout.md 'BitBayClient.ResponseModel.OrderbookItem.Amout')
+- [InitialAmount](./BitBayClient-ResponseModel-OrderbookItem-InitialAmount.md 'BitBayClient.ResponseModel.OrderbookItem.InitialAmount')
+- [NumberOfOfferInPosition](./BitBayClient-ResponseModel-OrderbookItem-NumberOfOfferInPosition.md 'BitBayClient.ResponseModel.OrderbookItem.NumberOfOfferInPosition')
+- [PositionRate](./BitBayClient-ResponseModel-OrderbookItem-PositionRate.md 'BitBayClient.ResponseModel.OrderbookItem.PositionRate')

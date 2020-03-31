@@ -13,12 +13,12 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// List of sell transaction
         /// </summary>
-        public List<OrderBookItem> Sell { get; set; }
+        public List<OrderbookItem> Sell { get; set; }
 
         /// <summary>
         /// List of buy transaction
         /// </summary>
-        public List<OrderBookItem> Buy { get; set; }
+        public List<OrderbookItem> Buy { get; set; }
 
         /// <summary>
         /// Time (unix) for which returned orderbook, are valid.
@@ -34,7 +34,7 @@ namespace BitBayClient.ResponseModel
     /// <summary>
     /// Orderbook item, use for Buy and Sell transaction.
     /// </summary>
-    public class OrderBookItem
+    public class OrderbookItem
     {
         /// <summary>
         /// Postion rate.

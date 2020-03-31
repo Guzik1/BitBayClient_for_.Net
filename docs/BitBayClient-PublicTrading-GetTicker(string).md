@@ -8,7 +8,7 @@ public BitBayClient.ResponseModel.Ticker GetTicker(string currencyPair);
 #### Parameters
 <a name='BitBayClient-PublicTrading-GetTicker(string)-currencyPair'></a>
 `currencyPair` [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
-Currency pair  
+Currency pair with dash, example BTC-USD  
   
 #### Returns
 [Ticker](./BitBayClient-ResponseModel-Ticker.md 'BitBayClient.ResponseModel.Ticker')  

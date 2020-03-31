@@ -1,6 +1,6 @@
 #### [BitBayClient](./index.md 'index')
-### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[OrderBookItem](./BitBayClient-ResponseModel-OrderBookItem.md 'BitBayClient.ResponseModel.OrderBookItem')
-## OrderBookItem.InitialAmount Property
+### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel').[OrderbookItem](./BitBayClient-ResponseModel-OrderbookItem.md 'BitBayClient.ResponseModel.OrderbookItem')
+## OrderbookItem.InitialAmount Property
 Initial amount of currency.  
 ```csharp
 public decimal InitialAmount { get; set; }
