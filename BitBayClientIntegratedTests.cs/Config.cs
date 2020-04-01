@@ -6,12 +6,18 @@ namespace BitBayClientTests
 {
     internal static class Config
     {
-        internal static string ApiTradingUrl => ApiUrl + "trading/";
+        internal static string PublicKey = "";
 
-        public static string ApiUrl { get; } = "https://api.bitbay.net/rest/";
+        internal static string PrivateKey = "";
 
-        internal static string PublicKey { get; set; } = "";
+        internal static bool IsAutorized()
+        {
+            if (string.IsNullOrEmpty(PublicKey) || string.IsNullOrEmpty(PrivateKey))
+            {
+                throw new Exception("Client is unautorized, add client keys to config.");
+            }
 
-        internal static string PrivateKey { get; set; } = "";
+            return true;
+        }
     }
 }
