@@ -725,6 +725,52 @@
             Different UUID wallets for second currency in pair. Opcjonal
             </summary>
         </member>
+        <member name="M:BitBayClient.RequestModel.NewOfferRequest.SetQuickMarketConstAmountOffer(System.String,System.Decimal)">
+            <summary>
+            Set quick sell or buy with const amount offer.
+            </summary>
+            <param name="offerType">String offer type: BUY/SELL</param>
+            <param name="amount">Amount of currencie.</param>
+        </member>
+        <member name="M:BitBayClient.RequestModel.NewOfferRequest.SetQuickMarketConstPriceOffer(System.String,System.Decimal)">
+            <summary>
+            Set quick sell or buy with const price offer.
+            </summary>
+            <param name="offerType">String offer type: BUY/SELL</param>
+            <param name="price">Price.</param>
+        </member>
+        <member name="M:BitBayClient.RequestModel.NewOfferRequest.SetLimitOffer(System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Set STANDARD offer type on exchange (default on exchange view). Set const rate and amount of currencies.
+            </summary>
+            <param name="offerType">String offer type: BUY/SELL</param>
+            <param name="amount">Amount of currencies</param>
+            <param name="rate">Offer rate</param>
+        </member>
+        <member name="M:BitBayClient.RequestModel.NewOfferRequest.SetPostOnlyOffer(System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Set post only offer data.
+            </summary>
+            <param name="offerType">String offer type: BUY/SELL</param>
+            <param name="amount">Amount of currencies</param>
+            <param name="rate">Offer rate</param>
+        </member>
+        <member name="M:BitBayClient.RequestModel.NewOfferRequest.SetFillOrKillOffer(System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Set fill or kill offer data.
+            </summary>
+            <param name="offerType">String offer type: BUY/SELL</param>
+            <param name="amount">Amount of currencies</param>
+            <param name="rate">Offer rate</param>
+        </member>
+        <member name="M:BitBayClient.RequestModel.NewOfferRequest.SetImmediateOrCancelOffer(System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Set Immediate or cancel offer data (IOC).
+            </summary>
+            <param name="offerType">String offer type: BUY/SELL</param>
+            <param name="amount">Amount of currencies</param>
+            <param name="rate">Offer rate</param>
+        </member>
         <member name="T:BitBayClient.RequestModel.NewStopOfferRequest">
             <summary>
             Data model for new stop offer request (<see cref="M:BitBayClient.PrivateStopTrading.AddNewStopOffer(System.String,BitBayClient.RequestModel.NewStopOfferRequest)"/>) to exchange.
@@ -935,7 +981,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.ActiveOffers">
             <summary>
-            Data model for active offers response on <see cref="M:BitBayClient.PrivateTrading.GetActiveOffer(System.String)" /> request.
+            Data model for active offers response. Temporary object
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.ActiveOffers.ActiveOffer">
@@ -945,7 +991,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.ActiveOffer">
             <summary>
-            Data model represent one active offer.
+            Data model represent one active offer. Response on <see cref="M:BitBayClient.PrivateTrading.GetActiveOffer(System.String)" /> and <see cref="M:BitBayClient.PrivateTrading.GetAllActiveOffer"/> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.ActiveOffer.Market">
@@ -1166,7 +1212,7 @@
         </member>
         <member name="T:BitBayClient.ResponseModel.CommissionAndConfig">
             <summary>
-            Data model for Commision and configuration details.
+            Data model for Commision and configuration details, return on <see cref="M:BitBayClient.PrivateTrading.GetCommissionsAndConfiguration(System.String)"/> request.
             </summary>
         </member>
         <member name="P:BitBayClient.ResponseModel.CommissionAndConfig.Buy">

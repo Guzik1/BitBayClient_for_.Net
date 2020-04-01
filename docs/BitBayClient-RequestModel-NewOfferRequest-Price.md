@@ -3,7 +3,7 @@
 ## NewOfferRequest.Price Property
 Use only in market offer, replaces rate. Opcjonal  
 ```csharp
-public float Price { get; set; }
+public decimal Price { get; set; }
 ```
 #### Property Value
-[System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')  
+[System.Decimal](https://docs.microsoft.com/en-us/dotnet/api/System.Decimal 'System.Decimal')  

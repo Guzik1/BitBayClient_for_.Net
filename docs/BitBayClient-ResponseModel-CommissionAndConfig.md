@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## CommissionAndConfig Class
-Data model for Commision and configuration details.  
+Data model for Commision and configuration details, return on [GetCommissionsAndConfiguration(string)](./BitBayClient-PrivateTrading-GetCommissionsAndConfiguration(string).md 'BitBayClient.PrivateTrading.GetCommissionsAndConfiguration(string)') request.  
 ```csharp
 public class CommissionAndConfig
 ```

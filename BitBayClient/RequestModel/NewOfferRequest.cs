@@ -14,17 +14,18 @@ namespace BitBayClient.RequestModel
         /// <summary>
         /// Amount of currency in position. REQUIRED
         /// </summary>
-        public float Amount { get; set; }
+        public decimal Amount { get; set; }
 
         /// <summary>
         /// Offer rate (price). REQUIRED
         /// </summary>
-        public float Rate { get; set; }
+        public decimal Rate { get; set; }
 
         /// <summary>
         /// Use only in market offer, replaces rate. Opcjonal
         /// </summary>
-        public float Price { get; set; }
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        public decimal Price { get; set; }
 
         /// <summary>
         /// Type of offer: buy or sell. REQUIRED
@@ -66,5 +67,88 @@ namespace BitBayClient.RequestModel
         /// </summary>
         [JsonProperty("secondBalanceId", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public string SecondBalanceId { get; set; }
+
+        /// <summary>
+        /// Set quick sell or buy with const amount offer.
+        /// </summary>
+        /// <param name="offerType">String offer type: BUY/SELL</param>
+        /// <param name="amount">Amount of currencie.</param>
+        public void SetQuickMarketConstAmountOffer(string offerType, decimal amount)
+        {
+            Amount = amount;
+            OfferType = offerType;
+            Mode = ExchangeBasicData.OfferType.Market.ToLowerString();
+        }
+
+        /// <summary>
+        /// Set quick sell or buy with const price offer.
+        /// </summary>
+        /// <param name="offerType">String offer type: BUY/SELL</param>
+        /// <param name="price">Price.</param>
+        public void SetQuickMarketConstPriceOffer(string offerType, decimal price)
+        {
+            Price = price;
+            OfferType = offerType;
+            Mode = ExchangeBasicData.OfferType.Market.ToLowerString();
+        }
+
+        /// <summary>
+        /// Set STANDARD offer type on exchange (default on exchange view). Set const rate and amount of currencies.
+        /// </summary>
+        /// <param name="offerType">String offer type: BUY/SELL</param>
+        /// <param name="amount">Amount of currencies</param>
+        /// <param name="rate">Offer rate</param>
+        public void SetLimitOffer(string offerType, decimal amount, decimal rate)
+        {
+            Amount = amount;
+            Rate = rate;
+            OfferType = offerType;
+            Mode = ExchangeBasicData.OfferType.Limit.ToLowerString();
+        }
+
+        /// <summary>
+        /// Set post only offer data.
+        /// </summary>
+        /// <param name="offerType">String offer type: BUY/SELL</param>
+        /// <param name="amount">Amount of currencies</param>
+        /// <param name="rate">Offer rate</param>
+        public void SetPostOnlyOffer(string offerType, decimal amount, decimal rate)
+        {
+            OfferType = offerType;
+            Amount = amount;
+            Rate = rate;
+            Mode = ExchangeBasicData.OfferType.Limit.ToLowerString();
+            PostOnly = true;
+        }
+
+        /// <summary>
+        /// Set fill or kill offer data.
+        /// </summary>
+        /// <param name="offerType">String offer type: BUY/SELL</param>
+        /// <param name="amount">Amount of currencies</param>
+        /// <param name="rate">Offer rate</param>
+        public void SetFillOrKillOffer(string offerType, decimal amount, decimal rate)
+        {
+            OfferType = offerType;
+            Amount = amount;
+            Rate = rate;
+            Mode = ExchangeBasicData.OfferType.Limit.ToLowerString();
+            FillOrKill = true;
+        }
+
+        /// <summary>
+        /// Set Immediate or cancel offer data (IOC).
+        /// </summary>
+        /// <param name="offerType">String offer type: BUY/SELL</param>
+        /// <param name="amount">Amount of currencies</param>
+        /// <param name="rate">Offer rate</param>
+        public void SetImmediateOrCancelOffer(string offerType, decimal amount, decimal rate)
+        {
+            OfferType = offerType;
+            Amount = amount;
+            Rate = rate;
+            Mode = ExchangeBasicData.OfferType.Limit.ToLowerString();
+            ImmediateOrCancel = true;
+        }
     }
 }

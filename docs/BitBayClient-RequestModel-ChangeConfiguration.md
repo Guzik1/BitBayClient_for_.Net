@@ -3,7 +3,7 @@
 ## ChangeConfiguration Class
 Data model for send to change default walets.  
 ```csharp
-public class ChangeConfiguration
+internal class ChangeConfiguration
 ```
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &gt; [ChangeConfiguration](./BitBayClient-RequestModel-ChangeConfiguration.md 'BitBayClient.RequestModel.ChangeConfiguration')  
 ### Properties

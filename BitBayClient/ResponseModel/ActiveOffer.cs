@@ -9,9 +9,9 @@ using System.Text;
 namespace BitBayClient.ResponseModel
 {
     /// <summary>
-    /// Data model for active offers response on <see cref="PrivateTrading.GetActiveOffer(string)" /> request.
+    /// Data model for active offers response. Temporary object
     /// </summary>
-    public class ActiveOffers
+    internal class ActiveOffers
     {
         /// <summary>
         /// List of active your offers.
@@ -22,7 +22,7 @@ namespace BitBayClient.ResponseModel
     }
 
     /// <summary>
-    /// Data model represent one active offer.
+    /// Data model represent one active offer. Response on <see cref="PrivateTrading.GetActiveOffer(string)" /> and <see cref="PrivateTrading.GetAllActiveOffer()"/> request.
     /// </summary>
     public class ActiveOffer
     {

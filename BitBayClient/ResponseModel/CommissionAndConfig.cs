@@ -8,7 +8,7 @@ namespace BitBayClient.ResponseModel
     /// <summary>
     /// Data model for response on <see cref="PrivateTrading.GetCommissionsAndConfiguration(string)"/> request.
     /// </summary>
-    public class CommissionAndConfigPre
+    internal class CommissionAndConfigPre
     {
         /// <summary>
         /// Confiuguration and commission data.
@@ -17,7 +17,7 @@ namespace BitBayClient.ResponseModel
     }
 
     /// <summary>
-    /// Data model for Commision and configuration details.
+    /// Data model for Commision and configuration details, return on <see cref="PrivateTrading.GetCommissionsAndConfiguration(string)"/> request.
     /// </summary>
     public class CommissionAndConfig
     {

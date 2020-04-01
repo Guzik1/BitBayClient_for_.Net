@@ -7,7 +7,7 @@ namespace BitBayClient.RequestModel
     /// <summary>
     /// Data model for send to change default walets.
     /// </summary>
-    public class ChangeConfiguration
+    internal class ChangeConfiguration
     {
         /// <summary>
         /// UUID first balance walet.

@@ -17,3 +17,10 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 - [Price](./BitBayClient-RequestModel-NewOfferRequest-Price.md 'BitBayClient.RequestModel.NewOfferRequest.Price')
 - [Rate](./BitBayClient-RequestModel-NewOfferRequest-Rate.md 'BitBayClient.RequestModel.NewOfferRequest.Rate')
 - [SecondBalanceId](./BitBayClient-RequestModel-NewOfferRequest-SecondBalanceId.md 'BitBayClient.RequestModel.NewOfferRequest.SecondBalanceId')
+### Methods
+- [SetFillOrKillOffer(string, decimal, decimal)](./BitBayClient-RequestModel-NewOfferRequest-SetFillOrKillOffer(string_decimal_decimal).md 'BitBayClient.RequestModel.NewOfferRequest.SetFillOrKillOffer(string, decimal, decimal)')
+- [SetImmediateOrCancelOffer(string, decimal, decimal)](./BitBayClient-RequestModel-NewOfferRequest-SetImmediateOrCancelOffer(string_decimal_decimal).md 'BitBayClient.RequestModel.NewOfferRequest.SetImmediateOrCancelOffer(string, decimal, decimal)')
+- [SetLimitOffer(string, decimal, decimal)](./BitBayClient-RequestModel-NewOfferRequest-SetLimitOffer(string_decimal_decimal).md 'BitBayClient.RequestModel.NewOfferRequest.SetLimitOffer(string, decimal, decimal)')
+- [SetPostOnlyOffer(string, decimal, decimal)](./BitBayClient-RequestModel-NewOfferRequest-SetPostOnlyOffer(string_decimal_decimal).md 'BitBayClient.RequestModel.NewOfferRequest.SetPostOnlyOffer(string, decimal, decimal)')
+- [SetQuickMarketConstAmountOffer(string, decimal)](./BitBayClient-RequestModel-NewOfferRequest-SetQuickMarketConstAmountOffer(string_decimal).md 'BitBayClient.RequestModel.NewOfferRequest.SetQuickMarketConstAmountOffer(string, decimal)')
+- [SetQuickMarketConstPriceOffer(string, decimal)](./BitBayClient-RequestModel-NewOfferRequest-SetQuickMarketConstPriceOffer(string_decimal).md 'BitBayClient.RequestModel.NewOfferRequest.SetQuickMarketConstPriceOffer(string, decimal)')

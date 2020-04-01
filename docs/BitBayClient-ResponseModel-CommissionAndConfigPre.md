@@ -3,7 +3,7 @@
 ## CommissionAndConfigPre Class
 Data model for response on [GetCommissionsAndConfiguration(string)](./BitBayClient-PrivateTrading-GetCommissionsAndConfiguration(string).md 'BitBayClient.PrivateTrading.GetCommissionsAndConfiguration(string)') request.  
 ```csharp
-public class CommissionAndConfigPre
+internal class CommissionAndConfigPre
 ```
 Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.Object 'System.Object') &gt; [CommissionAndConfigPre](./BitBayClient-ResponseModel-CommissionAndConfigPre.md 'BitBayClient.ResponseModel.CommissionAndConfigPre')  
 ### Properties

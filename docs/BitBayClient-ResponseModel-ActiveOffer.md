@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.ResponseModel](./BitBayClient-ResponseModel.md 'BitBayClient.ResponseModel')
 ## ActiveOffer Class
-Data model represent one active offer.  
+Data model represent one active offer. Response on [GetActiveOffer(string)](./BitBayClient-PrivateTrading-GetActiveOffer(string).md 'BitBayClient.PrivateTrading.GetActiveOffer(string)') and [GetAllActiveOffer()](./BitBayClient-PrivateTrading-GetAllActiveOffer().md 'BitBayClient.PrivateTrading.GetAllActiveOffer()') request.  
 ```csharp
 public class ActiveOffer
 ```

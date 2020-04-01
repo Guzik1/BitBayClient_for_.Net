@@ -17,7 +17,7 @@ namespace BitBayClient.Internal
         /// <returns>true if response has no error or false in another else case.</returns>
         public bool CheckResponseIsOk(string response)
         {
-            if (response.Contains("\"Fail\"") || response.Contains("\"errors\""))
+            if (response.Contains("\"Fail\""))
                 return false;
 
             return true;
