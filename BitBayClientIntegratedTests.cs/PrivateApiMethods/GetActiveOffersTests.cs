@@ -10,15 +10,8 @@ namespace BitBayClientIntegratedTests.PrivateApiMethods
 {
     public class GetActiveOffersTests
     {
-        BitBayClient.BitBayClient bbClient;
+        BitBayClient.BitBayClient bbClient = Tools.SetUp();
         List<ActiveOffer> offers;
-
-        [SetUp]
-        public void SetUp()
-        {
-            if (Config.IsAutorized())
-                bbClient = new BitBayClient.BitBayClient(Config.PublicKey, Config.PrivateKey);
-        }
 
         [Test]
         public void GetActiveOffersTest()
@@ -29,7 +22,7 @@ namespace BitBayClientIntegratedTests.PrivateApiMethods
             }
             catch (FailResponseException e)
             {
-                Assert.Fail(e.Errors[0].ToString());
+                Tools.HandlingErrors(e);
                 return;
             }
 

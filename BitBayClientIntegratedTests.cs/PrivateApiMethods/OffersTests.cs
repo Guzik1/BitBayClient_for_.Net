@@ -11,24 +11,17 @@ namespace BitBayClientIntegratedTests.PrivateApiMethods
 {
     public class OffersTests
     {
-        BitBayClient.BitBayClient bbClient;
+        BitBayClient.BitBayClient bbClient = Tools.SetUp();
         decimal rate = 5m;
         decimal amount = 1m;
         string id;
 
         bool runTest = false;
 
-        [SetUp]
-        public void SetUp()
-        {
-            if (Config.IsAutorized())
-                bbClient = new BitBayClient.BitBayClient(Config.PublicKey, Config.PrivateKey);
-        }
-
         [Test]
         public void OfferManipTest()
         {
-            if (runTest)
+            if (runTest && Config.IsAutorized())
             {
                 AddTestOffer();
 
@@ -40,9 +33,10 @@ namespace BitBayClientIntegratedTests.PrivateApiMethods
                 else
                     Assert.Fail();
             }
+            else
+                Assert.IsTrue(true);
         }
 
-        // TODO add offers and delete.
         void AddTestOffer()
         {
             NewOfferRequest body = new NewOfferRequest();
@@ -56,7 +50,7 @@ namespace BitBayClientIntegratedTests.PrivateApiMethods
             }
             catch (FailResponseException e)
             {
-                Assert.Fail(e.Errors[0].ToString());
+                Tools.HandlingErrors(e);
                 return;
             }
 
@@ -71,10 +65,7 @@ namespace BitBayClientIntegratedTests.PrivateApiMethods
             }
             catch (FailResponseException e)
             {
-                if(e.Errors.Count > 0)
-                    Assert.Fail(e.Errors[0].ToString());
-
-                Assert.Fail();
+                Tools.HandlingErrors(e);
                 return false;
             }
         }
@@ -89,7 +80,7 @@ namespace BitBayClientIntegratedTests.PrivateApiMethods
             }
             catch (FailResponseException e)
             {
-                Assert.Fail(e.Errors[0].ToString());
+                Tools.HandlingErrors(e);
                 return false;
             }
 

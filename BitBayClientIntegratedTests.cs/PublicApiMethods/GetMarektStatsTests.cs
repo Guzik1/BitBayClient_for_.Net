@@ -22,7 +22,7 @@ namespace BitBayClientIntegratedTests.PublicApiMethod
             }
             catch (FailResponseException e)
             {
-                Assert.Fail(e.Errors[0].ToString());
+                Tools.HandlingErrors(e);
                 return;
             }
 
@@ -45,7 +45,7 @@ namespace BitBayClientIntegratedTests.PublicApiMethod
             }
             catch (FailResponseException e)
             {
-                Assert.Fail(e.Errors[0].ToString());
+                Tools.HandlingErrors(e);
                 return;
             }
 

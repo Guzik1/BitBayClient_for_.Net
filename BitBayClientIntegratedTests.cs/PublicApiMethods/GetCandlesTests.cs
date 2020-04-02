@@ -21,11 +21,7 @@ namespace BitBayClientIntegratedTests.PublicApiMethod
             }
             catch (FailResponseException e)
             {
-                if (e.Errors.Count > 0)
-                    Assert.Fail(e.Errors[0].ToString());
-                else
-                    Assert.Fail(e.Message);
-
+                Tools.HandlingErrors(e);
                 return;
             }
 
