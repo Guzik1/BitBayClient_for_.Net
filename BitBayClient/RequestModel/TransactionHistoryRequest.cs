@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using CurrencyPair;
 using BitBayClient.Converters;
 
 namespace BitBayClient.RequestModel

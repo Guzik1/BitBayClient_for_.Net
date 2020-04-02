@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using CurrencyPair;
 using Newtonsoft.Json;
 
 namespace BitBayClient.RequestModel

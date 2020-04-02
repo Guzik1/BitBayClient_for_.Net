@@ -77,7 +77,7 @@ namespace BitBayClient.RequestModel
         {
             Amount = amount;
             OfferType = offerType;
-            Mode = ExchangeBasicData.OfferType.Market.ToLowerString();
+            Mode = ExchangeBasicData.OfferType.MARKET.ToLowerString();
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace BitBayClient.RequestModel
         {
             Price = price;
             OfferType = offerType;
-            Mode = ExchangeBasicData.OfferType.Market.ToLowerString();
+            Mode = ExchangeBasicData.OfferType.MARKET.ToLowerString();
         }
 
         /// <summary>
@@ -103,7 +103,7 @@ namespace BitBayClient.RequestModel
             Amount = amount;
             Rate = rate;
             OfferType = offerType;
-            Mode = ExchangeBasicData.OfferType.Limit.ToLowerString();
+            Mode = ExchangeBasicData.OfferType.LIMIT.ToLowerString();
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace BitBayClient.RequestModel
             OfferType = offerType;
             Amount = amount;
             Rate = rate;
-            Mode = ExchangeBasicData.OfferType.Limit.ToLowerString();
+            Mode = ExchangeBasicData.OfferType.LIMIT.ToLowerString();
             PostOnly = true;
         }
 
@@ -132,7 +132,7 @@ namespace BitBayClient.RequestModel
             OfferType = offerType;
             Amount = amount;
             Rate = rate;
-            Mode = ExchangeBasicData.OfferType.Limit.ToLowerString();
+            Mode = ExchangeBasicData.OfferType.LIMIT.ToLowerString();
             FillOrKill = true;
         }
 
@@ -147,7 +147,7 @@ namespace BitBayClient.RequestModel
             OfferType = offerType;
             Amount = amount;
             Rate = rate;
-            Mode = ExchangeBasicData.OfferType.Limit.ToLowerString();
+            Mode = ExchangeBasicData.OfferType.LIMIT.ToLowerString();
             ImmediateOrCancel = true;
         }
     }

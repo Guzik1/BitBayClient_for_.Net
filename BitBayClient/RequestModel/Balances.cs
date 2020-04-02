@@ -18,5 +18,16 @@ namespace BitBayClient.RequestModel
         /// Second balance from currency pari, UUID identificator.
         /// </summary>
         public string Second { get; set; }
+
+        /// <summary>
+        /// Constructor.
+        /// </summary>
+        /// <param name="firstBalances">First balance UUID identificator.</param>
+        /// <param name="secondBalances">Second balance UUID identificator.</param>
+        public Balances(string firstBalances, string secondBalances)
+        {
+            First = firstBalances;
+            Second = secondBalances;
+        }
     }
 }

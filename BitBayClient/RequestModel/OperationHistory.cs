@@ -1,5 +1,4 @@
 ﻿using BitBayClient.Converters;
-using CurrencyPair;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -18,12 +17,12 @@ namespace BitBayClient.RequestModel
         [JsonProperty("balancesId")]
         public List<string> BalancesId { get; set; } = new List<string>();
 
-        /// <summary>
+        /*/// <summary>
         /// List of balance currencies, use for filted resault. If null, will not send to a server.
         /// </summary>
         [JsonProperty("balanceCurrencies", NullValueHandling = NullValueHandling.Ignore)]
-        public List<Currency> BalanceCurrencies { get; set; }
-
+        //public List<Currency> BalanceCurrencies { get; set; }
+        */
         /// <summary>
         /// Filter result from time (unix). If null, will not send to a server.
         /// </summary>

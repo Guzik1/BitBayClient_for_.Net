@@ -1,5 +1,4 @@
 ﻿using BitBayClient.Converters;
-using CurrencyPair;
 using ExchangeBasicData;
 using Newtonsoft.Json;
 using System;
