@@ -14,3 +14,8 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 - [OfferType](./BitBayClient-RequestModel-NewStopOfferRequest-OfferType.md 'BitBayClient.RequestModel.NewStopOfferRequest.OfferType')
 - [Rate](./BitBayClient-RequestModel-NewStopOfferRequest-Rate.md 'BitBayClient.RequestModel.NewStopOfferRequest.Rate')
 - [StopRate](./BitBayClient-RequestModel-NewStopOfferRequest-StopRate.md 'BitBayClient.RequestModel.NewStopOfferRequest.StopRate')
+### Methods
+- [SetIgnoreInvalidStopRateOffer(string, decimal, decimal)](./BitBayClient-RequestModel-NewStopOfferRequest-SetIgnoreInvalidStopRateOffer(string_decimal_decimal).md 'BitBayClient.RequestModel.NewStopOfferRequest.SetIgnoreInvalidStopRateOffer(string, decimal, decimal)')
+- [SetStopLimitOffer(string, decimal, decimal, decimal)](./BitBayClient-RequestModel-NewStopOfferRequest-SetStopLimitOffer(string_decimal_decimal_decimal).md 'BitBayClient.RequestModel.NewStopOfferRequest.SetStopLimitOffer(string, decimal, decimal, decimal)')
+- [SetStopLimitSpecifyOffer(string, decimal, decimal, decimal, BitBayClient.RequestModel.Balances)](./BitBayClient-RequestModel-NewStopOfferRequest-SetStopLimitSpecifyOffer(string_decimal_decimal_decimal_BitBayClient-RequestModel-Balances).md 'BitBayClient.RequestModel.NewStopOfferRequest.SetStopLimitSpecifyOffer(string, decimal, decimal, decimal, BitBayClient.RequestModel.Balances)')
+- [SetStopMarketOffer(string, decimal, decimal)](./BitBayClient-RequestModel-NewStopOfferRequest-SetStopMarketOffer(string_decimal_decimal).md 'BitBayClient.RequestModel.NewStopOfferRequest.SetStopMarketOffer(string, decimal, decimal)')

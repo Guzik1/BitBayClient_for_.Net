@@ -3,7 +3,7 @@
 ## NewStopOfferRequest.Amount Property
 Currency amount. REQUIRED  
 ```csharp
-public float Amount { get; set; }
+public decimal Amount { get; set; }
 ```
 #### Property Value
-[System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')  
+[System.Decimal](https://docs.microsoft.com/en-us/dotnet/api/System.Decimal 'System.Decimal')  

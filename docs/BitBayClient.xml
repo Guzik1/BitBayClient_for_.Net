@@ -624,6 +624,13 @@
             Second balance from currency pari, UUID identificator.
             </summary>
         </member>
+        <member name="M:BitBayClient.RequestModel.Balances.#ctor(System.String,System.String)">
+            <summary>
+            Constructor.
+            </summary>
+            <param name="firstBalances">First balance UUID identificator.</param>
+            <param name="secondBalances">Second balance UUID identificator.</param>
+        </member>
         <member name="T:BitBayClient.RequestModel.ChangeConfiguration">
             <summary>
             Data model for send to change default walets.
@@ -811,6 +818,41 @@
             Ignore invalid stop rate. Prepare for add new offer that can be implemented immedietly.
             </summary>
         </member>
+        <member name="M:BitBayClient.RequestModel.NewStopOfferRequest.SetStopLimitOffer(System.String,System.Decimal,System.Decimal,System.Decimal)">
+            <summary>
+            Set stop limit offer temple.
+            </summary>
+            <param name="offerType">Offer type string: BUY/SELL.</param>
+            <param name="amount">Amount of currencies.</param>
+            <param name="stopRate">Stop rate, when offer will be added to orderbook.</param>
+            <param name="rate">Offer rate.</param>
+        </member>
+        <member name="M:BitBayClient.RequestModel.NewStopOfferRequest.SetStopMarketOffer(System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Set quick sell/buy offer, activated when stop rate will be achieved.
+            </summary>
+            <param name="offerType">Offer type string: BUY/SELL.</param>
+            <param name="amount">Amount of currencies.</param>
+            <param name="stopRate">Stop rate, when offer will be added to orderbook.</param>
+        </member>
+        <member name="M:BitBayClient.RequestModel.NewStopOfferRequest.SetIgnoreInvalidStopRateOffer(System.String,System.Decimal,System.Decimal)">
+            <summary>
+            Set stop market offer, with ignoring invalid stop rate (the offer can be realized immediately).
+            </summary>
+            <param name="offerType">Offer type string: BUY/SELL.</param>
+            <param name="amount">Amount of currencies.</param>
+            <param name="stopRate">Stop rate, when offer will be added to orderbook.</param>
+        </member>
+        <member name="M:BitBayClient.RequestModel.NewStopOfferRequest.SetStopLimitSpecifyOffer(System.String,System.Decimal,System.Decimal,System.Decimal,BitBayClient.RequestModel.Balances)">
+            <summary>
+            Set stop limit offer with custo balances identificators.
+            </summary>
+            <param name="offerType">Offer type string: BUY/SELL.</param>
+            <param name="amount">Amount of currencies.</param>
+            <param name="stopRate">Stop rate, when offer will be added to orderbook.</param>
+            <param name="rate">Offer rate.</param>
+            <param name="balances">Balances object (first and second wallet).</param>
+        </member>
         <member name="T:BitBayClient.RequestModel.NewWalletRequest">
             <summary>
             New wallet data model for <see cref="M:BitBayClient.Wallet.CreateNewWallet(System.String,System.String,BitBayClient.WalletType)"/> request.
@@ -843,7 +885,7 @@
         </member>
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalanceCurrencies">
             <summary>
-            List of balance currencies, use for filted resault. If null, will not send to a server.
+            List of balance currencies string, use for filted resault. If null, will not send to a server.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.FromTime">
@@ -951,7 +993,7 @@
         </member>
         <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.NextPageCursor">
             <summary>
-            Next page cursor, use for get next pages of resault. Default cursor is start.
+            Next page cursor, use for get next pages of resault. Default cursor is start. Page indicator.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.TransactionHistoryRequest.RateFrom">

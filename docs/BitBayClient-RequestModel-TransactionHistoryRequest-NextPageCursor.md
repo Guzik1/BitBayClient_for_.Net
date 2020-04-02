@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel').[TransactionHistoryRequest](./BitBayClient-RequestModel-TransactionHistoryRequest.md 'BitBayClient.RequestModel.TransactionHistoryRequest')
 ## TransactionHistoryRequest.NextPageCursor Property
-Next page cursor, use for get next pages of resault. Default cursor is start.  
+Next page cursor, use for get next pages of resault. Default cursor is start. Page indicator.  
 ```csharp
 public string NextPageCursor { get; set; }
 ```

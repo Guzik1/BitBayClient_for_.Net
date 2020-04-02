@@ -3,7 +3,7 @@
 ## NewStopOfferRequest.Rate Property
 Offer rate (price). Required in stop-limit mode and not required in stop-market mode.  
 ```csharp
-public float Rate { get; set; }
+public decimal Rate { get; set; }
 ```
 #### Property Value
-[System.Single](https://docs.microsoft.com/en-us/dotnet/api/System.Single 'System.Single')  
+[System.Decimal](https://docs.microsoft.com/en-us/dotnet/api/System.Decimal 'System.Decimal')  

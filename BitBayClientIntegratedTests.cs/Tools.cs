@@ -12,7 +12,14 @@ namespace BitBayClientIntegratedTests
         internal static void HandlingErrors(FailResponseException e)
         {
             if (e.Errors.Count > 0)
-                Assert.Fail(e.Errors[0].ToString());
+            {
+                string errors = "";
+                for (int i = 0; i < e.Errors.Count; i++)
+                    errors += e.Errors[i].ToString() + " / ";
+
+                Assert.Fail(errors);
+            }
+
 
             Assert.Fail();
         }

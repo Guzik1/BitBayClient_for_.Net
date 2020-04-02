@@ -13,9 +13,9 @@ namespace BitBayClientIntegratedTests.PrivateStopTradingMethods
     {
         BitBayClient.BitBayClient bbClient = Tools.SetUp();
         string offerId;
-        decimal amount = 1;
-        decimal rate = 5;
-        decimal stopRate = 6;
+        decimal amount = 1m;
+        decimal rate = 5m;
+        decimal stopRate = 8m;
 
         bool runTest = false;
 
