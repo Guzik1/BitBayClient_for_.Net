@@ -13,7 +13,7 @@ namespace ExchangeBasicDataTests
 
             OfferType type = OfferTypeExtension.Parse(sType);
 
-            Assert.AreEqual(OfferType.Limit, type);
+            Assert.AreEqual(OfferType.LIMIT, type);
         }
 
         [Test]
@@ -23,7 +23,7 @@ namespace ExchangeBasicDataTests
 
             OfferType type = OfferTypeExtension.Parse(sType);
 
-            Assert.AreEqual(OfferType.Stop_limit, type);
+            Assert.AreEqual(OfferType.STOP_LIMIT, type);
         }
 
         [Test]
@@ -33,14 +33,14 @@ namespace ExchangeBasicDataTests
 
             OfferType type = OfferTypeExtension.Parse(sType);
 
-            Assert.AreEqual(OfferType.Stop_limit, type);
+            Assert.AreEqual(OfferType.STOP_LIMIT, type);
         }
 
 
         [Test]
         public void OffertTypeToLowerStringTest()
         {
-            OfferType type = OfferType.Stop_limit;
+            OfferType type = OfferType.STOP_LIMIT;
 
             string sType = type.ToLowerString();
 

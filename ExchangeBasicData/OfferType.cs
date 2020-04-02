@@ -6,11 +6,11 @@ namespace ExchangeBasicData
 {
     public enum OfferType
     {
-        Limit,
-        Market,
+        LIMIT,
+        MARKET,
 
-        Stop_limit,
-        Stop_market
+        STOP_LIMIT,
+        STOP_MARKET
     }
 
     public static class OfferTypeExtension
