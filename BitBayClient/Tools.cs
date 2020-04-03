@@ -57,7 +57,10 @@ namespace BitBayClient
 
             FailResponseTemp frt2 = Deserialize.FromJson<FailResponseTemp>(rc.GetResponseToString);
 
-            throw new FailResponseException(frt2.Errors[0]);
+            if(frt2 == null)
+                throw new FailResponseException(frt2.Errors[0]);
+            else
+                throw new FailResponseException();
         }
     }
 }

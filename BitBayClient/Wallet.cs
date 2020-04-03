@@ -21,7 +21,7 @@ namespace BitBayClient
 
         #region WalletList
         /// <summary>
-        /// Get akk wallet list from user account. For use, must authorize User
+        /// Get all wallet list from user account. For use, must authorize User.
         /// </summary>
         /// <returns></returns>
         public List<WalletItem> GetWalletList()

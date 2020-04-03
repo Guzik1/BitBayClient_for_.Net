@@ -62,6 +62,21 @@ namespace BitBayClient
         }
         History _history;
 
+        /// <summary>
+        /// Historical api methods.
+        /// </summary>
+        public Wallet Balances
+        {
+            get
+            {
+                if (!autorized)
+                    ThrowUnauthorizedException();
+
+                return _wallet;
+            }
+        }
+        Wallet _wallet;
+
         void ThrowUnauthorizedException()
         {
             throw new Exception("Unautorized user, use SetAutorizationData method to autorize.");
@@ -92,6 +107,7 @@ namespace BitBayClient
             _privateTrading = new PrivateTrading(config);
             _privateStopTrading = new PrivateStopTrading(config);
             _history = new History(config);
+            _wallet = new Wallet(config);
         }
 
         /// <summary>

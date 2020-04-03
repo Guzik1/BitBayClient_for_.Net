@@ -13,6 +13,6 @@
         /// <summary>
         /// Real currency wallet
         /// </summary>
-        FIAT
+        FIAT,
     }
 }
