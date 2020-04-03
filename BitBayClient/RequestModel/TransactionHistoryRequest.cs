@@ -17,7 +17,7 @@ namespace BitBayClient.RequestModel
         public List<string> Markets { get; set; } = new List<string>();
 
         /// <summary>
-        /// Next page cursor, use for get next pages of resault. Default cursor is start.
+        /// Next page cursor, use for get next pages of resault. Default cursor is start. Page indicator.
         /// </summary>
         [JsonProperty("nextPageCursor")]
         public string NextPageCursor { get; set; } = "start";
@@ -25,7 +25,7 @@ namespace BitBayClient.RequestModel
         /// <summary>
         /// Rate from filter.
         /// </summary>
-        [JsonProperty("rateFrom")]
+        [JsonProperty("rateFrom", DefaultValueHandling = DefaultValueHandling.Populate)]
         public decimal RateFrom { get; set; }
 
         /// <summary>

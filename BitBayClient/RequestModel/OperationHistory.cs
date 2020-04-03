@@ -17,58 +17,74 @@ namespace BitBayClient.RequestModel
         [JsonProperty("balancesId")]
         public List<string> BalancesId { get; set; } = new List<string>();
 
-        /*/// <summary>
-        /// List of balance currencies, use for filted resault. If null, will not send to a server.
+        /// <summary>
+        /// List of balance currencies string, use for filted resault. If null, will not send to a server.
         /// </summary>
-        [JsonProperty("balanceCurrencies", NullValueHandling = NullValueHandling.Ignore)]
-        //public List<Currency> BalanceCurrencies { get; set; }
-        */
+        [JsonProperty("balanceCurrencies")]
+        public List<string> BalanceCurrencies { get; set; } = new List<string>();
+        
         /// <summary>
         /// Filter result from time (unix). If null, will not send to a server.
         /// </summary>
-        [JsonProperty("fromTime", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("fromTime", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public long FromTime { get; set; }
 
         /// <summary>
         /// Filter result to time (unix). If null, will not send to a server.
         /// </summary>
-        [JsonProperty("toTime", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("toTime", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public long ToTime { get; set; }
+
+        /// <summary>
+        /// Limit of result, default 20.
+        /// </summary>
+        public int Limit { get; set; } = 20;
+
+        /// <summary>
+        /// Result offset, default 0;
+        /// </summary>
+        public int Offset { get; set; } = 0;
 
         /// <summary>
         /// Filter result from value. If null, will not send to a server.
         /// </summary>
-        [JsonProperty("fromValue", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("fromValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public decimal FromValue { get; set; }
 
         /// <summary>
         /// Filter result to value. If null, will not send to a server.
         /// </summary>
-        [JsonProperty("toValue", NullValueHandling = NullValueHandling.Ignore)]
+        [JsonProperty("toValue", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public decimal ToValue { get; set; }
-
-        /// <summary>
-        /// Type of balance walet: fiat or crypto
-        /// </summary>
-        [JsonIgnore]
-        public WalletType BalanceType { get; set; }
 
         /// <summary>
         /// Type of balance walet: fiat or crypto, convert from BalanceType, used inside
         /// </summary>
         [JsonProperty("balanceTypes")]
-        public string BalanceTypesString { get => BalanceType.ToString(); }
+        public string BalanceTypesString { get; set; }
 
         /// <summary>
         /// List of types of operations.
         /// </summary>
         [JsonProperty("types")]
-        public List<string> TypesString { get; set; }
+        public List<string> TypesString { get; set; } = new List<string>();
 
         /// <summary>
-        /// Sort result configuration.
+        /// Sort result configuration. Default set order by time, DESC.
         /// </summary>
-        public Sort Sort { get; set; }
+        public Sort Sort { get; set; } = new Sort("time", SortOrderTypes.DESC);
+
+        /// <summary>
+        /// Request has next page, default false.
+        /// </summary>
+        [JsonProperty("hasNextPage")]
+        public bool HasNextPage { get; set; } = false;
+
+        /// <summary>
+        /// Cursor for get next page, default start.
+        /// </summary>
+        [JsonProperty("nextPageCursor")]
+        public string NextPageCursor { get; set; } = "start";
     }
     
     /// <summary>
@@ -77,7 +93,7 @@ namespace BitBayClient.RequestModel
     public class Sort
     {
         /// <summary>
-        /// Select field to sort by this field. Example: time.
+        /// Select field to sort by this field.
         /// </summary>
         public string By { get; set; }
 
@@ -91,12 +107,12 @@ namespace BitBayClient.RequestModel
         /// String order, converted from Order field.
         /// </summary>
         [JsonProperty("order")]
-        public string OrderString { get => Order.ToString();  }
+        public string OrderString { get => Order.ToString(); }
 
         /// <summary>
         /// Construct sort object.
         /// </summary>
-        /// <param name="sortBy">Set operation type.</param>
+        /// <param name="sortBy">Set operation type to be ordered.</param>
         /// <param name="orderBy">Set order by.</param>
         public Sort(string sortBy, SortOrderTypes orderBy)
         {

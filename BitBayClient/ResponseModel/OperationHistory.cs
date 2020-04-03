@@ -58,6 +58,7 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// Operation unique UUID identificator.
         /// </summary>
+        [JsonProperty("detailId")]
         public string DetailId { get; set; }
 
         /// <summary>

@@ -8,12 +8,11 @@ namespace BitBayClient.ResponseModel
     /// <summary>
     /// Wallet list on user account.
     /// </summary>
-    public class WalletList
+    internal class WalletList
     {
         /// <summary>
         /// List of wallets on user account.
         /// </summary>
-        [JsonConverter(typeof(List<WalletItem>))]
         public List<WalletItem> Balances { get; set; }
     }
 
@@ -81,6 +80,7 @@ namespace BitBayClient.ResponseModel
         /// <summary>
         /// Wallet type: crypto/fiat, convert from Type string.
         /// </summary>
+        [JsonIgnore]
         public WalletType WalletType { get => EnumConverter.Parse<WalletType>(Type); }
 
         /// <summary>

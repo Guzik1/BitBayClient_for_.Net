@@ -25,7 +25,7 @@ namespace BitBayClient.RequestModel
         /// <summary>
         /// Last transaction rate, when this offer was activate. REQUIRED
         /// </summary>
-        [JsonProperty("stopRate", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [JsonProperty("stopRate")]
         public decimal StopRate { get; set; }
 
         /// <summary>
