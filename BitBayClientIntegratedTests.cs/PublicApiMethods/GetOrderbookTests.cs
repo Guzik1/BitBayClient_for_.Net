@@ -47,8 +47,8 @@ namespace BitBayClientIntegratedTests.PublicApiMethod
         void Test(int limit)
         {
             Assert.IsNotNull(orderbook);
-            Assert.AreEqual(limit, orderbook.Buy.Count);
-            Assert.AreEqual(limit, orderbook.Sell.Count);
+            Assert.LessOrEqual(orderbook.Buy.Count, limit);
+            Assert.LessOrEqual(orderbook.Sell.Count, limit);
             Assert.Greater(orderbook.SeqNo, 0);
             Assert.Greater(orderbook.Buy[0].PositionRate, 0);
         }
