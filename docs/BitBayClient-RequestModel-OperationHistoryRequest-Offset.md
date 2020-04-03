@@ -1,9 +1,9 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel').[OperationHistoryRequest](./BitBayClient-RequestModel-OperationHistoryRequest.md 'BitBayClient.RequestModel.OperationHistoryRequest')
-## OperationHistoryRequest.Sort Property
-Sort result configuration. Default set order by time, DESC.  
+## OperationHistoryRequest.Offset Property
+Result offset, default 0;  
 ```csharp
-public BitBayClient.RequestModel.Sort Sort { get; set; }
+public int Offset { get; set; }
 ```
 #### Property Value
-[Sort](./BitBayClient-RequestModel-Sort.md 'BitBayClient.RequestModel.Sort')  
+[System.Int32](https://docs.microsoft.com/en-us/dotnet/api/System.Int32 'System.Int32')  

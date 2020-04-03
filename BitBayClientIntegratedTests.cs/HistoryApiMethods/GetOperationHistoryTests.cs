@@ -17,7 +17,7 @@ namespace BitBayClientIntegratedTests.HistoryApiMethods
         public void GetOperationsHistoryTest()
         {
             OperationHistoryRequest request = new OperationHistoryRequest();
-            request.BalanceCurrencies.Add("BTC");
+            //request.BalanceCurrencies.Add("BTC");
 
             try
             {

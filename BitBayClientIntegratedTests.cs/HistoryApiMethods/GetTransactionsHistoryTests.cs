@@ -14,7 +14,7 @@ namespace BitBayClientIntegratedTests.HistoryApiMethods
         TransactionHistory history;
 
         [Test]
-        public void GetOperationsHistoryTest()
+        public void GetTransactionHistoryTest()
         {
             TransactionHistoryRequest request = new TransactionHistoryRequest();
             request.Markets.Add("BTC-PLN");

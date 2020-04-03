@@ -1,7 +1,7 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient](./BitBayClient.md 'BitBayClient').[Wallet](./BitBayClient-Wallet.md 'BitBayClient.Wallet')
 ## Wallet.GetWalletList() Method
-Get akk wallet list from user account. For use, must authorize User  
+Get all wallet list from user account. For use, must authorize User.  
 ```csharp
 public System.Collections.Generic.List<BitBayClient.ResponseModel.WalletItem> GetWalletList();
 ```

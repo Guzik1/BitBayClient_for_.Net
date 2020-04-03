@@ -1,9 +1,9 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel').[OperationHistoryRequest](./BitBayClient-RequestModel-OperationHistoryRequest.md 'BitBayClient.RequestModel.OperationHistoryRequest')
-## OperationHistoryRequest.BalanceType Property
-Type of balance walet: fiat or crypto  
+## OperationHistoryRequest.NextPageCursor Property
+Cursor for get next page, default start.  
 ```csharp
-public BitBayClient.WalletType BalanceType { get; set; }
+public string NextPageCursor { get; set; }
 ```
 #### Property Value
-[WalletType](./BitBayClient-WalletType.md 'BitBayClient.WalletType')  
+[System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  

@@ -10,6 +10,7 @@ Inheritance [System.Object](https://docs.microsoft.com/en-us/dotnet/api/System.O
 - [BitBayClient()](./BitBayClient-BitBayClient-BitBayClient().md 'BitBayClient.BitBayClient.BitBayClient()')
 - [BitBayClient(string, string)](./BitBayClient-BitBayClient-BitBayClient(string_string).md 'BitBayClient.BitBayClient.BitBayClient(string, string)')
 ### Properties
+- [Balances](./BitBayClient-BitBayClient-Balances.md 'BitBayClient.BitBayClient.Balances')
 - [History](./BitBayClient-BitBayClient-History.md 'BitBayClient.BitBayClient.History')
 - [PrivateStopTrading](./BitBayClient-BitBayClient-PrivateStopTrading.md 'BitBayClient.BitBayClient.PrivateStopTrading')
 - [PrivateTrading](./BitBayClient-BitBayClient-PrivateTrading.md 'BitBayClient.BitBayClient.PrivateTrading')

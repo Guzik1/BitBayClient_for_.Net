@@ -44,6 +44,11 @@
             Historical api methods.
             </summary>
         </member>
+        <member name="P:BitBayClient.BitBayClient.Balances">
+            <summary>
+            Historical api methods.
+            </summary>
+        </member>
         <member name="M:BitBayClient.BitBayClient.#ctor">
             <summary>
             Default constructor.
@@ -898,6 +903,16 @@
             Filter result to time (unix). If null, will not send to a server.
             </summary>
         </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.Limit">
+            <summary>
+            Limit of result, default 20.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.Offset">
+            <summary>
+            Result offset, default 0;
+            </summary>
+        </member>
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.FromValue">
             <summary>
             Filter result from value. If null, will not send to a server.
@@ -906,11 +921,6 @@
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.ToValue">
             <summary>
             Filter result to value. If null, will not send to a server.
-            </summary>
-        </member>
-        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalanceType">
-            <summary>
-            Type of balance walet: fiat or crypto
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.BalanceTypesString">
@@ -925,7 +935,17 @@
         </member>
         <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.Sort">
             <summary>
-            Sort result configuration.
+            Sort result configuration. Default set order by time, DESC.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.HasNextPage">
+            <summary>
+            Request has next page, default false.
+            </summary>
+        </member>
+        <member name="P:BitBayClient.RequestModel.OperationHistoryRequest.NextPageCursor">
+            <summary>
+            Cursor for get next page, default start.
             </summary>
         </member>
         <member name="T:BitBayClient.RequestModel.Sort">
@@ -935,7 +955,7 @@
         </member>
         <member name="P:BitBayClient.RequestModel.Sort.By">
             <summary>
-            Select field to sort by this field. Example: time.
+            Select field to sort by this field.
             </summary>
         </member>
         <member name="P:BitBayClient.RequestModel.Sort.Order">
@@ -952,7 +972,7 @@
             <summary>
             Construct sort object.
             </summary>
-            <param name="sortBy">Set operation type.</param>
+            <param name="sortBy">Set operation type to be ordered.</param>
             <param name="orderBy">Set order by.</param>
         </member>
         <member name="T:BitBayClient.RequestModel.OrderbookLimits">
@@ -2005,7 +2025,7 @@
         </member>
         <member name="M:BitBayClient.Wallet.GetWalletList">
             <summary>
-            Get akk wallet list from user account. For use, must authorize User
+            Get all wallet list from user account. For use, must authorize User.
             </summary>
             <returns></returns>
         </member>

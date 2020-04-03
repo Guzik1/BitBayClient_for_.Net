@@ -1,9 +1,9 @@
 #### [BitBayClient](./index.md 'index')
 ### [BitBayClient.RequestModel](./BitBayClient-RequestModel.md 'BitBayClient.RequestModel').[OperationHistoryRequest](./BitBayClient-RequestModel-OperationHistoryRequest.md 'BitBayClient.RequestModel.OperationHistoryRequest')
-## OperationHistoryRequest.Sort Property
-Sort result configuration. Default set order by time, DESC.  
+## OperationHistoryRequest.HasNextPage Property
+Request has next page, default false.  
 ```csharp
-public BitBayClient.RequestModel.Sort Sort { get; set; }
+public bool HasNextPage { get; set; }
 ```
 #### Property Value
-[Sort](./BitBayClient-RequestModel-Sort.md 'BitBayClient.RequestModel.Sort')  
+[System.Boolean](https://docs.microsoft.com/en-us/dotnet/api/System.Boolean 'System.Boolean')  

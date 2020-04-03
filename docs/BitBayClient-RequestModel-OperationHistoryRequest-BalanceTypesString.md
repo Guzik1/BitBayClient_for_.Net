@@ -3,7 +3,7 @@
 ## OperationHistoryRequest.BalanceTypesString Property
 Type of balance walet: fiat or crypto, convert from BalanceType, used inside  
 ```csharp
-public string BalanceTypesString { get; }
+public string BalanceTypesString { get; set; }
 ```
 #### Property Value
 [System.String](https://docs.microsoft.com/en-us/dotnet/api/System.String 'System.String')  
