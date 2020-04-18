@@ -7,10 +7,9 @@ This project is a client for BitBay crypto exchange rest api.
 Lib BitBay client available soon in nuget package.<br />
 
 ## Simple code example
-Data in node and edge is int. Graph is unweighted and undirected (simple graph)
+Example for get ticker for BTCUSD market.
 ```C#
 BitBayClient bbc = new BitBayClient();
-
 Ticker bitcoinTicker = bbc.PublicTrading.GetTicker("BTCUSD");
 ```
 For more information, you must view [lib documentation](https://github.com/Guzik1/BitBayClient_for_.Net/blob/master/docs/index.md). <br />
