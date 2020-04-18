@@ -5,6 +5,7 @@ This project is a client for BitBay crypto exchange rest api.
 
 ## Setup
 Lib BitBay client available soon in nuget package.<br />
+View [BitBay api documentation](https://docs.bitbay.net/v1.0.1-en/reference#ticker-1) for get all api method and data model.
 
 ## Simple code example
 Example for get ticker for BTCUSD market.
